@@ -1,0 +1,22 @@
+.candado-css{
+    background-image: url(../img/imagen-candado.png);
+    background-size: cover;
+    opacity: 50%;
+    width: 185px;
+    height: 185px;
+}
+
+.candado-js{
+    background-image: url(../img/imagen-candado.png);
+    background-size: cover;
+    opacity: 50%;
+    width: 185px;
+    height: 185px;
+}
+
+.boton-vueltaAlWireframe4-o-5{
+    background-image: url(../img/flecha-reversa-removebg-preview.png);
+    background-size: cover;
+    width: 200px;
+    height: 150px;
+}
