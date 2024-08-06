@@ -1,0 +1,13 @@
+.recuerdame {
+    cursor: pointer;
+}
+
+.boton-acceder {
+    cursor: pointer;
+}
+
+.boton-volverAPresentacion {
+    cursor: pointer;
+    background-image: url(../img/flecha-reversa-removebg-preview.png);
+    
+}

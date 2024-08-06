@@ -1,0 +1,16 @@
+.boton-tengoCuenta{
+background: none;
+border: none;
+cursor: pointer;
+font: inherit;
+padding: 0;
+}
+
+.boton-tengoCuenta:hover {
+color: darkblue;
+text-decoration: underline;
+}
+
+.boton-crearCuenta{
+    cursor: pointer;
+}
