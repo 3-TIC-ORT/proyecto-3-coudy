@@ -1,19 +1,36 @@
-// Función para manejar clics
-function verQueBotonEligio(event) {
-    const buttonId = event.target.id; // Obtener el ID del botón clickeado
-
-    // Verificar qué botón fue clickeado
-    if (buttonId === 'boton-dependeQueEligio') {
-        const urlParams = new URLSearchParams(window.location.search);
-        const from = urlParams.get('from');
-
-        if (from === '2') {
-            window.location.href = '../Wireframe-6/index.html';
-        } else if (from === '3' || from === '4') {
-            window.location.href = '../Wireframe-5/index.html';
-        }
-    }
+function cambiarArchivo (){
+    window.location.href = '../Wireframe-6/index.html'
 }
 
-// Asignar la función de manejo al botón "Siguiente"
-document.querySelector('boton-dependeQueEligio').addEventListener('click', verQueBotonEligio);
+function cambiarArchivo2 (){
+    window.location.href = '../Wireframe-5/index.html'
+}
+function cambioAlWireframe_2 (){
+    location.href='../Wireframe-2/index.html'
+    variable ++;
+}
+
+localStorage.setItem("variable", 0);
+
+function cambioAlWireframe_3 (){
+    location.href='../Wireframe-3/index.html'
+    variable =  2;
+}
+
+function cambioAlWireframe_4 (){
+    console.log(variable + "Hola");
+    variable = localStorage.getItem("variable");
+    location.href='../Wireframe-4/index.html'
+
+    console.log(variable + "chau");
+    variable = 3;
+    console.log(variable);
+}
+
+if (variable === 1){
+    document.getElementById("boton-dependeQueEligio").addEventListener("click", cambiarArchivo)
+}
+
+else if (variable === 2 || variable === 3){
+    document.getElementById("boton-dependeQueEligio").addEventListener("click", cambiarArchivo2)
+}
