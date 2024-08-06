@@ -9,12 +9,15 @@
 </head>
 <body>
     <form id="logInForm">
-    <h1 class="logIn">Log In</h1>
-    <input type="text" placeholder="email" id="mail" class="input-mail">
-    <input type="text" class="input-contraseña" placeholder="contraseña" id="password">
-    <p id="recuerdame" class="recuerdame">Recuerdame</p>
-    <button id="boton-acceder" class="boton-acceder">Acceder</button>
-    <button id="boton-volverAPresentacion"  class="boton-volverAPresentacion" onclick="location.href='../Presentación/index.html'"></button>.
+        <h1 class="logIn">Log In</h1>
+        <input type="text" placeholder="email" id="mail" class="input-mail">
+    <div class="password-container">
+        <input type="text" class="input-contraseña" placeholder="contraseña" id="password">
+        <span id="togglePassword" class="toggle-password">&#128065;</span>
+    </div>
+        <input type="checkbox" id="recuerdame" class="recuerdame">Recuerdame
+        <button type="submit" id="boton-acceder" class="boton-acceder">Acceder</button>
+        <button id="boton-volverAPresentacion"  class="boton-volverAPresentacion" onclick="location.href='../Presentación/index.html'"></button>.
     </form>
     
     <script src="index.js"></script>

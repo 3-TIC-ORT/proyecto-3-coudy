@@ -1,28 +1,32 @@
-const SignUpForm = document.querySelector('#SignUpForm')
-SignUpForm.addEventListener
-(
-    'submit', (e)=>
-{
+document.addEventListener("DOMContentLoaded", function() {
+    const SignUpForm = document.querySelector('#SignUpForm');
+    const botonAceptar = document.getElementById("button");
 
-    e.preventDefault()
-    const name = document.querySelector('#name').value
-    const mail = document.querySelector('#mail').value
-    const password = document.querySelector('#password').value
+    SignUpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    const Users = JSON.parse(localStorage.getItem('users')) || []
-    const isUserRegistered = Users.find(user => user.mail === mail)
-    
-    if (isUserRegistered)
-    {
+        if (e.submitter !== botonAceptar) {
+            return;
+        }
 
-    return alert('el usuario ya esta registrado')
+        const name = document.querySelector('#name').value;
+        const mail = document.querySelector('#mail').value;
+        const password = document.querySelector('#password').value;
 
+        const Users = JSON.parse(localStorage.getItem('users')) || [];
+        const isUserRegistered = Users.find(user => user.mail === mail);
+
+        if (isUserRegistered) {
+            return alert('El usuario ya está registrado');
+        }
+
+        Users.push({ name: name, mail: mail, password: password });
+        localStorage.setItem('users', JSON.stringify(Users));
+        alert("Registro exitoso");
+        cambioDeHtml();
+    });
+
+    function cambioDeHtml() {
+        window.location.href = '../Wireframe-23/index.html';
     }
-
-    Users.push({name: name, mail: mail, password: password}) 
-    localStorage.setItem('users', JSON.stringify(Users))
-    alert ("registro exitoso")
-    window.location.href = '../Wireframe-23/index.html'
-
-}
-)
+});
