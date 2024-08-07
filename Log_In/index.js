@@ -27,19 +27,25 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
-        const mail = mailInput.value;
+        const mailOrUsername = mailInput.value;
         const password = passwordInput.value;
 
         const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const validUser = Users.find(user => user.mail === mail && user.password === password);
+        const validUser = Users.find(user => 
+          (user.mail === mailOrUsername || user.username === mailOrUsername) && user.password === password
+        );
 
         if (!validUser) {
             return alert("Usuario y/o contraseña incorrectos");
         }
+    
+        if (!mailOrUsername || !password) {
+            return alert('Asegúrate de haber completado todos los espacios');
+        }
 
         if (recuerdameCheckbox.checked) {
             localStorage.setItem('recuerdame', 'true');
-            localStorage.setItem('mail', mail);
+            localStorage.setItem('mail', mailOrUsername);
             localStorage.setItem('password', password);
         } else {
             localStorage.removeItem('recuerdame');
@@ -47,25 +53,25 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem('password');
         }
 
-        alert("Bienvenido");
+        alert(`Bienvenido de nuevo ${validUser.username}`); // Mensaje personalizado
         window.location.href = '../Wireframe-23/index.html';
     });
 });
 
-        function adjustInputWidth() {
-            const passwordInput = document.querySelector('.input-contraseña');
-            const span = document.createElement('span');
-            document.body.appendChild(span);
-            span.style.visibility = 'hidden';
-            span.style.whiteSpace = 'pre';
-            span.style.font = getComputedStyle(passwordInput).font;
-            span.textContent = passwordInput.value || passwordInput.placeholder;
-            passwordInput.style.width = `${Math.max(span.offsetWidth + 40, 200)}px`; // 40px para el espacio del icono
-            document.body.removeChild(span);
-        }
+function adjustInputWidth() {
+    const passwordInput = document.querySelector('.input-contraseña');
+    const span = document.createElement('span');
+    document.body.appendChild(span);
+    span.style.visibility = 'hidden';
+    span.style.whiteSpace = 'pre';
+    span.style.font = getComputedStyle(passwordInput).font;
+    span.textContent = passwordInput.value || passwordInput.placeholder;
+    passwordInput.style.width = `${Math.max(span.offsetWidth + 40, 200)}px`; // 40px para el espacio del icono
+    document.body.removeChild(span);
+}
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const passwordInput = document.querySelector('.input-contraseña');
-            passwordInput.addEventListener('input', adjustInputWidth);
-            adjustInputWidth(); // Ajustar el ancho al cargar
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    const passwordInput = document.querySelector('.input-contraseña');
+    passwordInput.addEventListener('input', adjustInputWidth);
+    adjustInputWidth(); // Ajustar el ancho al cargar
+});

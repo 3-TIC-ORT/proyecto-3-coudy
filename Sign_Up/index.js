@@ -12,17 +12,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const name = document.querySelector('#name').value;
         const mail = document.querySelector('#mail').value;
         const password = document.querySelector('#password').value;
+    
+        if (!name || !mail || !password) {
+            return alert('Asegúrate de haber completado todos los espacios');
+        }
 
         const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const isUserRegistered = Users.find(user => user.mail === mail);
+        const isUserRegistered = Users.find(user => user.mail === mail || user.username === name);
 
         if (isUserRegistered) {
             return alert('El usuario ya está registrado');
         }
 
-        Users.push({ name: name, mail: mail, password: password });
+        Users.push({ username: name, mail: mail, password: password });
         localStorage.setItem('users', JSON.stringify(Users));
-        alert("Registro exitoso");
+        alert("Registro exitoso, disfrute de su experiencia");
         cambioDeHtml();
     });
 
