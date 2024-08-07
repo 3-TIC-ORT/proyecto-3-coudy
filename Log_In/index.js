@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const recuerdameCheckbox = document.getElementById("recuerdame");
     const mailInput = document.querySelector('#mail');
     const passwordInput = document.querySelector('#password');
-    const togglePassword = document.getElementById("togglePassword");
+    const togglePassword = document.getElementById("emojiOjo");
 
     // Toggle password visibility
     togglePassword.addEventListener('click', function() {

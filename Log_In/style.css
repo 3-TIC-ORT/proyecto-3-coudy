@@ -23,7 +23,7 @@ form {
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
-.toggle-password {
+.emoji-ojo {
     position: absolute;
     right: 10px; /* Ajusta el espaciado desde el borde derecho del input */
     top: 50%;
