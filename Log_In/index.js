@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         alert(`Bienvenido de nuevo ${validUser.username}`); // Mensaje personalizado
-        window.location.href = '../Wireframe-23/index.html';
+        window.location.href = '../Wireframe-1/index.html';
     });
 });
 
