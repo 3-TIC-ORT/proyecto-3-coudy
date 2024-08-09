@@ -1,46 +1,57 @@
 function botonSecundaria (){
     location.href='../Wireframe-1/index.html'
-    localStorage.setItem('numero', "Estudiante de Secundaria")
+    guardarDatosUsuario(userId, 'teSentisIdentificado', "Estudiante de Secundaria");
 }
 
 function botonUniversidad (){
     location.href='../Wireframe-1/index.html'
-    localStorage.setItem('numero', "Estudiante de Universidad")
+    guardarDatosUsuario(userId, 'teSentisIdentificado', "Estudiante de Universidad")
 }
 
 function botonTrabajador (){
     location.href='../Wireframe-1/index.html'
-    localStorage.setItem('numero', "Trabajador")
+    guardarDatosUsuario(userId, 'teSentisIdentificado', "Trabajador")
 }
 
 function botonNinguna (){
     location.href='../Wireframe-1/index.html'
-    localStorage.setItem('numero', "Otro")
+    guardarDatosUsuario(userId, 'teSentisIdentificado', "Otro")
 }
 
 function botonProgramador (){
     location.href='../Wireframe-24/index.html'
-    localStorage.setItem('helloWorld', "Programador")
+    guardarDatosUsuario(userId, 'razonAprender', "Programador")
 }
 
 function botonDiversion (){
     location.href='../Wireframe-24/index.html'
-    localStorage.setItem('helloWorld', "Diversión")
+    guardarDatosUsuario(userId, 'razonAprender', "Diversión")
 }
 
 function botonTrabajo (){
     location.href='../Wireframe-24/index.html'
-    localStorage.setItem('helloWorld', "Trabajo")
+    guardarDatosUsuario(userId, 'razonAprender', "Trabajo")
 }
 
 function botonOtrosMotivos (){
     location.href='../Wireframe-24/index.html'
-    localStorage.setItem('helloWorld', "Otros motivos")
+    guardarDatosUsuario(userId, 'razonAprender', "Otros motivos")
 }
 
-let numero = String(localStorage.getItem('numero'));
-let helloWorld = String(localStorage.getItem('helloWorld'));
+let teSentisIdentificado = String(localStorage.getItem('teSentisIdentificado'));
+let razonAprender = String(localStorage.getItem('razonAprender'));
 
-console.log("Te sientes más identificado como: " + numero)
+// Obtener el ID del usuario activo (esto se debe hacer cuando el usuario inicie sesión)
+let userId = 'el-id-del-usuario-registrado';
 
-console.log("Estas programando por: " + helloWorld)
+// Reutilizar la función de guardar datos del usuario
+function guardarDatosUsuario(userId, key, value) {
+    let userData = JSON.parse(localStorage.getItem(userId)) || {};
+    userData[key] = value;
+    localStorage.setItem(userId, JSON.stringify(userData));
+}
+
+// Recuperar la información del usuario
+let userData = JSON.parse(localStorage.getItem(userId)) || {};
+console.log("Te sientes más identificado como: " + (userData.teSentisIdentificado || "No especificado"));
+console.log("Estas programando por: " + (userData.razonAprender || "No especificado"));
