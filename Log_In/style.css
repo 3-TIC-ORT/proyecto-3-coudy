@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .password-container {
@@ -36,12 +37,12 @@ body, html {
 
 .emoji-ojo {
     position: absolute;
-    right: 10px; /* Ajusta el espaciado desde el borde derecho del input */
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%; /* Centramos horizontalmente */
+    transform: translate(3vw, -0.5vw);
+    top: 10px; /* Mantén la posición vertical como desees, puedes ajustar este valor */
     cursor: pointer;
     user-select: none;
-    font-size: 1.2em; /* Ajusta el tamaño del icono según sea necesario */
+    font-size: 4em; /* Ajusta el tamaño del icono según sea necesario */
     z-index: 1; /* Asegura que el icono esté por encima del input */
 }
 
@@ -72,6 +73,7 @@ body, html {
     display: flex;
     justify-content: center;
     margin-bottom: 4.5vh;
+    font-size: 2em;
 }
 
 .boton-acceder {
@@ -81,6 +83,9 @@ body, html {
     font-size: 4vw;
     border: none;
     background-color: #D9D9D9;
+    left: 25vw;
+    bottom: -2vh;
+    position: relative;
 }
 
 .boton-volver {

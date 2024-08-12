@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     font-size: 3em;
-    margin: 2vh; /* Elimina el margen para centrar el título correctamente */
+    margin: 2vh;
 }
 
 .botones {
