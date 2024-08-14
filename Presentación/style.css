@@ -16,7 +16,7 @@ body, html {
 }
 
 .imagen-coudy {
-    background-image: url('../img/imagen-coudy.png');
+    background-image: url('../img/coudy.png');
     background-repeat: no-repeat;
     background-size: contain; 
     background-position: center;
