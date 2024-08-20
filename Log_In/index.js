@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     togglePassword.addEventListener('click', function() {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-        this.textContent = type === 'password' ? '👁️' : '🙈'; // Cambiar el icono
+        this.textContent = type === 'password' ? '🙈' : '👁️'; // Cambiar el icono
     });
 
     // Cargar datos guardados si existe
