@@ -17,11 +17,6 @@ html, body {
     height: 185px;
 }
 
-.boton-vueltaAlWireframe4-o-5 {
-    width: 200px;
-    height: 150px;
-}
-
 .mi-div {
     width: 100%;
     height: 10vh;
@@ -93,11 +88,13 @@ html, body {
     height: 100%;
     width: 100%;
     left: 2.6vw;
+    z-index: 3;
 }
 
 .btnMenu{
     margin: 6.5vh 0px;
     cursor: pointer;
+    z-index: 3;
 }
 
 .imgInicio{
@@ -107,6 +104,7 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat;
     top: 27.3vh;
+    z-index: 3;
     position: relative;
 }
 
@@ -118,6 +116,7 @@ html, body {
     background-repeat: no-repeat;
     top: 32.5vh;
     position: relative;
+    z-index: 3;
 }
 
 .imgNiveles{
@@ -130,6 +129,7 @@ html, body {
     position: relative;
     cursor: pointer;
     transform: rotate(-90deg);
+    z-index: 3;
 }
 
 @keyframes moverFlecha {
@@ -158,25 +158,20 @@ html, body {
 
 @keyframes mostrarNiveles {
     0% {
+        top: 48vh;
         opacity: 0;
-        bottom: 0vh;
-        left: 0vw;
     } 100% {
+        top: 52vh;
         opacity: 1;
-        bottom: 20vh;
-        left: 30vw;
     }
 }
 
 @keyframes ocultarNiveles {
     0% {
-        opacity: 1;
-        bottom: 20vh;
-        left: 30vw;
+        top: 52vh;
     } 100% {
+        top: 48vh;
         opacity: 0;
-        bottom: 0vh;
-        left: 0vw;
     }
 }
 
@@ -184,13 +179,29 @@ html, body {
     width: 10vw;
     height: 13vh;
     position: fixed;
+    z-index: 2;
     opacity: 0;
+    left: 2vw;
 }
 
 .desplegar {
-    animation: moverFlecha 1s ease forwards;
+    animation: mostrarNiveles 1s ease forwards;
 }
 
 .oculto {
-    animation: moverFlecha2 1s ease forwards;
+    animation: ocultarNiveles 4s ease-in-out forwards;
+}
+
+.pantalla {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.niveles {
+    z-index: 3;
+}
+
+.html, .css, .js {
+    margin-bottom: 2vh;
 }
