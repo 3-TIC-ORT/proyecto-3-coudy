@@ -53,7 +53,9 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem('password');
         }
 
-        alert(`Bienvenido de nuevo ${validUser.username}`); // Mensaje personalizado
+        localStorage.setItem('nombreUsuario', validUser.username);
+
+        alert(`Bienvenido de nuevo ${validUser.username}`);
         window.location.href = '../Wireframe-1/index.html';
     });
 });

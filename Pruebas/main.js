@@ -66,10 +66,59 @@ function mostrarOcultarNiveles() {
 
 niveles.addEventListener("click", function() {
     cambiarFlecha();
-    mostrarOcultarNiveles();
+    mostrarOcultarNiveles(); 
 });
 
 niveles2.addEventListener("click", function() {
     cambiarFlecha();
     mostrarOcultarNiveles();
+});
+
+document.getElementById("html").addEventListener("click", function(){
+    window.location='../Wireframe-15/index.html'
+})
+document.getElementById("js").addEventListener("click", function(){
+    window.location='../Wireframe-20/index.html'
+})
+document.getElementById("css").addEventListener("click", function(){
+    window.location='../Wireframe-17/index.html'
+})
+
+const imageCircle = document.getElementById('image-circle');
+const fileInput = document.getElementById('file-input');
+let imageSet = false; 
+
+imageCircle.addEventListener('click', () => {
+    if (imageSet) {
+        const confirmChange = confirm("¿Estás seguro de que quieres cambiar la imagen?");
+        if (!confirmChange) {
+            return;
+        }
+    }
+    fileInput.click();
+});
+
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        imageCircle.style.backgroundImage = `url(${e.target.result})`;
+        imageSet = true;
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const texto = document.getElementById("nombreUsuario");
+    const nombreUsuario = localStorage.getItem('nombreUsuario');
+
+    if (nombreUsuario) {
+        texto.textContent = nombreUsuario;
+    } else {
+        texto.textContent = "No se ha iniciado sesión";
+    }
 });
