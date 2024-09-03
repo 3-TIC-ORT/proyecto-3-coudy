@@ -52,3 +52,24 @@
     display: flex;
     justify-content: center;
 }
+
+.contenedor-contraseña {
+    position: relative;
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido dentro del contenedor */
+    width: fit-content; /* Ajusta el ancho del contenedor al contenido del input */
+}
+.input-contraseña2 {
+    padding-right: 40px; /* Espacio para el icono */
+    width: 57.5vw;
+}
+.emojiOjo {
+    position: absolute;
+    left: 50%; /* Centramos horizontalmente */
+    transform: translate(22vw, -1.5vw);
+    top: 10px; /* Mantén la posición vertical como desees, puedes ajustar este valor */
+    cursor: pointer;
+    user-select: none;
+    font-size: 4em; /* Ajusta el tamaño del icono según sea necesario */
+    z-index: 1; /* Asegura que el icono esté por encima del input */
+}
