@@ -6,6 +6,7 @@ body, html {
     font-family: 'Courier New', Courier, monospace;
     background-color: #1e1e1e;
     color: white;
+    overflow: hidden;
 }
 
 .editor-container {
@@ -47,7 +48,7 @@ button:hover {
 }
 
 .preview {
-    width: 50%;
+    width: 50vw;
     margin-left: 10vw;
     background-color: #ffffff;
 }
@@ -59,5 +60,26 @@ iframe {
 }
 
 .precode{
-    margin-top: -2vh;
+    margin-top: -5vh;
+}
+
+#sugerencias {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: calc(100% - 20px);
+    margin-top: 5px;
+    color: black;
+}
+
+#sugerencias div {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#sugerencias div:hover {
+    background-color: #f0f0f0;
 }

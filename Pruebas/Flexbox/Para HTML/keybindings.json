@@ -1,12 +1,12 @@
 [
     {
         "key": "ctrl+s",
-        "command": "workbench.action.files.save",
+        "command": "save",
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+m",
-        "command": "editor.action.commentLine",
+        "command": "commentLine",
         "when": "editorTextFocus"
     }
 ]

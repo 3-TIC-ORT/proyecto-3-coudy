@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="signUp">Sign Up</h1>
 <form id="SignUpForm">
+        <h1 class="signUp">Sign Up</h1>
+
 <div class="inputs">
     <input type="text" id="name" placeholder="Nombre de usuario" class="input-nombre">
     <input type="email" placeholder="Correo electrónico" id="mail" class="input-mail2">
@@ -19,10 +20,20 @@
     </div>
 </div>
 <div class="div-boton">
-    <button type="submit" id="button" class="boton-aceptar">Aceptar</button>
+    <button type="submit" id="button" class="boton-aceptar">Comenzar</button>
 </div>
-    <button id="boton-volverAPresentacion2" class="boton-volverAPresentacion2" onclick="location.href='../Presentación/index.html'"></button>
+        <div class="botoncuenta">
+<button id="boton-tengoCuenta" class="boton-tengoCuenta" onclick="location.href='../Log_In/index.html'">Ya tengo cuenta</button>
+        </div>
 </form>
+<button id="boton-volverAPresentacion2" class="boton-volverAPresentacion2" onclick="location.href='../Presentación/index.html'">
+    <div class="flecha">
+        <div class="flecha-cuerpo"></div>
+        <div class="flecha-punta"></div>
+    </div>
+</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+<script src="../socket.js"></script>
 <script src="index.js"></script>
 <script src="../mail.js"></script>
 </body>

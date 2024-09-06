@@ -27,41 +27,24 @@ body, html {
 .texto-presentacion {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 13px 0;
     font-size: 5vw;
 }
 
 .div-botones {
     display: flex;
-    justify-content: center; 
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-end;
     width: 100%; 
+    position: absolute;
+    margin-top: -85vh;
+    margin-right: 4.5vw
 }
 
 .boton-crearCuenta {
     cursor: pointer;
-    width: 20vw;
-    height: 5.13vh;
-    margin: 0.4vh;
-    font-size: 2vw;
-    text-align: center;
-}
-
-.boton-tengoCuenta {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font: inherit;
-    padding: 0;
-    position: relative;
     width: 15vw;
-    height: 3vh;
-    margin: 4.5vh; 
-    font-size: 2vw;
-}
-
-.boton-tengoCuenta:hover {
-    color: darkblue;
-    text-decoration: underline;
+    height: 8vh;
+    font-size: 2em;
+    text-align: center;
+    background: none;
 }

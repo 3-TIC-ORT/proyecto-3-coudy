@@ -1,22 +1,38 @@
+body {
+    background-color: #5F5A5A;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
 .boton-volverAPresentacion2 {
-    background-image: url(../img/flecha-reversa.png);
-    background-size: contain;
     position: fixed;
     z-index: 1000; 
-    bottom: 20px; 
-    left: 20px;  
+    bottom: 2vh; 
+    left: 2vw;  
     display: flex;
-    width: 6vw;
-    height: 13.75vh;
-    background-repeat: no-repeat;
+    width: 5vw;
+    height: 10vh;
     border: none;
     cursor: pointer;
+    border-radius: 50%;
+}
+
+form{
+    background-color: #D9D9D9;
+    margin-top: 5vh;
+    width: 55vw;
+    height: 85vh;
+    border-color: black;
+    border-width: 0.18em;
+    border-style: solid;
 }
 
 .signUp {
     font-size: 4em;
     text-align: center;
     position: relative;
+    margin-top: 2vh;
 }
 
 .input-nombre, .input-mail2, .input-contraseña2 {
@@ -26,7 +42,7 @@
     justify-content: space-around;
     position: relative;
     margin-bottom: 3vh;
-    width: 60vw;
+    width: 45vw;
     height: 10vh;
     font-size: 4vw;
 }
@@ -39,13 +55,11 @@
     position: relative;
 }
 
-.boton-aceptar {
-    width: 73vw;
-    height: 18vh;   
+.boton-aceptar {  
     cursor: pointer;
     font-size: 4vw;
     border: none;
-    background-color: #D9D9D9;
+    background: none;
 }
 
 .div-boton {
@@ -60,16 +74,66 @@
     width: fit-content; /* Ajusta el ancho del contenedor al contenido del input */
 }
 .input-contraseña2 {
-    padding-right: 40px; /* Espacio para el icono */
-    width: 57.5vw;
+    padding-right: 0.5em; /* Espacio para el icono */
+    width: 43vw;
 }
 .emojiOjo {
     position: absolute;
     left: 50%; /* Centramos horizontalmente */
-    transform: translate(22vw, -1.5vw);
-    top: 10px; /* Mantén la posición vertical como desees, puedes ajustar este valor */
+    transform: translate(18vw, -1vw);
     cursor: pointer;
     user-select: none;
-    font-size: 4em; /* Ajusta el tamaño del icono según sea necesario */
+    font-size: 3em; /* Ajusta el tamaño del icono según sea necesario */
     z-index: 1; /* Asegura que el icono esté por encima del input */
+}
+
+.boton-tengoCuenta {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    position: absolute;
+    width: 100%;
+    height: 3vh;
+    font-size: 1.6em;
+}
+
+.boton-tengoCuenta:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.botoncuenta{
+    display: flex;
+    margin-top: 5vh;
+    justify-content: center;
+}
+
+.flecha {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateZ(90deg);
+}
+
+.flecha-cuerpo {
+    width: 0.8vw;
+    height: 5vh;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(1.7em, 0.5em);
+}
+
+.flecha-punta {
+    width: 0;
+    height: 0;
+    border-left: 1.6vw solid transparent; /* Ajusta el tamaño de las puntas */
+    border-right:1.6vw solid transparent;
+    border-top: 3vh solid #333; /* Ajusta el tamaño de la punta */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-1.5em, -0.4em);
 }
