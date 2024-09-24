@@ -146,5 +146,5 @@ document.getElementById("cerrarSesion").addEventListener("click", function() {
     localStorage.setItem('sesionActiva', 'false');
     
     // Redirigir a la página de login
-    window.location.href = 'login.html'; // Cambia esto a la ruta correcta
+    window.location.href = 'Log_in.html'; // Cambia esto a la ruta correcta
 });
