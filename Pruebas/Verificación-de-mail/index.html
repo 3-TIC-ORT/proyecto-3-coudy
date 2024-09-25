@@ -4,70 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #hola{
-            width: 10vw;
-            height: 10vh;
-            background-color: aquamarine;
-        }
-    </style>
+    <title>Verificación de código</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Verificar código</h2>
-    <input type="number" id="input1" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input2" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input3" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input4" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input5" class="num" oninput="limitarCaracteres(this)" required>
+    <input type="text" id="input1" class="num" maxlength="1" oninput="moverSiguiente(this, 'input2')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input2" class="num" maxlength="1" oninput="moverSiguiente(this, 'input3')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input3" class="num" maxlength="1" oninput="moverSiguiente(this, 'input4')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input4" class="num" maxlength="1" oninput="moverSiguiente(this, 'input5')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input5" class="num" maxlength="1" oninput="moverSiguiente(this, null)" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
     <button onclick="verificarCodigo()">Verificar</button>
-    <div id="hola"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
-<script src="../../socket.js"></script>
-<script>
-        const socket = io();  // Asumiendo que el servidor está en la misma URL
-
-// Manejar la conexión con el servidor
-socket.on("connect", () => {
-    console.log("Conectado al servidor");
-});
-
-// Recibir el código generado desde el servidor
-socket.on("codigoGenerado", (codigo) => {
-    console.log("Código recibido:", codigo);
-    // Guardar el código en sessionStorage para luego verificarlo
-    let gmail = sessionStorage.getItem('objeto') ? JSON.parse(sessionStorage.getItem('objeto')).gmail : null;
-    let objeto = { gmail, codigo };
-    sessionStorage.setItem('objeto', JSON.stringify(objeto));
-});
-
-// Emitir el evento "obtenerCodigo" para solicitar el código generado
-socket.emit("obtenerCodigo");
-
-// Limitar el número de caracteres en cada input a un solo dígito
-function limitarCaracteres(input) {
-    if (input.value.length > 1) {
-        input.value = input.value.slice(0, 1);
-    }
-}
-
-// Función para verificar si el código ingresado coincide con el código recibido
-function verificarCodigo() {
-    let input1 = document.getElementById("input1").value;
-    let input2 = document.getElementById("input2").value;
-    let input3 = document.getElementById("input3").value;
-    let input4 = document.getElementById("input4").value;
-    let input5 = document.getElementById("input5").value;
-
-    let objeto = JSON.parse(sessionStorage.getItem('objeto'));
-    let { codigo } = objeto;
-
-    if (codigo && input1 == codigo.numero1 && input2 == codigo.numero2 && input3 == codigo.numero3 && input4 == codigo.numero4 && input5 == codigo.numero5) {
-        window.location.href = '../../Wireframe-23/index.html';
-    } else {
-        alert("El código es incorrecto, por favor revise.");
-    }
-}
-</script>
 </html>
