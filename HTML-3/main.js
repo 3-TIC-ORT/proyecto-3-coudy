@@ -1,7 +1,3 @@
-function sumar(){
-    sessionStorage.setItem('volver', 2)
-}
-
 document.getElementById("tresFlechas").addEventListener("click", function() {
     const menu = document.getElementById("miMenu");
 
@@ -135,20 +131,15 @@ document.addEventListener("DOMContentLoaded", function() {
         texto.textContent = "No se ha iniciado sesión";
     }
 });
-// Evento para cerrar sesión
+
 document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
     localStorage.setItem('sesionActiva', 'false');
     
-    // Redirigir a la página de login
-    window.location.href = 'login.html'; // Cambia esto a la ruta correcta
+    window.location.href = '../Log_In/index.html';
 });
 
-// Evento para cerrar sesión
 document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
     localStorage.setItem('sesionActiva', 'false');
     
-    // Redirigir a la página de login
-    window.location.href = 'Log_in.html'; // Cambia esto a la ruta correcta
+    window.location.href = '../Log_in/index.html';
 });
