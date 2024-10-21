@@ -70,15 +70,15 @@ niveles2.addEventListener("click", function() {
 
 // Redireccionamientos de botones
 document.getElementById("html").addEventListener("click", function() {
-    window.location = '../Wireframe-15/index.html';
+    window.location.href = '../HTML\'S_FOLDER/HTML-1/index.html'
 });
 
 document.getElementById("js").addEventListener("click", function() {
-    window.location = '../Wireframe-20/index.html';
+    window.location.href = '../Wireframe-20/index.html';
 });
 
 document.getElementById("css").addEventListener("click", function() {
-    window.location = '../Wireframe-17/index.html';
+    window.location.href = '../Wireframe-17/index.html';
 });
 
 // Gestión de imagen de perfil
