@@ -6,29 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coudy</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="website icon" type="png" href="../img/cara-coudy.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <form id="logInForm">
         <h1 class="logIn">Log In</h1>
 <div class="inputs">
-        <input type="text" placeholder="Nombre de usuario o Mail" id="mail" class="input-mail">
-    <div class="password-container">
-        <input type="text" class="input-contraseña" placeholder="Contraseña" id="password">
-        <span id="emojiOjo" class="emoji-ojo">&#128065;</span>
-    </div>
+        <input type="text" placeholder="Nombre de usuario o Mail" id="mail" class="input-mail input-form">
+        <input type="password" class="input-contraseña input-form" placeholder="Contraseña" id="password">
 </div>
     <div class="recuerdame">
-        <input type="checkbox" id="recuerdame">Recuerdame
+        <input type="checkbox" id="recuerdame" class="inp-re"><span>Recuerdame</span>
     </div>
-        <button type="submit" id="boton-acceder" class="boton-acceder">Acceder</button>
-        <div class="boton-volver">
-        <button id="boton-volverAPresentacion"  class="boton-volverAPresentacion" onclick="location.href='../Presentación/index.html'">
-            <div class="flecha">
-                <div class="flecha-cuerpo"></div>
-                <div class="flecha-punta"></div>
-            </div>
+        <button type="submit" id="boton-acceder" class="btn-acceder">Acceder</button>
+        <button class="btn-volver" onclick="location.href='../Presentación/index.html'">
+            <div class="flecha"></div>
         </button>
-        </div>
     </form>
     
     <script src="index.js"></script>

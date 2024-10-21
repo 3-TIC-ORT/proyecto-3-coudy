@@ -1,20 +1,60 @@
-/*:root{
-    --bg-color: rgb(71, 69, 69);
-    background-color: var(--bg-color);
+body{
+    overflow: hidden;
+    background-color: #A89AB9;
 }
-*/
+
+.isla-html{
+    background-image: url(../img/isla\ HTML.png);
+    width: 50vw;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-left: 7vw;
+    margin-top: 18vh;
+}
+
+.isla-css{
+    background-image: url(../img/isla\ CSS.png);
+    width: 50vw;
+    position: absolute;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 37vw;
+    margin-top: 18vh;
+}
+
+.isla-js{
+    background-image: url(../img/isla\ JS.png);
+    width: 50vw;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-left: 30vw;
+}
 
 html, body {
     margin: 0;
     padding: 0;
 }
 
-.candado-css, .candado-js {
+.candados {
     background-image: url(../img/imagen-candado.png);
     background-size: cover;
     opacity: 50%;
-    width: 185px;
-    height: 185px;
+    width: 15vw;
+    position: absolute;
+    height: 38vh;
+}
+
+.candado-js{
+    margin-left: 32.5vw;
+    margin-top: 5vh;
+} .candado-css{
+    margin-top: 5vh;
+    margin-left: 3vw;
 }
 
 .mi-div {

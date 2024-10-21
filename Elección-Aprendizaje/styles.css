@@ -1,0 +1,104 @@
+body{
+    background-color: #A89AB9;
+    overflow: hidden;
+}
+
+.eleccion{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    width: 25vw;
+    font-size: 3.2em;
+    position: absolute;
+    margin-top: 33vh;
+    margin-left: 3vw;
+} div{
+    background-image: url(../img/flecha-eleccion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 9vw;
+    height: 7vh;
+    margin-top: 0.2vh;
+    margin-left: 19vw;
+    position: absolute;
+} .btn-guia{
+    background-color: #806B9C;
+    color: #FFFFFF;
+    font-family: "Josefin Sans", sans-serif;
+    border: none;
+    border-radius: 2em;
+    width: 43vw;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    margin-left: 50vw;
+    position: absolute;
+    margin-top: 13vh;
+} .btn-manual{
+    background-color: #806B9C;
+    color: #FFFFFF;
+    font-family: "Josefin Sans", sans-serif;
+    border: none;
+    border-radius: 2em;
+    width: 43vw;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: 25vw;
+    margin-left: 50vw;
+    position: absolute;
+} .texto-guia{
+    margin-left: 1.8vw;
+} .flechaguia{
+    margin-left: 36.5vw;
+} .texto-manual{
+    margin-left: 11vw;
+} .flechamanual {
+    margin-left: 30vw;
+} .btn-volver{
+    border: 0.25em solid #614881BF;
+    background-color: #E7D2FF;
+    border-radius: 50%;
+    margin-top: 80vh;
+    margin-left: 3vw;
+    width: 5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    cursor: pointer;
+  } .flecha{
+    background-image: url(../img/Vector.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 5.5vw;
+    height: 5.5vh;
+    margin-left: 3.5vw;
+  } .guia, .manual{
+      color: #FFFFFF;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 1.5em;    
+      position: absolute;
+  } .manual{
+    margin-top: 31vw;
+    margin-left: 53vw;
+    width: 35vw;
+  } .guia{
+    margin-top: 25vh;
+    margin-left: 53vw;
+    width: 35vw;
+  }
+
+/* Fonts: */
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

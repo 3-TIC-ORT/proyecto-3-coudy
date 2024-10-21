@@ -1,0 +1,54 @@
+:root{ --font: "Josefin Sans", sans-serif; }
+body{ background-color: #F2E8FF; }
+.btn-volver{
+    border: 0.25em solid #614881BF;
+    background-color: #E7D2FF;
+    border-radius: 50%;
+    margin-top: 3vh;
+    margin-left: 2vw;
+    width: 5vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    cursor: pointer;
+  } .flecha{
+    background-image: url(../img/Vector.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 5.5vw;
+    height: 5.5vh;
+    margin-left: 3.5vw;
+  } .titulo-pregunta{
+      font-family: var(--font);
+      color: #FFFFFF;
+      background-color: #6E5293;
+      width: 95vw;
+      margin-left: 2vw;
+      height: 11vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+  } .boton{
+      border: 0.1em solid #614881B2;
+      width: 90vw;
+      height: 10vh;
+      margin-bottom: 6vh;
+      background-color: #D0B0F9;
+      color: #4A3A5F;
+      font-family: var(--font);
+      cursor: pointer;
+      font-size: 2em;
+      border-radius: 0.4em;
+      margin-left: 4vw;
+  }
+
+.josefin-sans {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }

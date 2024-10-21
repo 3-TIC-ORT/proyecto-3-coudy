@@ -1,50 +1,66 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body{
+    background-color: #6E5293;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.mi-div {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 55vh; 
-}
-
-.imagen-coudy {
-    background-image: url('../img/coudy.png');
-    background-repeat: no-repeat;
-    background-size: contain; 
-    background-position: center;
-    width: 28.83vw;
-    height: 55vh;
-}
-
-.texto-presentacion {
-    display: flex;
-    justify-content: center;
-    margin: 13px 0;
-    font-size: 5vw;
-}
-
-.div-botones {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%; 
+.btn-registro{
+    background-color: #8F8DEE;
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.3em;
+    width: 16.67vw;
+    height: 9.44vh;
+    margin-left: 81vw;
+    margin-top: 13vh;
+    font-size: 1.5em;
     position: absolute;
-    margin-top: -85vh;
-    margin-right: 4.5vw
+    cursor: pointer;
+} .btn-inicio{
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-family: "Inter", sans-serif;
+    font-size: 1.5em;
+    position: absolute;
+    margin-left: 45vw;
+    cursor: pointer;
+    margin-top: 13vh;
+} .imagen{
+    background-image: url(../img/coudy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 16.2vw;
+    height: 55.9vh;
+} section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 17vw;
+    height: 80vh;
+    text-align: center;
+    margin-top: 110vh;
+    position: absolute;
+} .coudy{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 3em;
 }
 
-.boton-crearCuenta {
-    cursor: pointer;
-    width: 15vw;
-    height: 8vh;
-    font-size: 2em;
-    text-align: center;
-    background: none;
+/* Fonts: */
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

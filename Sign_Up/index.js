@@ -1,15 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const SignUpForm = document.querySelector('#SignUpForm');
     const botonAceptar = document.getElementById("button");
-    const passwordInput = document.getElementById("password");
-    const togglePassword = document.getElementById("emojiojo");
-        // Toggle password visibility
-        togglePassword.addEventListener('click', function() {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.textContent = type === 'password' ? '🙈' : '👁️';
-        });
-    
+
         SignUpForm.addEventListener('submit', async (e) => {
             e.preventDefault();
         
@@ -60,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         
             // Redirigir a la página de verificación
-            window.location.href = '../Pruebas/Verificación-de-mail/index.html';
+            window.location.href = '../Formulario-1/index.html';
         
             let gmail = document.querySelector('#mail').value; // Asegurarte de obtener el valor correctamente
             let objeto = { gmail:gmail, codigo:codigo }; // Crear el objeto correctamente
@@ -72,22 +64,4 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateUniqueId() {
         return 'id-' + Math.random().toString(36).substr(2, 16);
     }
-});
-
-function adjustInputWidth() {
-    const passwordInput = document.querySelector('.input-contraseña');
-    const span = document.createElement('span');
-    document.body.appendChild(span);
-    span.style.visibility = 'hidden';
-    span.style.whiteSpace = 'pre';
-    span.style.font = getComputedStyle(passwordInput).font;
-    span.textContent = passwordInput.value || passwordInput.placeholder;
-    passwordInput.style.width = `${Math.max(span.offsetWidth + 40, 200)}px`; // 40px para el espacio del icono
-    document.body.removeChild(span);
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const passwordInput = document.querySelector('.input-contraseña');
-    passwordInput.addEventListener('input', adjustInputWidth);
-    adjustInputWidth(); // Ajustar el ancho al cargar
 });

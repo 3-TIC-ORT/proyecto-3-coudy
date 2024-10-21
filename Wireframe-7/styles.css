@@ -1,0 +1,37 @@
+body{
+    overflow: hidden;
+    background-color: #A89AB9;
+}
+
+.isla-html{
+    background-image: url(../img/isla\ HTML.png);
+    width: 50vw;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-left: 3vw;
+    margin-top: 18vh;
+}
+
+.isla-css{
+    background-image: url(../img/isla\ CSS.png);
+    width: 50vw;
+    position: absolute;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 37vw;
+    margin-top: 18vh;
+}
+
+.isla-js{
+    background-image: url(../img/isla\ JS.png);
+    width: 50vw;
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    margin-left: 70vw;
+    margin-top: 18vh;
+}

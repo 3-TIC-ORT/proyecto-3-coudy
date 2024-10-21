@@ -62,7 +62,6 @@ function verificarCodigo() {
 
     let objeto = JSON.parse(sessionStorage.getItem('objeto'));
     let { codigo } = objeto;
-
     if (codigo && input1 == codigo.numero1 && input2 == codigo.numero2 && input3 == codigo.numero3 && input4 == codigo.numero4 && input5 == codigo.numero5) {
         window.location.href = '../../Wireframe-23/index.html';
     } else {

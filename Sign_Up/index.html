@@ -6,31 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coudy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="website icon" type="png" href="../img/cara-coudy.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> 
 </head>
 <body>
 <form id="SignUpForm">
         <h1 class="signUp">Sign Up</h1>
-
 <div class="inputs">
     <input type="text" id="name" placeholder="Nombre de usuario" class="input-nombre">
     <input type="email" placeholder="Correo electrónico" id="mail" class="input-mail2">
-    <div class="contenedor-contraseña">
-        <input type="text" class="input-contraseña2" placeholder="Contraseña" id="password">
-        <span id="emojiojo" class="emojiOjo">&#128065;</span>
-    </div>
+    <input type="password" class="input-contraseña2" placeholder="Contraseña" id="password">
 </div>
-<div class="div-boton">
-    <button type="submit" id="button" class="boton-aceptar">Comenzar</button>
-</div>
-        <div class="botoncuenta">
-<button id="boton-tengoCuenta" class="boton-tengoCuenta" onclick="location.href='../Log_In/index.html'">Ya tengo cuenta</button>
-        </div>
+    <button type="submit" id="button" class="boton-aceptar">Registrarme</button>
 </form>
-<button id="boton-volverAPresentacion2" class="boton-volverAPresentacion2" onclick="location.href='../Presentación/index.html'">
-    <div class="flecha">
-        <div class="flecha-cuerpo"></div>
-        <div class="flecha-punta"></div>
-    </div>
+<button id="boton-volverAPresentacion2" class="btn-volver" onclick="location.href='../Presentación/index.html'">
+    <div class="flecha"></div>
 </button>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 <script src="../socket.js"></script>

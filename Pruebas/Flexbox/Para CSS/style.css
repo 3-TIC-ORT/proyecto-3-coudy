@@ -1,0 +1,45 @@
+.objMover {
+    width: 20vw;
+    height: 20vh;
+    background-color: black;
+    position: relative;
+}
+
+.mostrar {
+    border: 1em solid blueviolet;
+    height: 95vh;
+    width: 55vw;
+    display: flex;
+    margin-left: 43vw;
+    position: absolute;
+}
+
+.code {
+    width: 35vw;
+    position: absolute;
+    height: 30vh;
+    margin-top: 30vh;
+    margin-left: 5vw;
+}
+
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0px;
+}
+
+button{
+    width: 20vw;
+    height: 10vh;
+    margin-top: 80vh;
+}
+
+/* MODIFICACIONES DE LUGAR */
+.JUScentrar{ justify-content: center; } 
+.JUSend{ justify-content: flex-end; }  
+.JUSaround{ justify-content: space-around; } 
+.JUSbetween{ justify-content: space-between; } 
+.JUSevenly{ justify-content: space-evenly; }
+.ALIGcentrar{ align-items: center; }

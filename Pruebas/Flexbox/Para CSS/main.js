@@ -1,0 +1,27 @@
+let codigo = document.querySelector('.code');
+let objMover = document.querySelector('.mostrar');
+
+function mover() {
+    const valorCodigo = codigo.value.trim().split(';');
+
+    valorCodigo.forEach((propiedad) => {
+        propiedad = propiedad.trim();
+
+        if (propiedad === "justify-content: center") {
+            objMover.classList.add('JUScentrar');
+        } else if (propiedad === "justify-content: flex-end"){
+            objMover.classList.add('JUSend');
+        } else if (propiedad === "justify-content: space-between"){
+            objMover.classList.add('JUSbetween');
+        } else if (propiedad === "justify-content: space-around"){
+            objMover.classList.add('JUSaround');
+        } else if (propiedad === "justify-content: space-evenly"){
+            objMover.classList.add('JUSevenly');
+        }
+        if (propiedad === "align-items: center") {
+            objMover.classList.add('ALIGcentrar');
+        }
+    });
+}
+
+document.querySelector('button').addEventListener('click', mover);

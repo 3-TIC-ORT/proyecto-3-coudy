@@ -19,15 +19,6 @@ document.getElementById("tresFlechas").addEventListener("click", function() {
     }
 });
 
-document.getElementById("pantalla").addEventListener("click", function(){
-    const menu = document.getElementById("miMenu");
-
-    if (menu.classList.contains("mostrar")){
-        menu.classList.remove("mostrar");
-        menu.classList.add("ocultar");
-    }
-})
-
 let inicio = document.getElementById("imgInicio")
 let inicio2 = document.getElementById("inicio")
 let reglas = document.getElementById("imgReglas")
@@ -119,6 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (nombreUsuario) {
         texto.textContent = nombreUsuario;
     } else {
-        texto.textContent = "No se ha iniciado sesión";
+        texto.textContent = "Invitado";
     }
 });

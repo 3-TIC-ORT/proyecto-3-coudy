@@ -1,5 +1,8 @@
 import { onEvent, startServer } from "soquetic";
 import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+
+dotenv.config();  // Esto carga las variables del archivo .env
 
 // Configurar el transportador de Nodemailer
 const cuenta = nodemailer.createTransport({
@@ -50,7 +53,6 @@ function enviarMail (objeto){
         }
     });
 }
-
 onEvent("gmail", enviarMail);
 
 startServer();
