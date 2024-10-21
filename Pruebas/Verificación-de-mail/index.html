@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #hola{
-            width: 10vw;
-            height: 10vh;
-            background-color: aquamarine;
-        }
-    </style>
+    <title>Verificación de código</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>Verificar código</h2>
-    <input type="number" id="input1" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input2" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input3" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input4" class="num" oninput="limitarCaracteres(this)" required>
-    <input type="number" id="input5" class="num" oninput="limitarCaracteres(this)" required>
+    <input type="text" id="input1" class="num" maxlength="1" oninput="moverSiguiente(this, 'input2')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input2" class="num" maxlength="1" oninput="moverSiguiente(this, 'input3')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input3" class="num" maxlength="1" oninput="moverSiguiente(this, 'input4')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input4" class="num" maxlength="1" oninput="moverSiguiente(this, 'input5')" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
+    <input type="text" id="input5" class="num" maxlength="1" oninput="moverSiguiente(this, null)" onkeydown="permitirSoloNumeros(event)" onpaste="return false" required>
     <button onclick="verificarCodigo()">Verificar</button>
-    <div id="hola"></div>
+    
+    <script src="script.js"></script>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
 <script src="../../socket.js"></script>

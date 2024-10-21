@@ -1,7 +1,3 @@
-function sumar(){
-    sessionStorage.setItem('volver', 2)
-}
-
 document.getElementById("tresFlechas").addEventListener("click", function() {
     const menu = document.getElementById("miMenu");
 
@@ -24,10 +20,6 @@ document.getElementById("tresFlechas").addEventListener("click", function() {
     }
 });
 
-let inicio = document.getElementById("imgInicio")
-let inicio2 = document.getElementById("inicio")
-let reglas = document.getElementById("imgReglas")
-let reglas2 = document.getElementById("reglas")
 document.getElementById("pantalla").addEventListener("click", function() {
     const menu = document.getElementById("miMenu");
 
@@ -74,15 +66,15 @@ niveles2.addEventListener("click", function() {
 
 // Redireccionamientos de botones
 document.getElementById("html").addEventListener("click", function() {
-    window.location.href = '../HTML\'S_FOLDER/HTML-1/index.html'
+    window.location = '../Wireframe-15/index.html';
 });
 
 document.getElementById("js").addEventListener("click", function() {
-    window.location.href = '../Wireframe-20/index.html';
+    window.location = '../Wireframe-20/index.html';
 });
 
 document.getElementById("css").addEventListener("click", function() {
-    window.location.href = '../Wireframe-17/index.html';
+    window.location = '../Wireframe-17/index.html';
 });
 
 // Gestión de imagen de perfil
@@ -136,23 +128,18 @@ document.addEventListener("DOMContentLoaded", function() {
     if (nombreUsuario) {
         texto.textContent = nombreUsuario;
     } else {
-        texto.textContent = "Invitado";
+        texto.textContent = "No se ha iniciado sesión";
     }
 });
-// Evento para cerrar sesión
+
 document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
     localStorage.setItem('sesionActiva', 'false');
     
-    // Redirigir a la página de login
-    window.location.href = 'login.html'; // Cambia esto a la ruta correcta
+    window.location.href = '../Log_In/index.html';
 });
 
-// Evento para cerrar sesión
 document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
     localStorage.setItem('sesionActiva', 'false');
     
-    // Redirigir a la página de login
-    window.location.href = 'Log_in.html'; // Cambia esto a la ruta correcta
+    window.location.href = '../Log_in/index.html';
 });
