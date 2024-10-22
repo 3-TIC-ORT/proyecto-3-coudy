@@ -75,14 +75,17 @@ niveles2.addEventListener("click", function() {
 // Redireccionamientos de botones
 document.getElementById("html").addEventListener("click", function() {
     window.location.href = '../HTML\'S_FOLDER/HTML-1/index.html'
+        localStorage.setItem('volver-wi', 1)
 });
 
 document.getElementById("js").addEventListener("click", function() {
-    window.location.href = '../Wireframe-20/index.html';
+    window.location.href = '../CSS\'S_FOLDER/CSS-1/index.html';
+        localStorage.setItem('volver-wi', 2)
 });
 
 document.getElementById("css").addEventListener("click", function() {
-    window.location.href = '../Wireframe-17/index.html';
+    window.location.href = '../JS\'S_FOLDER/JS-1/index.html';
+        localStorage.setItem('volver-wi', 3)
 });
 
 // Gestión de imagen de perfil

@@ -14,16 +14,13 @@
 <body>
     <h1 class="titulo">¿Cuánta experiencia de programación tenés?</h1>
 <div class="botones">
-    <button class="boton" onclick="guardarSeleccion('ninguna'); cambioAlWireframe_2()" id="boton-2">Ninguna</button>
-    <button class="boton" onclick="guardarSeleccion('poca'); cambioAlWireframe_3(); modificarVariable()" id="boton-3">Poca</button>
-    <button class="boton" onclick="guardarSeleccion('mucha'); cambioAlWireframe_4(); cambiarVariable()" id="boton-4">Mucha</button>
+    <button class="boton" onclick="guardarSeleccion('ninguna'); window.location.href='../Seleccion_de_niveles-Guia/index.html'" id="boton-2">Ninguna</button>
+    <button class="boton" onclick="guardarSeleccion('poca'); window.location.href='../Seleccion_de_niveles-Guia/index.html'" id="boton-3">Poca</button>
+    <button class="boton" onclick="guardarSeleccion('mucha'); window.location.href='../Seleccion_de_niveles-Manual/index.html'" id="boton-4">Mucha</button>
 </div>
     <button class="btn-volver" onclick="window.location.href='../Formulario-2/index.html'">
         <div class="flecha"></div>
     </button>
-    <script src="../Wireframe-4/main.js"></script>
-    <script src="../Wireframe-3/main.js"></script>
-    <script src="../Wireframe-4/funciones.js"></script>
     <script>
         function guardarSeleccion(seleccion) {
             localStorage.setItem('experienciaProgramacion', seleccion);
