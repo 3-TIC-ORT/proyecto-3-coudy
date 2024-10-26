@@ -12,17 +12,31 @@ body{
     position: absolute;
     margin-left: 3vw;
     margin-top: 18vh;
+    cursor: pointer;
+} .isla-html:hover{
+    background-image: url(../img/isla-html-hover.png);
+    margin-left: 1vw;
+    margin-top: 18vh;
+    width: 55vw;
+    height: 55vh;
 }
 
 .isla-css{
     background-image: url(../img/isla\ CSS.png);
-    width: 50vw;
+    width: 30vw;
     position: absolute;
     height: 50vh;
     background-repeat: no-repeat;
     background-size: contain;
     margin-left: 37vw;
+    cursor: pointer;
     margin-top: 18vh;
+} .isla-css:hover{
+    background-image: url(../img/isla-css-hover.png);
+    margin-left: 33vw;
+    margin-top: 17vh;
+    height: 55vh;
+    width: 42vw;
 }
 
 .isla-js{
@@ -34,4 +48,11 @@ body{
     position: absolute;
     margin-left: 70vw;
     margin-top: 18vh;
+    cursor: pointer;
+} .isla-js:hover{
+    background-image: url(../img/isla-js-hover.png);
+    margin-left: 66vw;
+    margin-top: 18vh;
+    width: 52vw;
+    height: 52vh;
 }
