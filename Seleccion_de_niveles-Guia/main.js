@@ -116,6 +116,25 @@ fileInput.addEventListener('change', (event) => {
 
         // Guardar la imagen en base64 en localStorage
         localStorage.setItem('perfilImagen', base64String);
+
+        // Recuperar el array de usuarios de localStorage
+
+        const usersString = localStorage.getItem('users');
+
+        let users = JSON.parse(usersString);
+
+        // Buscar el usuario por ID
+
+        const userId = sessionStorage.getItem('id_usuario');
+        const user = users.find(user => user.id === userId);
+
+        if (user) {
+            // Agregar o modificar el campo perfilImagen
+            user.perfilImagen = base64String;
+
+            // Volver a guardar el array de usuarios en localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+        }
     };
 
     if (file) {
