@@ -1,0 +1,38 @@
+.titulo {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    margin: 2vh;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column; /* Asegura que los botones estén en columna */
+    justify-content: center; /* Centra los botones verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    height: 85vh;
+}
+
+.boton {
+    width: 66.25vw;
+    height: 16.88vh;
+    position: relative;
+    font-size: 2em;
+    margin-bottom: 4.5vh; /* Espacio entre los botones */
+    cursor: pointer;
+}
+
+.boton-volverAlWireframe24 {
+    background-image: url(../img/flecha-reversa.png);
+    background-size: contain;
+    position: fixed;
+    z-index: 1000;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    width: 6vw;
+    height: 13.75vh;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}

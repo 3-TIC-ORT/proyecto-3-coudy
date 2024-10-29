@@ -162,11 +162,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Buscar el usuario en el array Users
     const Users = JSON.parse(localStorage.getItem('users')) || [];
     usuario = Users.find(user => user.id === userId);
-
-    console.log("Nombre de usuario" + usuario.username);
-    if (nombreUsuario) {
+    
+    if (usuario) {
+		console.log("Nombre de usuario: " + usuario.username);
         texto.textContent = usuario.username;
     } else {
+		console.log("Nombre de usuario: Undefined");
         texto.textContent = "Invitado";
     }
 });
@@ -186,4 +187,34 @@ document.getElementById("cerrarSesion").addEventListener("click", function() {
     
     // Redirigir a la página de login
     window.location.href = 'Log_in.html'; // Cambia esto a la ruta correcta
+});
+
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const base64String = e.target.result; // La imagen en base64
+
+        // Establecer la imagen como fondo del círculo
+        imageCircle.style.backgroundImage = `url(${base64String})`;
+        imageSet = true;
+
+        // Guardar la imagen en base64 en localStorage
+        localStorage.setItem('perfilImagen', base64String);
+
+        // Recuperar el userId del sessionStorage y actualizar la entrada del usuario
+        const userId = sessionStorage.getItem('id_usuario');
+        const Users = JSON.parse(localStorage.getItem('users')) || [];
+        const usuario = Users.find(user => user.id === userId);
+
+        if (usuario) {
+            usuario.perfilImagen = base64String; // Guardar la imagen en el perfil del usuario
+            localStorage.setItem('users', JSON.stringify(Users)); // Actualizar el array en localStorage
+        }
+    };
+
+    if (file) {
+        reader.readAsDataURL(file); // Convertir a base64
+    }
 });
