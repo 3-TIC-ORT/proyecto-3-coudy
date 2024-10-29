@@ -143,11 +143,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Buscar el usuario en el array Users
     const Users = JSON.parse(localStorage.getItem('users')) || [];
     usuario = Users.find(user => user.id === userId);
-
-    console.log("Nombre de usuario" + usuario.username);
-    if (nombreUsuario) {
+    
+    if (usuario) {
+		console.log("Nombre de usuario: " + usuario.username);
         texto.textContent = usuario.username;
     } else {
+		console.log("Nombre de usuario: Undefined");
         texto.textContent = "Invitado";
     }
 });
