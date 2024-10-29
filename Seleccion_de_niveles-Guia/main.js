@@ -134,10 +134,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Nombre de usuario
     const texto = document.getElementById("nombreUsuario");
-    const nombreUsuario = localStorage.getItem('nombreUsuario');
+    //const nombreUsuario = localStorage.getItem('nombreUsuario');
 
+    // Recuperar el userId del sessionStorage
+    const userId = sessionStorage.getItem('id_usuario');
+
+    console.log("Buscando el user con el id: " + userId);
+    // Buscar el usuario en el array Users
+    const Users = JSON.parse(localStorage.getItem('users')) || [];
+    usuario = Users.find(user => user.id === userId);
+
+    console.log("Nombre de usuario" + usuario.username);
     if (nombreUsuario) {
-        texto.textContent = nombreUsuario;
+        texto.textContent = usuario.username;
     } else {
         texto.textContent = "Invitado";
     }
