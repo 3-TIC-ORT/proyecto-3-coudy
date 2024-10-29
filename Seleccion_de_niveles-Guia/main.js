@@ -1,5 +1,5 @@
-function sumar(){
-    sessionStorage.setItem('volver', 2)
+function sumar() {
+    sessionStorage.setItem('volver', 2);
 }
 
 document.getElementById("tresFlechas").addEventListener("click", function() {
@@ -12,22 +12,22 @@ document.getElementById("tresFlechas").addEventListener("click", function() {
         menu.classList.remove("ocultar");
         menu.classList.add("mostrar");
     }
-    if (niveles2.classList.contains("girar")){
+    if (niveles2.classList.contains("girar")) {
         niveles2.classList.remove("girar");
         niveles2.classList.add("girar2");
     }
 
     const nivel = document.getElementById("miNivel");
-    if (nivel.classList.contains("desplegar")){
+    if (nivel.classList.contains("desplegar")) {
         nivel.classList.remove("desplegar");
         nivel.classList.add("oculto");
     }
 });
 
-let inicio = document.getElementById("imgInicio")
-let inicio2 = document.getElementById("inicio")
-let reglas = document.getElementById("imgReglas")
-let reglas2 = document.getElementById("reglas")
+let inicio = document.getElementById("imgInicio");
+let inicio2 = document.getElementById("inicio");
+let reglas = document.getElementById("imgReglas");
+let reglas2 = document.getElementById("reglas");
 document.getElementById("pantalla").addEventListener("click", function() {
     const menu = document.getElementById("miMenu");
 
@@ -74,18 +74,18 @@ niveles2.addEventListener("click", function() {
 
 // Redireccionamientos de botones
 document.getElementById("html").addEventListener("click", function() {
-    window.location.href = '../HTML\'S_FOLDER/HTML-1/index.html'
-        localStorage.setItem('volver-wi', 1)
+    window.location.href = '../HTML\'S_FOLDER/HTML-1/index.html';
+    localStorage.setItem('volver-wi', 1);
 });
 
 document.getElementById("js").addEventListener("click", function() {
     window.location.href = '../CSS\'S_FOLDER/CSS-1/index.html';
-        localStorage.setItem('volver-wi', 2)
+    localStorage.setItem('volver-wi', 2);
 });
 
 document.getElementById("css").addEventListener("click", function() {
     window.location.href = '../JS\'S_FOLDER/JS-1/index.html';
-        localStorage.setItem('volver-wi', 3)
+    localStorage.setItem('volver-wi', 3);
 });
 
 // Gestión de imagen de perfil
@@ -114,20 +114,16 @@ fileInput.addEventListener('change', (event) => {
         imageCircle.style.backgroundImage = `url(${base64String})`;
         imageSet = true;
 
-        // Guardar la imagen en base64 en localStorage
-        localStorage.setItem('perfilImagen', base64String);
+        // Guardar la imagen en base64 en sessionStorage
+        const userId = sessionStorage.getItem('id_usuario');
+        sessionStorage.setItem(`perfilImagen_${userId}`, base64String); // Cambiar a sessionStorage
 
         // Recuperar el array de usuarios de localStorage
-
         const usersString = localStorage.getItem('users');
-
         let users = JSON.parse(usersString);
 
         // Buscar el usuario por ID
-
-        const userId = sessionStorage.getItem('id_usuario');
         const user = users.find(user => user.id === userId);
-
         if (user) {
             // Agregar o modificar el campo perfilImagen
             user.perfilImagen = base64String;
@@ -144,7 +140,8 @@ fileInput.addEventListener('change', (event) => {
 
 // Al cargar la página, recuperar la imagen y mostrarla
 document.addEventListener("DOMContentLoaded", function() {
-    const savedImage = localStorage.getItem('perfilImagen');
+    const userId = sessionStorage.getItem('id_usuario');
+    const savedImage = sessionStorage.getItem(`perfilImagen_${userId}`); // Cambiar a sessionStorage
 
     if (savedImage) {
         imageCircle.style.backgroundImage = `url(${savedImage})`;
@@ -153,24 +150,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Nombre de usuario
     const texto = document.getElementById("nombreUsuario");
-    //const nombreUsuario = localStorage.getItem('nombreUsuario');
-
-    // Recuperar el userId del sessionStorage
-    const userId = sessionStorage.getItem('id_usuario');
-
-    console.log("Buscando el user con el id: " + userId);
-    // Buscar el usuario en el array Users
     const Users = JSON.parse(localStorage.getItem('users')) || [];
-    usuario = Users.find(user => user.id === userId);
+    const usuario = Users.find(user => user.id === userId);
     
     if (usuario) {
-		console.log("Nombre de usuario: " + usuario.username);
         texto.textContent = usuario.username;
     } else {
-		console.log("Nombre de usuario: Undefined");
         texto.textContent = "Invitado";
     }
 });
+
 // Evento para cerrar sesión
 document.getElementById("cerrarSesion").addEventListener("click", function() {
     // Cambiar el estado de la sesión a "false"
@@ -178,43 +167,4 @@ document.getElementById("cerrarSesion").addEventListener("click", function() {
     
     // Redirigir a la página de login
     window.location.href = 'login.html'; // Cambia esto a la ruta correcta
-});
-
-// Evento para cerrar sesión
-document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
-    localStorage.setItem('sesionActiva', 'false');
-    
-    // Redirigir a la página de login
-    window.location.href = 'Log_in.html'; // Cambia esto a la ruta correcta
-});
-
-fileInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-        const base64String = e.target.result; // La imagen en base64
-
-        // Establecer la imagen como fondo del círculo
-        imageCircle.style.backgroundImage = `url(${base64String})`;
-        imageSet = true;
-
-        // Guardar la imagen en base64 en localStorage
-        localStorage.setItem('perfilImagen', base64String);
-
-        // Recuperar el userId del sessionStorage y actualizar la entrada del usuario
-        const userId = sessionStorage.getItem('id_usuario');
-        const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const usuario = Users.find(user => user.id === userId);
-
-        if (usuario) {
-            usuario.perfilImagen = base64String; // Guardar la imagen en el perfil del usuario
-            localStorage.setItem('users', JSON.stringify(Users)); // Actualizar el array en localStorage
-        }
-    };
-
-    if (file) {
-        reader.readAsDataURL(file); // Convertir a base64
-    }
 });
