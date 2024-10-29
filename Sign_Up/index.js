@@ -39,9 +39,15 @@ document.addEventListener("DOMContentLoaded", function() {
         
             alert("Registro exitoso, disfrute de su experiencia");
             generarCodigo();
+            console.log("Guardando el usuario con id: " + userId);
+            sessionStorage.setItem('id_usuario', userId);
+            loginUsuario(name);
         });
         
-
+        function loginUsuario(nombreUsuario)
+        {
+            
+        }
         function generarCodigo() {    
             let codigo = {
                 numero1: Math.floor(Math.random() * 10),
