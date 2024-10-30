@@ -1,89 +1,28 @@
-body{
-    overflow: hidden;
-    background-color: #A89AB9;
-}
-
-.isla-html{
-    background-image: url(../img/isla\ HTML.png);
-    width: 50vw;
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    margin-left: 7vw;
-    margin-top: 18vh;
-    cursor: pointer;
-} .isla-html:hover{
-    background-image: url(../img/isla-html-hover.png);
-    margin-left: 3vw;
-    margin-top: 18vh;
-    width: 55vw;
-    height: 55vh;
-}
-
-.isla-css{
-    background-image: url(../img/isla\ CSS.png);
-    width: 50vw;
-    position: absolute;
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 37vw;
-    margin-top: 18vh;
-}
-
-.isla-js{
-    background-image: url(../img/isla\ JS.png);
-    width: 50vw;
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    margin-left: 30vw;
-}
-
 html, body {
     margin: 0;
     padding: 0;
-}
-
-.candado-js{
-    margin-left: 36vw;
-    margin-top: 11vh;
-    background-image: url(../img/candado-js.png);
-    background-size: cover;
-    width: 10vw;
-    position: absolute;
-    height: 30vh;
-} .candado-css{
-    margin-top: 10vh;
-    margin-left: 5.5vw;
-    background-image: url(../img/candado-css.png);
-    background-size: cover;
-    width: 12vw;
-    position: absolute;
-    height: 34vh;
+    background-color: #9795F3;
 }
 
 .mi-div {
     width: 100%;
     height: 12vh;
-    background-color: #6E5293;
+    background-color: #5C74D8;
     position: relative;
     z-index: 0;
 }
 
 .tres-flechas {
-    background-image: url(../img/tres\ líneas.png);
-    width: 5vw;
-    height: 7vh;
+    background-image: url(../../img/tres\ líneas.png);
+    width: 4vw;
+    height: 6vh;
     background-size: contain;
     background-repeat: no-repeat;
-    position: fixed; /* Asegura que esté fijo en la ventana */
-    top: 2vh;
-    left: 2vw;
+    position: fixed;
+    top: 2.5vh;
+    left: 1vw;
     z-index: 10;
-    cursor: url('../img/cursor.png'), auto;
+    cursor: url('../../img/cursor.png'), auto;
 }
 
 @keyframes menuDesplegable {
@@ -109,9 +48,9 @@ html, body {
 }
 
 .menu {
-    width: 10vw;
+    width: 7vw;
     height: 100vh;
-    background-color: #6E5293;
+    background-color: blueviolet;
     position: fixed;
     top: 0;
     left: 0;
@@ -143,44 +82,39 @@ html, body {
     margin: 6.5vh 0px;
     cursor: pointer;
     z-index: 3;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
 }
 
 .imgInicio{
-    background-image: url(../img/home.png);
-    width: 2vw;
-    height: 4vh;
+    background-image: url(../../img/home.png);
+    width: 3vw;
+    height: 5vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 24.7vh;
-    margin-left: 0.3vw;
+    top: 27.3vh;
     z-index: 3;
     position: relative;
     cursor: pointer;
 }
 
 .imgReglas{
-    background-image: url(../img/icono\ reglas.png);
-    width: 2vw;
-    height: 4.2vh;
+    background-image: url(../../img/icono\ reglas.png);
+    width: 3vw;
+    height: 5vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 30vh;
-    margin-left: 0.5vw;
+    top: 32.5vh;
     position: relative;
     z-index: 3;
     cursor: pointer;
 }
 
 .imgNiveles{
-    background-image: url(../img/flecha.png);
-    width: 1.5vw;
-    height: 3vh;
+    background-image: url(../../img/flecha.png);
+    width: 3vw;
+    height: 5vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 35.5vh;
-    margin-left: 0.7vw;
+    top: 36.5vh;
     position: relative;
     cursor: pointer;
     transform: rotate(-90deg);
@@ -214,7 +148,6 @@ html, body {
 @keyframes mostrarNiveles {
     0% {
         top: 48vh;
-        left: -20vw;
         opacity: 0;
     } 100% {
         top: 52vh;
@@ -248,12 +181,6 @@ html, body {
     animation: ocultarNiveles 4s ease-in-out forwards;
 }
 
-.pantalla {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-}
-
 .niveles {
     z-index: 4;
 }
@@ -262,14 +189,12 @@ html, body {
     margin-bottom: 2vh;
     cursor: pointer;
     z-index: 5;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
 }
 
 .html:hover, .css:hover, .js:hover {
     text-decoration: underline;
-    text-decoration-thickness: 0.15em;
-    text-decoration-color: rgb(60, 148, 148);
+    text-decoration-thickness: 0.2em; /* Ajusta el grosor del subrayado */
+    text-decoration-color: darkslategray; /* Cambia el color del subrayado */
 }
 
 .cerrarSesion {
@@ -277,11 +202,20 @@ html, body {
     align-items: flex-end;
 }
 
+.linea {
+    height: 0.4vh;
+    width: 85%;
+    z-index: 10;
+    background-color: #574646;
+    position: relative;
+    margin: 0.5vw;
+}
+
 .image-circle {
     width: 5vw;
     height: 10vh;
     border-radius: 50%;
-    background-image: url('../img/image.png');
+    background-image: url('../../img/image.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -303,13 +237,99 @@ html, body {
     top: -2vh;
     position: absolute;
     z-index: 10;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
 }
 
-.josefin-sans {
+.html-ti{
+    position: absolute;
+    z-index: 10000;
     font-family: "Josefin Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
+    color: #FFFFFF;
+    margin-left: 10vw;
+    font-size: 2.6em;
+    margin-top: 2.5vh;
+}
+
+.teoria{
+    position: absolute;
+    z-index: 10000;
+    color: #FFFFFF;
+    opacity: 75%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.3em;
+    margin-left: 22vw;
+    margin-top: 5vh;
+}
+
+.anterior{
+    background-color: #575C7D;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 2vw;
+    margin-top: 15vh;
+    position: absolute;
+    cursor: pointer;
+    height: 7vh;
+} .texto-Anterior{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: 2vw;
+} .flecha-Anterior{
+    background-image: url(../../img/vector-anterior.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -2.8vh;
+    margin-left: 0.6vw;
+}
+
+.siguiente{
+    background-color: #575C7D;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 88vw;
+    margin-top: 15vh;
+    cursor: pointer;
+    position: absolute;
+    height: 7vh;
+} .texto-Siguiente{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: -2vw;
+} .flecha-Siguiente{
+    background-image: url(../../img/vector-siguiente.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -0.2vh;
+    margin-left: 6.5vw;
+} 
+
+.texto, ul{
+    color: #FFFFFF;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2em;
+    font-weight: normal;
+    width: 50vw;
+    margin-left: 5vw;
+    margin-top: 8vh;
+} .negrita{ font-weight: bold; }
+
+/* Fonts: */
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
