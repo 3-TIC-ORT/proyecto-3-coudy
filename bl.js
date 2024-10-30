@@ -9,7 +9,6 @@ document.getElementById("tresFlechas").addEventListener("click", function() {
         menu.classList.remove("ocultar");
         menu.classList.add("mostrar");
     }
-    
     // Cambiar flecha
     if (niveles2.classList.contains("girar")) {
         niveles2.classList.remove("girar");
@@ -67,3 +66,8 @@ document.getElementById("pantalla").addEventListener("click", function() {
         menu.classList.add("ocultar");
     }
 });
+
+document.getElementById('cerrarSesion').addEventListener("click", ()=>{
+    window.location.href='../Presentación/index.html'
+
+})
