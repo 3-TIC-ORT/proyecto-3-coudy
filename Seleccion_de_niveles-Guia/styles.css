@@ -12,6 +12,13 @@ body{
     position: absolute;
     margin-left: 7vw;
     margin-top: 18vh;
+    cursor: pointer;
+} .isla-html:hover{
+    background-image: url(../img/isla-html-hover.png);
+    margin-left: 3vw;
+    margin-top: 18vh;
+    width: 55vw;
+    height: 55vh;
 }
 
 .isla-css{
@@ -40,27 +47,28 @@ html, body {
     padding: 0;
 }
 
-.candados {
-    background-image: url(../img/imagen-candado.png);
-    background-size: cover;
-    opacity: 50%;
-    width: 15vw;
-    position: absolute;
-    height: 38vh;
-}
-
 .candado-js{
-    margin-left: 32.5vw;
-    margin-top: 5vh;
+    margin-left: 36vw;
+    margin-top: 11vh;
+    background-image: url(../img/candado-js.png);
+    background-size: cover;
+    width: 10vw;
+    position: absolute;
+    height: 30vh;
 } .candado-css{
-    margin-top: 5vh;
-    margin-left: 3vw;
+    margin-top: 10vh;
+    margin-left: 5.5vw;
+    background-image: url(../img/candado-css.png);
+    background-size: cover;
+    width: 12vw;
+    position: absolute;
+    height: 34vh;
 }
 
 .mi-div {
     width: 100%;
     height: 12vh;
-    background-color: #D9D9D9;
+    background-color: #6E5293;
     position: relative;
     z-index: 0;
 }
@@ -72,8 +80,8 @@ html, body {
     background-size: contain;
     background-repeat: no-repeat;
     position: fixed; /* Asegura que esté fijo en la ventana */
-    top: 1.2vh;
-    left: 0.3vw;
+    top: 2vh;
+    left: 2vw;
     z-index: 10;
     cursor: url('../img/cursor.png'), auto;
 }
@@ -101,9 +109,9 @@ html, body {
 }
 
 .menu {
-    width: 7vw;
+    width: 10vw;
     height: 100vh;
-    background-color: blueviolet;
+    background-color: #6E5293;
     position: fixed;
     top: 0;
     left: 0;
@@ -135,15 +143,18 @@ html, body {
     margin: 6.5vh 0px;
     cursor: pointer;
     z-index: 3;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
 }
 
 .imgInicio{
     background-image: url(../img/home.png);
-    width: 3vw;
-    height: 5vh;
+    width: 2vw;
+    height: 4vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 27.3vh;
+    top: 24.7vh;
+    margin-left: 0.3vw;
     z-index: 3;
     position: relative;
     cursor: pointer;
@@ -151,11 +162,12 @@ html, body {
 
 .imgReglas{
     background-image: url(../img/icono\ reglas.png);
-    width: 3vw;
-    height: 5vh;
+    width: 2vw;
+    height: 4.2vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 32.5vh;
+    top: 30vh;
+    margin-left: 0.5vw;
     position: relative;
     z-index: 3;
     cursor: pointer;
@@ -163,11 +175,12 @@ html, body {
 
 .imgNiveles{
     background-image: url(../img/flecha.png);
-    width: 3vw;
-    height: 5vh;
+    width: 1.5vw;
+    height: 3vh;
     background-size: contain;
     background-repeat: no-repeat;
-    top: 36.5vh;
+    top: 35.5vh;
+    margin-left: 0.7vw;
     position: relative;
     cursor: pointer;
     transform: rotate(-90deg);
@@ -201,6 +214,7 @@ html, body {
 @keyframes mostrarNiveles {
     0% {
         top: 48vh;
+        left: -20vw;
         opacity: 0;
     } 100% {
         top: 52vh;
@@ -248,26 +262,21 @@ html, body {
     margin-bottom: 2vh;
     cursor: pointer;
     z-index: 5;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
 }
 
 .html:hover, .css:hover, .js:hover {
     text-decoration: underline;
-    text-decoration-thickness: 0.2em; /* Ajusta el grosor del subrayado */
-    text-decoration-color: darkslategray; /* Cambia el color del subrayado */
+    text-decoration-thickness: 0.15em;
+    text-decoration-color: rgb(60, 148, 148);
 }
 
 .cerrarSesion {
     display: flex;
     align-items: flex-end;
-}
-
-.linea {
-    height: 0.4vh;
-    width: 85%;
-    z-index: 10;
-    background-color: #574646;
-    position: relative;
-    margin: 0.5vw;
+    z-index: 10000;
+    cursor: pointer;
 }
 
 .image-circle {
@@ -296,4 +305,13 @@ html, body {
     top: -2vh;
     position: absolute;
     z-index: 10;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
 }
+
+.josefin-sans {
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }

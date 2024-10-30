@@ -48,16 +48,17 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         localStorage.setItem('nombreUsuario', validUser.username);
+        sessionStorage.setItem('id_usuario', validUser.id);
 
         if (experienciaProgramacion === 'ninguna') {
             alert(`Bienvenido de nuevo ${validUser.username}`);
-            window.location.href = '../Wireframe-6/index.html';
+            window.location.href = '../Seleccion_de_niveles-Guia/index.html';
         } else if (experienciaProgramacion === 'poca') {
             alert(`Bienvenido de nuevo ${validUser.username}`);
-            window.location.href = '../Wireframe-6/index.html'; 
+            window.location.href = '../Seleccion_de_niveles-Guia/index.html'; 
         } else if (experienciaProgramacion === 'mucha') {
             alert(`Bienvenido de nuevo ${validUser.username}`);
-            window.location.href = '../Wireframe-7/index.html'; 
+            window.location.href = '../Seleccion_de_niveles-Manual/index.html'; 
         } else {
             alert(`Bienvenido de nuevo ${validUser.username}, no se ha guardado correctamente la selección de cuanto sabe de programación, por favor completela de nuevo.`);
             window.location.href = '../Formulario-3/index.html';

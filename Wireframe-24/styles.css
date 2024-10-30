@@ -1,0 +1,39 @@
+.titulo-pregunta2 {
+    font-size: 4em;
+    text-align: center;
+    position: relative;
+    top: -5vh;
+}
+
+.botones {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+}
+
+.boton {
+    margin-bottom: 4.5vh;
+    width: 77.92vw;
+    height: 12.5vh;
+    position: relative;
+    top: -5vh;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.boton-volverAlWireframe23 {
+    background-image: url(../img/flecha-reversa.png);
+    background-size: contain;
+    position: fixed;
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    bottom: 20px; /* Ajusta la distancia desde el borde inferior de la ventana */
+    left: 20px;   /* Ajusta la distancia desde el borde izquierdo de la ventana */
+    display: flex;
+    width: 6vw;
+    height: 13.75vh;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
