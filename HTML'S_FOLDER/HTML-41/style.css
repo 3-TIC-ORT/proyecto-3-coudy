@@ -266,7 +266,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 1.5vw;
-    margin-top: 23vh;
+    margin-top: 36vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,7 +291,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 88vw;
-    margin-top: 23vh;
+    margin-top: 36vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -316,39 +316,17 @@ html, body {
     font-size: 2em;
     margin-left: 2vw;
     margin-top: 10vh;
-    width: 50vw;
 } .sintaxis{
     margin-left: 2vw;
     margin-top: 10vh;
 } .sintaxis > p{
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
-    font-size: 1.5em;
-} .enca{
-    color: #D25C28;
-    font-weight: bold;
-} .txt{
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
-    font-size: 1em;
-} .hreff{
-    color: #954B2B;
-    font-weight: bold;
-} .negrita{
-    font-weight: bold;
-} ul{
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
-    font-size: 1.5em;
-    margin-top: 2vh;
-} .pregunta{
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
     font-size: 2em;
-} .explicacion{
-    margin-left: 55vw;
-    margin-top: -35vh;
-    width: 30vw;
+} .subrayar{
+    font-weight: bold;
+} .color{
+    color: #614881;
 }
 
 /* Fonts: */
