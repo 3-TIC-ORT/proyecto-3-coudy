@@ -1,5 +1,3 @@
-// barraLateral.js
-
 // Manejo del menú de la barra lateral
 document.getElementById("tresFlechas").addEventListener("click", function() {
     const menu = document.getElementById("miMenu");
