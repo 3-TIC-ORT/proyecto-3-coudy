@@ -14,14 +14,15 @@
 <body>
     <h1 class="titulo-pregunta2">¿Cuál de los siguientes te describe mejor?</h1>
 <div class="botones">
-    <button id="boton-estudianteSecundaria" class="boton" onclick="botonSecundaria()">Estudiante de secundario</button>
-    <button id="boton-estudianteUniversidad" class="boton" onclick="botonUniversidad()">Estudiante de universidad</button>
-    <button id="boton-trabajador" class="boton" onclick="botonTrabajador()">Trabajador/a</button>
-    <button id="boton-ninguna" class="boton" onclick="botonNinguna()">Ninguna de las anteriores</button>
+    <button id="boton-estudianteSecundaria" class="boton" onclick="handleBotonSecundariaClick()">Estudiante de secundario</button>
+    <button id="boton-estudianteUniversidad" class="boton" onclick="handleBotonUniversidadClick()">Estudiante de universidad</button>
+    <button id="boton-trabajador" class="boton" onclick="handleBotonTrabajadorClick()">Trabajador/a</button>
+    <button id="boton-ninguna" class="boton" onclick="handleBotonNingunaClick()">Ninguna de las anteriores</button>
 </div>
     <button class="btn-volver" onclick="location.href='../Formulario-1/index.html'">
         <div class="flecha"></div>
-    </button>
-    <script src="../main.js"></script>
+    </button>    
+    <script src="../database.js"></script>    
+    <script src="index.js"></script>    
 </body>
 </html>
