@@ -275,6 +275,8 @@ html, body {
 .cerrarSesion {
     display: flex;
     align-items: flex-end;
+    z-index: 10000;
+    cursor: pointer;
 }
 
 .image-circle {

@@ -162,9 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Evento para cerrar sesión
 document.getElementById("cerrarSesion").addEventListener("click", function() {
-    // Cambiar el estado de la sesión a "false"
-    localStorage.setItem('sesionActiva', 'false');
-    
+    sessionStorage.removeItem('id_usuario');
     // Redirigir a la página de login
-    window.location.href = 'login.html'; // Cambia esto a la ruta correcta
+    window.location.href = '../Presentación/index.html'; // Cambia esto a la ruta correcta
 });
