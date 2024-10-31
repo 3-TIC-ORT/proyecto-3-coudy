@@ -31,12 +31,6 @@ document.addEventListener("DOMContentLoaded", function() {
         Users.push({ id: userId, username: name, mail: mail, password: password });
         localStorage.setItem('users', JSON.stringify(Users));
 
-        // Crear una entrada en el localStorage para los datos adicionales del usuario
-        localStorage.setItem(userId, JSON.stringify({
-            numero: "", // Inicialmente vacío, se puede completar más tarde
-            razonAprender: "" // Inicialmente vacío, se puede completar más tarde
-        }));
-
         alert("Registro exitoso, disfrute de su experiencia");
         generarCodigo();
         console.log("Guardando el usuario con id: " + userId);
