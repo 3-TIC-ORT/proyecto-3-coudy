@@ -131,3 +131,8 @@ function guardarDatosUsuario(key, value)
         console.log("id_usuario no se encontro en sessionStorage");
     }    
 }
+    const userId = sessionStorage.getItem('id_usuario'); // Cambia 'id_usuario' por el nombre correcto
+
+if (!userId) {
+    window.location.href = '../../Presentación/index.html';
+}

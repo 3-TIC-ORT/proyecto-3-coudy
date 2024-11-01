@@ -4,7 +4,7 @@ document.querySelector('.siguiente').addEventListener('click', () => {
 
     let verificar = Number(localStorage.getItem('guardar-LevelPassed42')) || 0;
     if (verificar === 1){
-        window.location.href = '../HTML-43index.html';
+        window.location.href = '../HTML-43/index.html';
     } else if (verificar === 0){
         if (input1 === "<div>" && input2 === '</div>') {
             alert("Felicitaciones, has completado el Nivel 22!");
