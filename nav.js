@@ -109,3 +109,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const texto = document.getElementById("nombreUsuario");
     texto.textContent = user.username;
 });
+
+    // Redirección al hacer clic en "Inicio"
+    document.getElementById("inicio").addEventListener("click", function() {
+        // Cambia la URL a la ruta correcta del archivo HTML
+        window.location.href = '../../Seleccion_de_niveles-Guia/index.html';
+    });
+
+    document.getElementById('cerrarSesion').addEventListener("click", () => {
+        // Borra toda la información del sessionStorage
+        sessionStorage.clear();
+        // Redirige al index.html de la carpeta Presentación
+        window.location.href = '../Presentación/index.html';
+    });
