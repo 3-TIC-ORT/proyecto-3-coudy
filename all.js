@@ -1,6 +1,6 @@
 // Gestión de imagen de perfil
-const imageCircle = document.getElementById('image-circle');
-const fileInput = document.getElementById('file-input');
+const imageCircle = document.querySelectorAll('.image-circle');
+const fileInput = document.querySelectorAll('.file-input');
 let imageSet = false;
 
 imageCircle.addEventListener('click', () => {
@@ -59,13 +59,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Nombre de usuario
-    const texto = document.getElementById("nombreUsuario");
+    const textos = document.querySelectorAll(".nombreUsuario"); 
     const Users = JSON.parse(localStorage.getItem('users')) || [];
     const usuario = Users.find(user => user.id === userId);
     
-    if (usuario) {
-        texto.textContent = usuario.username;
-    } else {
-        texto.textContent = "Invitado";
-    }
+    textos.forEach((texto) => {
+        if (usuario) {
+            texto.textContent = usuario.username;
+        } else {
+            texto.textContent = "Invitado";
+        }
+    });    
 });
