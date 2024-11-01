@@ -3,7 +3,7 @@ document.querySelector('.siguiente').addEventListener('click', () => {
 
     let verificar = Number(localStorage.getItem('guardar-LevelPassed34')) || 0;
     if (verificar === 1){
-        window.location.href = '../HTML-32/index.html';
+        window.location.href = '../HTML-35/index.html';
     } else if (verificar === 0){
         if (input1 === "href=") {
             alert("Felicitaciones, has completado el Nivel 16!");

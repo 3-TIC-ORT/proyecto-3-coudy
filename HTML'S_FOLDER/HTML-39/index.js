@@ -14,7 +14,7 @@ verdadero.addEventListener('click', () => {
 btnSiguiente.addEventListener('click', () => {
     let verify = Number(localStorage.getItem('añadir-LevelPassed39')) || 0;
     if(verify === 1){
-        window.location.href='../HTML-40/index.html';
+        window.location.href='../HTML-41/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")
     }
