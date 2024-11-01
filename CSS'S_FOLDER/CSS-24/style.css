@@ -266,7 +266,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 2vw;
-    margin-top: 25vh;
+    margin-top: 23vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,7 +291,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 88vw;
-    margin-top: 25vh;
+    margin-top: 23vh;
     cursor: pointer;
     position: absolute;
     height: 7vh;
@@ -319,15 +319,10 @@ html, body {
     margin-left: 5vw;
     margin-top: 8vh;
 } .negrita{ font-weight: bold; }
-.negro{
-    font-weight: bold;
-    color: #5F5DBD;
-}
-
 .primero{
-    background-color: #888888;
-    width: 35vw;
-    height: 35vh;
+    background-color: #5F5DBD;
+    width: 37vw;
+    height: 39vh;
     margin-top: -40vh;
     margin-left: 60vw;
     display: flex;
@@ -337,21 +332,21 @@ html, body {
 } .segundo{
     background-color: #A3A3A3;
     width: 32vw;
-    height: 28vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 } .tercero{
-    background-color: #C0C0C0;
+    background-color: #888888;
     width: 29vw;
-    height: 23vh;
+    height: 25vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 } .elemento{
-    background-color: #5F5DBD;
+    background-color: #C0C0C0;
     width: 25vw;
     height: 17vh;
     display: flex;
@@ -369,8 +364,12 @@ html, body {
     font-family: "Josefin Sans", sans-serif;
     font-weight: normal;
     font-size: 1.2em;
-    margin-top: 15vh;
+    margin-top: 37vh;
     position: absolute;
+}
+.negro{
+    font-weight: bold;
+    color: #5F5DBD;
 }
 
 /* Fonts: */
