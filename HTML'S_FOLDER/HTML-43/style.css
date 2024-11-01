@@ -1,13 +1,13 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #E48056;
+    background-color: #D86A3A;
 }
 
 .mi-div {
     width: 100%;
     height: 12vh;
-    background-color: #EF7039;
+    background-color: #C35525;
     position: relative;
     z-index: 0;
 }
@@ -260,14 +260,13 @@ html, body {
     margin-top: 5vh;
 }
 
-
 .anterior{
     background-color: #D25C28;
     border: none;
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 1.5vw;
-    margin-top: 75vh;
+    margin-top: 23vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,8 +290,8 @@ html, body {
     border: none;
     border-radius: 0.4em;
     width: 9vw;
-    margin-left: 89vw;
-    margin-top: 75vh;
+    margin-left: 88vw;
+    margin-top: 23vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -311,92 +310,54 @@ html, body {
     margin-left: 6.5vw;
 }
 
-.consigna{
-    background-color: #EF7039;
-    width: 40vw;
-    height: 88vh;
-    position: absolute;
-    z-index: -10000;
-} .title{
-    color: #FFFFFF;
+.colorsito{
+    color: #893815;
+    font-weight: bold;
+} .primer-txt{
     font-family: "Josefin Sans", sans-serif;
-    margin-left: 2vw;
-    font-size: 2em;
-    margin-top: 8vh;
-} .txt-consigna{
     color: #FFFFFF;
-    font-family: "Josefin Sans", sans-serif;
-    margin-left: 2vw;
     font-size: 1.7em;
+    margin-left: 2vw;
+} .segundo-txt{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.7em;
+    margin-left: 2vw;
+} .tercer-txt{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    margin-left: 2vw;
+    width: 25vw;
+} .primerLista{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    margin-left: 1.7vw;
+} .cuarto-txt{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    margin-left: 50vw;
+    margin-top: -35vh;
     width: 30vw;
-}
-
-.index-imgYtxt{
-    margin-left: 40vw;
     position: absolute;
-    display: flex;
-    height: 7vh;
-    width: 10vw;
-    background-color: #C75523;
-} .index-img{
-    background-image: url(../../img/HTML-Icon.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 5vw;
-    height: 5vh;
-    margin-top: 1vh;
-    margin-left: 1vw;
-} .index-txt{
+} .segundaLista{
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
-    margin-top: 2.5vh;
-    margin-left: -2.5vw;
-} .index-consig{
-    margin-left: 40vw;
+    font-size: 1.4em;
+    margin-left: 2vw;
+    width: 100%;
     position: absolute;
-    margin-top: 7vh;
-    height: 81vh;
-    width: 60vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #C75523;
-} input{
-    width: 5.5vw;
-    height: 5vh;
-    background-color: #F69369;
-    border: none;
-    border-radius: 0.1em;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
-    font-size: 1.5em;
+    z-index: 10;
+} .cosas{
+    background: none;
+    border: 0.3em solid #933C16;
+    width: 20vw;
+    height: 24vh;
+    margin-left: 50vw;
+    margin-top: -20vh;
     position: absolute;
-    z-index: 11000;
-} .consig{
-    margin-top: 10vh;
-    font-family: "Josefin Sans", sans-serif;
-    position: absolute;
-    width: 50%;
-    color: #FFFFFF;
-    font-size: 1.5em;
-    margin-left: -7vw;
-} .element{
-    color: #FFFFFF;
-    font-family: "Josefin Sans", sans-serif;
-    font-size: 1.5em;
-    margin-top: -12vh;
-    margin-left: -15vw;
-    position: absolute;
-} #inp{
-    margin-top: -30vh;
-    margin-left: -30vw;
-} #inp2{
-    margin-top: 20vh;
-    margin-left: -30vw;
-} .segundo{
-    margin-top: 3vh;
-    margin-left: -20vw;
 }
 
 /* Fonts: */
