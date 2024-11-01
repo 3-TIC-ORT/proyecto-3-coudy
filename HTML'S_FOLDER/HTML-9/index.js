@@ -19,15 +19,14 @@ dropArea.addEventListener('drop', function(event) {
         alert('Respuesta incorrecta, vuelve a intentarlo');
     } else if (draggedElementId === 'opcion2') {
         alert('Respuesta correcta, toca siguiente para continuar');
-        localStorage.setItem('verificar-LevelPassed2', 1)
+        modificarNivelHtmlAlcanzado(2);
     } else if (draggedElementId === 'opcion3') {
         alert('Respuesta incorrecta, vuelve a intentarlo');
     }
 });
 
 document.querySelector('.siguiente').addEventListener('click', () => {
-    let verificar = Number(localStorage.getItem('verificar-LevelPassed2')) || 0;
-    if(verificar === 1){
+    if(obtenerNivelHtmlAlcanzado >= 2) {
         window.location.href='../HTML-10/index.html'
     } else{
         alert("Aún no has completado el nivel")

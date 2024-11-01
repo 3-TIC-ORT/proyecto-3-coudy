@@ -19,15 +19,14 @@
             alert('Respuesta incorrecta, vuelve a intentarlo');
         } else if (draggedElementId === 'opcion3') {
             alert('Respuesta correcta, toca siguiente para continuar');
-            localStorage.setItem('verificar-LevelPassed', 1)
+            modificarNivelHtmlAlcanzado(1);
         } else if (draggedElementId === 'opcion2') {
             alert('Respuesta incorrecta, vuelve a intentarlo');
         }
     });
 
-    document.querySelector('.siguiente').addEventListener('click', () => {
-        let verificar = Number(localStorage.getItem('verificar-LevelPassed')) || 0;
-        if(verificar === 1){
+    document.querySelector('.siguiente').addEventListener('click', () => {        
+        if(obtenerNivelHtmlAlcanzado >= 1) {
             window.location.href='../HTML-9/index.html'
         } else{
             alert("Aún no has completado el nivel")

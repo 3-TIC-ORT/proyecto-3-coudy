@@ -13,11 +13,21 @@ function modificarExperiencia(nuevaExperiencia)
     guardarDatosUsuario('experienciaProgramacion', nuevaExperiencia)
 }
 
+function modificarNivelHtmlAlcanzado(nuevoNivel)
+{
+    guardarDatosUsuario("nivelHtmlAlcanzado",nuevoNivel);
+}
+
 function actualizarFotoPerfil(nuevaFotoBase64)
 {
     guardarDatosUsuario("perfilImagen",nuevaFotoBase64);
 }
 
+function obtenerNivelHtmlAlcanzado()
+{
+    const nivel = obtenerDatosUsuario("nivelHtmlAlcanzado");
+    return nivel ?? 0;
+}
 function obtenerFotoPerfil()
 {
     obtenerDatosUsuario("perfilImagen");
