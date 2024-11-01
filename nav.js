@@ -9,7 +9,6 @@ document.getElementById("tresFlechas").addEventListener("click", function() {
         menu.classList.remove("ocultar");
         menu.classList.add("mostrar");
     }
-    
     // Cambiar flecha
     if (niveles2.classList.contains("girar")) {
         niveles2.classList.remove("girar");
@@ -67,3 +66,56 @@ document.getElementById("pantalla").addEventListener("click", function() {
         menu.classList.add("ocultar");
     }
 });
+
+document.getElementById('cerrarSesion').addEventListener("click", ()=>{
+    window.location.href='../Presentación/index.html'
+
+})
+
+// Gestión de imagen de perfil
+const imageCircle = document.getElementById('image-circle');
+const fileInput = document.getElementById('file-input');
+let imageSet = false;
+
+imageCircle.addEventListener('click', () => {
+    if (imageSet) {
+        const confirmChange = confirm("¿Estás seguro de que quieres cambiar la imagen?");
+        if (!confirmChange) {
+            return;
+        }
+    }
+    fileInput.click();
+});
+
+fileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        const base64String = e.target.result; // La imagen en base64
+
+        // Establecer la imagen como fondo del círculo
+        imageCircle.style.backgroundImage = `url(${base64String})`;
+        imageSet = true;
+
+        actualizarFotoPerfil(base64String)
+    };
+
+    if (file) {
+        reader.readAsDataURL(file); // Convertir a base64
+    }
+});
+
+// Al cargar la página, recuperar la imagen y mostrarla
+document.addEventListener("DOMContentLoaded", function() {    
+    const user = obtenerUsuario();
+    const savedImage = user.perfilImagen;
+
+    if (savedImage) {
+        imageCircle.style.backgroundImage = `url(${savedImage})`;
+        imageSet = true;
+    }                    
+    const texto = document.getElementById("nombreUsuario");
+    texto.textContent = user.username;        
+}
+);

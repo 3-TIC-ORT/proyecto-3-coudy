@@ -13,13 +13,14 @@
 </head>
 <body>
     <h1 class="titulo-pregunta">¿Por qué estás aprendiendo a programar?</h1>
-    <button id="boton-serProgramador" class="boton" onclick="botonProgramador()">Para ser un programador profesional</button>
-    <button id="boton-porDiversion" class="boton" onclick="botonDiversion()">Por diversión</button>
-    <button id="boton-porTrabajo" class="boton" onclick="botonTrabajo()">Para mi trabajo actual</button>
-    <button id="boton-porOtroMotivo" class="boton" onclick="botonOtrosMotivos()">Por otros motivos</button>
+    <button id="boton-serProgramador" class="boton" onclick="handleBotonProgramadorClick()">Para ser un programador profesional</button>
+    <button id="boton-porDiversion" class="boton" onclick="handleBotonDiversionClick()">Por diversión</button>
+    <button id="boton-porTrabajo" class="boton" onclick="handleBotonTrabajoClick()">Para mi trabajo actual</button>
+    <button id="boton-porOtroMotivo" class="boton" onclick="handleBotonOtrosMotivosClick()">Por otros motivos</button>
     <button class="btn-volver" onclick="window.location.href='../Sign_Up/index.html'">
         <div class="flecha"></div>
     </button>
-    <script src="../main.js"></script>
+    <script src="index.js"></script>
+    <script src="..\database.js"></script>
 </body>
 </html>

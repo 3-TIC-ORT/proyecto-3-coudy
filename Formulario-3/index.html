@@ -14,17 +14,14 @@
 <body>
     <h1 class="titulo">¿Cuánta experiencia de programación tenés?</h1>
 <div class="botones">
-    <button class="boton" onclick="guardarSeleccion('ninguna'); window.location.href='../Seleccion_de_niveles-Guia/index.html'" id="boton-2">Ninguna</button>
-    <button class="boton" onclick="guardarSeleccion('poca'); window.location.href='../Seleccion_de_niveles-Guia/index.html'" id="boton-3">Poca</button>
-    <button class="boton" onclick="guardarSeleccion('mucha'); window.location.href='../Seleccion_de_niveles-Manual/index.html'" id="boton-4">Mucha</button>
+    <button class="boton" onclick="handleBotonNingunaClick()"> Ninguna</button>
+    <button class="boton" onclick="handleBotonPocaClick()"> Poca</button>
+    <button class="boton" onclick="handleBotonMuchaClick()"> Mucha</button>
 </div>
     <button class="btn-volver" onclick="window.location.href='../Formulario-2/index.html'">
         <div class="flecha"></div>
-    </button>
-    <script>
-        function guardarSeleccion(seleccion) {
-            localStorage.setItem('experienciaProgramacion', seleccion);
-        }
-    </script>
+    </button>    
+    <script src="../database.js"></script>    
+    <script src="index.js"></script>   
 </body>
 </html>
