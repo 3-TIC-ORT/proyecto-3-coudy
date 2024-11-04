@@ -234,6 +234,8 @@ html, body {
 .nombreUsuario {
     right: 8vw;
     font-size: 2em;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     top: -2vh;
     position: absolute;
     z-index: 10;
@@ -318,7 +320,7 @@ html, body {
     margin-top: 10vh;
 } .sintaxis{
     margin-left: 2vw;
-    margin-top: 10vh;
+    margin-top: 5vh;
 } .sintaxis > p{
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
@@ -344,7 +346,7 @@ html, body {
     flex-direction: column;
 } .codigo{
     position: absolute;
-    margin-top: -45vh;
+    margin-top: -55vh;
     margin-left: 60vw;
     width: 30vw;
     display: flex;

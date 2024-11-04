@@ -234,6 +234,8 @@ html, body {
 .nombreUsuario {
     right: 8vw;
     font-size: 2em;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     top: -2vh;
     position: absolute;
     z-index: 10;
@@ -266,7 +268,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 1.5vw;
-    margin-top: 36vh;
+    margin-top: 31vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,7 +293,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 88vw;
-    margin-top: 36vh;
+    margin-top: 31vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;

@@ -31,9 +31,20 @@
     <p id="nombreUsuario" class="nombreUsuario"></p>
     <div class="mi-div"></div>
     <div class="tres-flechas" id="tresFlechas"></div>
-    <div class="isla-html" onclick="location.href='../HTML\'S_FOLDER/HTML-1/index.html'"></div>
-    <div id="isla-css" class="isla-css" onclick="location.href='../CSS\'S_FOLDER/CSS-1/index.html'"></div>
-    <div id="isla-js" class="isla-js" onclick="location.href='../JS\'S_FOLDER/JS-1/index.html'"></div>
-    <button class="boton-vueltaAlWireframe5" onclick="location.href='../Formulario-3/index.html'"></button>
+    <div class="isla-html" onclick="guardarInfo(1)"></div>
+    <div id="isla-css" class="isla-css" onclick="guardarInfo(2)"></div>
+    <div id="isla-js" class="isla-js" onclick="guardarInfo(3)"></div>
+    <script>
+        function guardarInfo(num){
+            if(num === 1){
+                window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'
+            } else if(num === 2){
+                window.location.href='../CSS\'S_FOLDER/CSS-1/index.html'
+            } else if(num = 3){
+                window.location.href='../JS\'S_FOLDER/JS-1/index.html'
+            }
+            localStorage.setItem('seleccion-Guia', 2)
+        }
+    </script>    
 </body>
 </html>

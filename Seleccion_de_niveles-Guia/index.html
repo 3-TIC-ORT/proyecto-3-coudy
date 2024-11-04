@@ -33,13 +33,44 @@
     <p id="nombreUsuario" class="nombreUsuario"></p>
     <div class="mi-div"></div>
     <div class="tres-flechas" id="tresFlechas"></div>
-    <div class="isla-html" onclick="location.href='../HTML\'S_FOLDER/HTML-1/index.html'"></div>
-    <div id="islaCss" class="isla-css"</div>
+    <div class="isla-html" onclick="guardarInfo()"></div>
+    <div id="islaCss" class="isla-css"></div>
     <div id="candadoCss" class="candado-css"></div>
     <div id="islaJs" class="isla-js"></div>
     <div id="candadoJs" class="candado-js"></div>
     </div>
     <script src="../database.js"></script>
     <script src="../nav.js"></script>
+    <script>
+        function guardarInfo(){
+            window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'
+            localStorage.setItem('seleccion-Guia', 1)
+        }
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            let verifyHtml = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
+            let verifyCss = Number(localStorage.getItem('finalLevelCSS-Passed') || 0)
+            let verifyAnimation = Number(localStorage.get('animationFinished') || 0)
+            let candadoHtml = document.getElementById('candadoCss');
+            let islaCss = document.getElementById('islaCss');
+            let candadoCss = document.getElementById('candadoJs');
+            let islaJs = document.getElementById('islaJs');
+            if(verifyAnimation != 0){
+                candadoHtml.classList.add('mantenerCss')
+                islaCss.style.cursor = 'pointer';
+            }
+            if(verifyHtml === 1 && verifyAnimation === 0){
+                candadoHtml.classList.add('romperCandadoCss')
+                islaCss.style.cursor = 'pointer';
+                islaCss.classList.add('islaC')
+                localStorage.setItem('animationFinished', 1)
+            } else if(verifyHtml === 1 && verifyCss === 1 && verifyAnimation != 2){
+                candadoCss.classList.add('romperCandadoJs')
+                islaJs.style.cursor = 'pointer';
+                islaJs.classList.add('islaJ')
+                localStorage.setItem('animationFinished', 2)
+            }
+        })
+    </script>
 </body>
 </html>

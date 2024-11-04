@@ -235,6 +235,8 @@ html, body {
     right: 8vw;
     font-size: 2em;
     top: -2vh;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     position: absolute;
     z-index: 10;
 }
@@ -326,7 +328,7 @@ html, body {
     font-size: 1.8em;
     font-weight: bold;
     font-family: "Josefin Sans", sans-serif;
-    width: 40vw;
+    width: 45vw;
     height: 8vh;
     display: flex;
     align-items: center;

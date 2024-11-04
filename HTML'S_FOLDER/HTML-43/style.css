@@ -235,6 +235,8 @@ html, body {
     right: 8vw;
     font-size: 2em;
     top: -2vh;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     position: absolute;
     z-index: 10;
 }
@@ -266,7 +268,6 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 1.5vw;
-    margin-top: 23vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,7 +292,6 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 88vw;
-    margin-top: 23vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -339,7 +339,7 @@ html, body {
     color: #FFFFFF;
     font-size: 1.4em;
     margin-left: 50vw;
-    margin-top: -35vh;
+    margin-top: -45vh;
     width: 30vw;
     position: absolute;
 } .segundaLista{
@@ -356,7 +356,7 @@ html, body {
     width: 20vw;
     height: 24vh;
     margin-left: 50vw;
-    margin-top: -20vh;
+    margin-top: -30vh;
     position: absolute;
 }
 

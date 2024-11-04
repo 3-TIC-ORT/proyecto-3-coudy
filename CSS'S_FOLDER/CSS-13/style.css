@@ -232,6 +232,8 @@ html, body {
 }
 
 .nombreUsuario {
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     right: 8vw;
     font-size: 2em;
     top: -2vh;

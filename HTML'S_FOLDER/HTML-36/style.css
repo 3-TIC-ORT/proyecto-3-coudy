@@ -237,6 +237,8 @@ html, body {
     top: -2vh;
     position: absolute;
     z-index: 10;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
 }
 
 .html-ti{
@@ -266,7 +268,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 1.5vw;
-    margin-top: 23vh;
+    margin-top: 12vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;
@@ -291,7 +293,7 @@ html, body {
     border-radius: 0.4em;
     width: 9vw;
     margin-left: 88vw;
-    margin-top: 23vh;
+    margin-top: 12vh;
     position: absolute;
     cursor: pointer;
     height: 7vh;

@@ -5,7 +5,7 @@ body{
 
 .isla-html{
     background-image: url(../img/isla\ HTML.png);
-    width: 50vw;
+    width: 25vw;
     height: 50vh;
     background-repeat: no-repeat;
     background-size: contain;
@@ -16,20 +16,21 @@ body{
 } .isla-html:hover{
     background-image: url(../img/isla-html-hover.png);
     margin-left: 3vw;
-    margin-top: 18vh;
-    width: 55vw;
-    height: 55vh;
+    margin-top: 16vh;
+    width: 60vw;
+    height: 60vh;
 }
 
 .isla-css{
     background-image: url(../img/isla\ CSS.png);
-    width: 50vw;
+    width: 30vw;
     position: absolute;
     height: 50vh;
     background-repeat: no-repeat;
     background-size: contain;
     margin-left: 37vw;
     margin-top: 18vh;
+    cursor: not-allowed;
 }
 
 .isla-js{
@@ -39,7 +40,9 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    margin-left: 30vw;
+    margin-left: 70vw;
+    margin-top: 18vh;
+    cursor: not-allowed;
 }
 
 html, body {
@@ -48,21 +51,91 @@ html, body {
 }
 
 .candado-js{
-    margin-left: 36vw;
-    margin-top: 11vh;
+    margin-left: 76vw;
+    margin-top: 28vh;
     background-image: url(../img/candado-js.png);
     background-size: cover;
     width: 10vw;
     position: absolute;
+    cursor: not-allowed;
     height: 30vh;
 } .candado-css{
-    margin-top: 10vh;
-    margin-left: 5.5vw;
+    margin-top: 25vh;
+    margin-left: 42.5vw;
     background-image: url(../img/candado-css.png);
     background-size: cover;
     width: 12vw;
     position: absolute;
     height: 34vh;
+    cursor: not-allowed;
+}
+
+/* Animacion CSS */
+@keyframes romperCandadoCSS {
+    0%{
+        background-image: url(../img/candado-css.png);
+    } 15%{
+        background-image: url(../img/candadoRoto-css.png);
+        height: 36vh;
+    } 25%{
+        background-image: url(../img/candadoRoto2-css.png);
+    } 35%{
+        background-image: url(../img/candadoRoto3-css.png);
+    } 80%{
+        margin-top: 50vh;
+        opacity: 0;
+        background-image: url(../img/candadoRoto3-css.png);
+        background-size: contain;
+    } 100%{
+        bottom: -100vh;
+        background: none;
+    }
+}
+.romperCandadoCss{
+    animation: romperCandadoCSS 7s ease forwards;
+}
+.islaC:hover{
+    background-image: url(../img/isla-css-hover.png);
+    width: 40vw;
+    height: 60vh;
+    margin-top: 13vh;
+    margin-left: 33vw;
+}
+.mantenerCss{
+    bottom: -100vh;
+    background: none;
+}
+
+/* Animacion JS */
+@keyframes romperCandadoJS {
+    0%{
+        background-image: url(../img/candado-js.png);
+    } 15%{
+        background-image: url(../img/candadoRoto-js.png);
+        height: 36vh;
+    } 25%{
+        background-image: url(../img/candadoRoto2-js.png);
+    } 35%{
+        background-image: url(../img/candadoRoto3-js.png);
+    } 80%{
+        margin-top: 50vh;
+        opacity: 0;
+        background-image: url(../img/candadoRoto3-js.png);
+        background-size: contain;
+    } 100%{
+        bottom: -100vh;
+        background: none;
+    }
+}
+.romperCandadoJs{
+    animation: romperCandadoJS 7s ease forwards;
+}
+.islaJ:hover{
+    background-image: url(../img/isla-js-hover.png);
+    width: 40vw;
+    height: 60vh;
+    /* margin-top: 13vh;
+    margin-left: 33vw; */
 }
 
 .mi-div {

@@ -237,6 +237,8 @@ html, body {
     top: -2vh;
     position: absolute;
     z-index: 10;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
 }
 
 .html-ti{
@@ -373,7 +375,7 @@ html, body {
     font-size: 1.5em;
     position: absolute;
     margin-top: -1vh;
-    margin-left: -38vw;
+    margin-left: -39.5vw;
 } .consig{
     margin-top: 10vh;
     font-family: "Josefin Sans", sans-serif;
@@ -388,7 +390,7 @@ html, body {
     font-size: 1.5em;
     position: absolute;
 } #inp2{
-    margin-left: 38vw;
+    margin-left: 39.5vw;
 }
 
 /* Fonts: */
