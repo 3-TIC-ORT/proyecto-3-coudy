@@ -1,34 +1,60 @@
-const dragItems = document.querySelectorAll('.drag-item');
-const dropArea = document.querySelector('.dropArea');
-
-dragItems.forEach(item => {
-    item.addEventListener('dragstart', function(event) {
-        event.dataTransfer.setData('text', event.target.id);
+document.addEventListener("DOMContentLoaded", () => {
+    const opciones = document.querySelectorAll(".drag-item");
+    const dropArea = document.querySelector(".dropArea");
+    const botonSiguiente = document.querySelector(".siguiente");
+  
+    // Función que se llama cuando se comienza a arrastrar el ítem
+    opciones.forEach(opcion => {
+      opcion.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text", event.target.id);
+      });
     });
-});
-
-dropArea.addEventListener('dragover', function(event) {
-    event.preventDefault();
-});
-
-dropArea.addEventListener('drop', function(event) {
-    event.preventDefault();
-    const draggedElementId = event.dataTransfer.getData('text');
-    
-    if (draggedElementId === 'opcion2') {
-        alert('Respuesta incorrecta, vuelve a intentarlo');
-    } else if (draggedElementId === 'opcion1') {
-        alert('Respuesta correcta, toca siguiente para continuar');
-        modificarNivelHtmlAlcanzado(3);
-    } else if (draggedElementId === 'opcion2') {
-        alert('Respuesta incorrecta, vuelve a intentarlo');
+  
+    // Evento cuando el ítem se suelta dentro del área
+    dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+    });
+  
+    dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      const draggedElement = document.getElementById(data);
+  
+      // Verificamos si el ítem arrastrado es el correcto
+      if (draggedElement) {
+        dropArea.appendChild(draggedElement);
+        checkAnswer();
+      }
+    });
+  
+    // Función para verificar si la respuesta es correcta
+    function checkAnswer() {
+      const dropElements = dropArea.children;
+      const correctOrder = ['opcion1', 'opcion2', 'opcion3'];
+  
+      let isCorrect = true;
+  
+      // Verificar si los elementos están en el orden correcto
+      for (let i = 0; i < dropElements.length; i++) {
+        if (dropElements[i].id !== correctOrder[i]) {
+          isCorrect = false;
+          break;
+        }
+      }
+  
+      if (isCorrect) {
+        alert("¡Respuesta correcta!");
+        // Habilitar el botón de 'Siguiente' si la respuesta es correcta
+        botonSiguiente.disabled = false;  // Habilitamos el botón de 'Siguiente'
+      }
     }
-});
-
-document.querySelector('.siguiente').addEventListener('click', () => {
-    if(obtenerNivelHtmlAlcanzado >= 3) {
-        window.location.href='../HTML-11/index.html'
-    } else{
-        alert("Aún no has completado el nivel")
-    }
-})
+  
+    // Evento del botón Siguiente para redirigir a la siguiente página
+    botonSiguiente.addEventListener("click", () => {
+      window.location.href = "../HTML-4/index.html"; // Reemplaza con el link de la siguiente página
+    });
+  
+    // Deshabilitar el botón al principio
+    botonSiguiente.disabled = true;
+  });
+  
