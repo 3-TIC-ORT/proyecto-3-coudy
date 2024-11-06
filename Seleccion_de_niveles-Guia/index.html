@@ -63,7 +63,10 @@
                 candadoHtml.classList.add('romperCandadoCss')
                 islaCss.style.cursor = 'pointer';
                 islaCss.classList.add('islaC')
-                localStorage.setItem('animationFinished', 1)
+                setTimeout(() => {
+                    localStorage.setItem('animationFinished', 1);
+                }, 7000);
+
             } else if(verifyHtml === 1 && verifyCss === 1 && verifyAnimation != 2){
                 candadoCss.classList.add('romperCandadoJs')
                 islaJs.style.cursor = 'pointer';

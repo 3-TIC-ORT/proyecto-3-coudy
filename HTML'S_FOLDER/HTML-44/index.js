@@ -14,7 +14,8 @@ function actualizarNumerosDeLinea() {
 
     cambiar.textContent = `${totalLineas + 6}.`; 
     cambiar2.textContent = `${totalLineas + 7}.`; 
-
+    document.querySelector('.septimo').style.marginTop = `${(totalLineas % 2)}px`;
+    document.querySelector('.octavo').style.marginTop = `${(totalLineas % 2)}px`;  
 }
 
 function ajustarAltura() {
@@ -96,7 +97,7 @@ document.querySelector('.siguiente').addEventListener('click', ()=>{
     verificarCodigo();
     let verify = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
     let volver = Number(localStorage.getItem('seleccion-Guia'))
-    if(verify = 1){
+    if(verify === 1){
         if(volver === 1){
             window.location.href='../../Seleccion_de_niveles-Guia'
         } else if(volver === 2){
