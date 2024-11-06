@@ -31,32 +31,31 @@
 <p class="cerrarSesion" id="cerrarSesion">Cerrar sesión</p>
 </div>
 <h1 class="html-ti">CSS |</h1>
-<p class="teoria">Box Model</p>
+<p class="teoria">Box sizing</p>
 <div class="image-circle" id="image-circle"></div>
 <input type="file" id="file-input" accept="image/*">
 <p id="nombreUsuario" class="nombreUsuario"></p>
 <div class="mi-div"></div>
 <div class="tres-flechas" id="tresFlechas"></div>
 </div>
-<p class="texto">El <span class="negrita">modelo de caja CSS</span> es básicamente  un cuadro que envuelve cada elemento HTML. Este está formado por:</p>
-<ul>
-    <li>El <span class="negrita">borde</span> de la caja (“<span class="negro">border</span>”): El borde de la caja envuelve el contenido y el de relleno. Esta propiedad acepta valores para modificar el tamaño, estilo, color y radio del borde</li>
-</ul>
-<div class="primero">
-    <div class="segundo">
-        <div class="tercero">
-            <article class="elemento">
-                <p class="title">ELEMENTO</p>
-            </article>
-        </div>
-        <p class="subtitle">border</p>
-    </div>
-</div>
-<button class="anterior" onclick="window.location.href='../CSS-23/index.html'">
+<p class="txt"><span class="colorsito">content-box:</span> (o modelo de cajas estándar): Utilizando esta propiedad, el ancho y alto que defines para un elemento solo se aplican al área de contenido (content). Con esta propiedad, el elemento va a medir la suma del tamaño del content, padding y border. El márgen (margin) no modifica el tamaño del elemento. </p>
+<h3 class="textooo pt1"><span class="negrita">.caja</span> {</h3>
+<article class="varios">
+    <p class="textooo">width: 350px;</p>
+    <p class="textooo">height: 150px;</p>
+    <p class="textooo">margin: 10px;</p>
+    <p class="textooo">padding: 25px;</p>
+    <p class="textooo">border: 5px solid black;</p>
+</article>
+    <h3 class="textooo pt2">}</h3>
+    <article class="derecha">
+        <p>En este ejemplo, el espacio que va a ocupar esta caja usando el modelo de cajas estándar será en realidad de 410 px (350 + 25 + 25 + 5 + 5); y su altura, de 210 px (150 + 25 + 25 + 5 + 5)</p>
+    </article>
+<button class="anterior" onclick="window.location.href='../CSS-27/index.html'">
     <span class="texto-Anterior">ANTERIOR</span>
     <div class="flecha-Anterior"></div>
 </button>
-<button class="siguiente" onclick="window.location.href='../CSS-25/index.html'">
+<button class="siguiente" onclick="window.location.href='../CSS-29/index.html'">
     <div class="flecha-Siguiente"></div>
     <span class="texto-Siguiente">SIGUIENTE</span>
 </button>
