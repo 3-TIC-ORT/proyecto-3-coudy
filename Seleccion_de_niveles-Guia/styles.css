@@ -101,7 +101,7 @@ html, body {
     margin-top: 13vh;
     margin-left: 33vw;
 }
-.mantenerCss{
+.mantener{
     bottom: -100vh;
     background: none;
 }
@@ -112,7 +112,6 @@ html, body {
         background-image: url(../img/candado-js.png);
     } 15%{
         background-image: url(../img/candadoRoto-js.png);
-        height: 36vh;
     } 25%{
         background-image: url(../img/candadoRoto2-js.png);
     } 35%{
@@ -133,9 +132,9 @@ html, body {
 .islaJ:hover{
     background-image: url(../img/isla-js-hover.png);
     width: 40vw;
-    height: 60vh;
-    /* margin-top: 13vh;
-    margin-left: 33vw; */
+    height: 50vh;
+    margin-top: 17vh;
+    margin-left: 68vw;
 }
 
 .mi-div {

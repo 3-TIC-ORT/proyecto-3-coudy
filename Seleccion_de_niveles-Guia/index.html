@@ -50,15 +50,11 @@
         document.addEventListener("DOMContentLoaded", ()=>{
             let verifyHtml = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
             let verifyCss = Number(localStorage.getItem('finalLevelCSS-Passed') || 0)
-            let verifyAnimation = Number(localStorage.get('animationFinished') || 0)
             let candadoHtml = document.getElementById('candadoCss');
             let islaCss = document.getElementById('islaCss');
             let candadoCss = document.getElementById('candadoJs');
             let islaJs = document.getElementById('islaJs');
-            if(verifyAnimation != 0){
-                candadoHtml.classList.add('mantenerCss')
-                islaCss.style.cursor = 'pointer';
-            }
+            let verifyAnimation = Number(localStorage.getItem('animationFinished') || 0)
             if(verifyHtml === 1 && verifyAnimation === 0){
                 candadoHtml.classList.add('romperCandadoCss')
                 islaCss.style.cursor = 'pointer';
@@ -66,12 +62,21 @@
                 setTimeout(() => {
                     localStorage.setItem('animationFinished', 1);
                 }, 7000);
-
             } else if(verifyHtml === 1 && verifyCss === 1 && verifyAnimation != 2){
                 candadoCss.classList.add('romperCandadoJs')
                 islaJs.style.cursor = 'pointer';
                 islaJs.classList.add('islaJ')
-                localStorage.setItem('animationFinished', 2)
+                setTimeout(() => {
+                    localStorage.setItem('animationFinished', 2);
+                }, 7000);
+            } else if(verifyAnimation != 0){
+                candadoHtml.classList.add('mantener')
+                islaCss.style.cursor = 'pointer';
+                islaCss.classList.add('islaC')
+            } else if(verifyAnimation === 2){
+                candadoCss.classList.add('mantener')
+                islaJs.style.cursor = 'pointer';
+                islaJs.classList.add('islaC')
             }
         })
     </script>

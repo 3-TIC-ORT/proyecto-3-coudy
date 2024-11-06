@@ -120,5 +120,5 @@ document.addEventListener("DOMContentLoaded", function() {
         // Borra toda la información del sessionStorage
         sessionStorage.clear();
         // Redirige al index.html de la carpeta Presentación
-        window.location.href = '../Presentación/index.html';
+        window.location.href = '../../Presentación/index.html';
     });
