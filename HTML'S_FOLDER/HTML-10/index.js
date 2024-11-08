@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Evento del botón Siguiente para redirigir a la siguiente página
     botonSiguiente.addEventListener("click", () => {
-      window.location.href = "../HTML-4/index.html"; // Reemplaza con el link de la siguiente página
+      window.location.href = "../HTML-11/index.html"; // Reemplaza con el link de la siguiente página
     });
   
     // Deshabilitar el botón al principio
