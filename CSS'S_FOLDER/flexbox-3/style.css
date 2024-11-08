@@ -314,6 +314,27 @@ html, body {
     margin-left: 6.5vw;
 } 
 
+.mimi {
+    width: 20vw;
+    height: 20vh;
+    background-color: #3E4D8A;
+    margin-left: 9vw;
+    position: absolute;
+    z-index: 1000;
+} .mimi::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-bottom: 3vh solid #3E4D8A;
+}  
+
 .txt{
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
@@ -329,6 +350,12 @@ html, body {
     margin-left: 2vw;
     color: #FFFFFF;
 } .negro{ font-weight: bold; }   .colorsito{ color: #273672; font-weight: bold; }
+.cuadradito{ 
+    color: #273672; 
+    font-weight: bold;
+    background-color: #9DB0FF; 
+    cursor: crosshair;
+ } .segundo{ margin-left: 1vw; }
 
 .relleno{
     background-color: #D9D9D9;
@@ -392,14 +419,31 @@ html, body {
     height: 13vh;
     margin-top: 2vh;
     margin-left: 2vw;
-    z-index: 3;
+    z-index: 9999;
+} .imagen2{
+    background-image: url(../../img/img-flexbox-2.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    z-index: 9999;
 } .cuadrado{
     background-color: #2A3C89;
     width: 10vw;
     margin-top: -77vh;
-    margin-left: 84.5vw;
+    margin-left: 58.2vw;
     height: 15vh;
-    z-index: 2;
+    z-index: 1;
+    position: absolute;
+} .cuadrado2{
+    background-color: #AA9657;
+    width: 10vw;
+    margin-top: -77vh;
+    margin-left: 71.3vw;
+    height: 15vh;
+    z-index: 1;
     position: absolute;
 }
 
@@ -409,6 +453,8 @@ html, body {
 .JUSaround { justify-content: space-around; }
 .JUSbetween { justify-content: space-between; }
 .JUSevenly { justify-content: space-evenly; }
+.ALIGcentrar { align-items: center; }
+.ALIGend { align-items: flex-end; }
 
 /* Fonts: */
 .josefin-sans {

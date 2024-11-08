@@ -2,7 +2,7 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 
 function mover() {
-    objMover.classList.remove('JUScentrar', 'JUSend', 'JUSbetween', 'JUSaround', 'JUSevenly');
+    objMover.classList.remove('JUScentrar', 'JUSend', 'JUSbetween', 'JUSaround', 'JUSevenly', 'ALIGcentrar');
     const valorCodigo = codigo.value.trim().split(';');
 
     valorCodigo.forEach((propiedad) => {
@@ -10,9 +10,9 @@ function mover() {
 
         if (propiedad === "justify-content: center") {
             objMover.classList.add('JUScentrar');
+            localStorage.setItem('levelPassed2-flexbox', 1)
         } else if (propiedad === "justify-content: flex-end"){
             objMover.classList.add('JUSend');
-            localStorage.setItem('levelPassed1-flexbox', 1)
         } else if (propiedad === "justify-content: space-between"){
             objMover.classList.add('JUSbetween');
         } else if (propiedad === "justify-content: space-around"){
@@ -20,15 +20,20 @@ function mover() {
         } else if (propiedad === "justify-content: space-evenly"){
             objMover.classList.add('JUSevenly');
         }
+        if (propiedad === "align-items: center") {
+            objMover.classList.add('ALIGcentrar');
+        } else if (propiedad === "align-items: flex-end") {
+            objMover.classList.add('ALIGcentrar');
+        }                
     });
 }
 
 codigo.addEventListener('input', mover);
 
 document.querySelector('.siguiente').addEventListener('click', ()=>{
-    let verify = Number(localStorage.getItem('levelPassed1-flexbox') || 0)
+    let verify = Number(localStorage.getItem('levelPassed2-flexbox') || 0)
     if(verify === 1){
-        window.location.href='../flexbox-2/index.html'
+        window.location.href='../flexbox-3/index.html'
     } else{
         alert('No has completado el ejercicio');
     }

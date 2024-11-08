@@ -392,14 +392,31 @@ html, body {
     height: 13vh;
     margin-top: 2vh;
     margin-left: 2vw;
-    z-index: 3;
+    z-index: 9999;
+} .imagen2{
+    background-image: url(../../img/img-flexbox-2.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    z-index: 9999;
 } .cuadrado{
     background-color: #2A3C89;
     width: 10vw;
     margin-top: -77vh;
-    margin-left: 84.5vw;
+    margin-left: 58.2vw;
     height: 15vh;
-    z-index: 2;
+    z-index: 1;
+    position: absolute;
+} .cuadrado2{
+    background-color: #AA9657;
+    width: 10vw;
+    margin-top: -77vh;
+    margin-left: 71.3vw;
+    height: 15vh;
+    z-index: 1;
     position: absolute;
 }
 
@@ -409,6 +426,8 @@ html, body {
 .JUSaround { justify-content: space-around; }
 .JUSbetween { justify-content: space-between; }
 .JUSevenly { justify-content: space-evenly; }
+.ALIGcentrar { align-items: center; }
+.ALIGend { align-items: flex-end; }
 
 /* Fonts: */
 .josefin-sans {
