@@ -1,41 +1,28 @@
-/*:root{
-    --bg-color: rgb(71, 69, 69);
-    background-color: var(--bg-color);
-}
-*/
-
 html, body {
     margin: 0;
     padding: 0;
-}
-
-.candado-css, .candado-js {
-    background-image: url(../img/imagen-candado.png);
-    background-size: cover;
-    opacity: 50%;
-    width: 185px;
-    height: 185px;
+    background-color: #F1CE5F;
 }
 
 .mi-div {
     width: 100%;
     height: 12vh;
-    background-color: #D9D9D9;
+    background-color: #EFBE24;
     position: relative;
     z-index: 0;
 }
 
 .tres-flechas {
-    background-image: url(../img/tres\ líneas.png);
-    width: 5vw;
-    height: 7vh;
+    background-image: url(../../img/tres\ líneas.png);
+    width: 4vw;
+    height: 6vh;
     background-size: contain;
     background-repeat: no-repeat;
-    position: fixed; /* Asegura que esté fijo en la ventana */
-    top: 1.2vh;
-    left: 0.3vw;
+    position: fixed;
+    top: 2.5vh;
+    left: 1vw;
     z-index: 10;
-    cursor: url('../img/cursor.png'), auto;
+    cursor: url('../../img/cursor.png'), auto;
 }
 
 @keyframes menuDesplegable {
@@ -98,7 +85,7 @@ html, body {
 }
 
 .imgInicio{
-    background-image: url(../img/home.png);
+    background-image: url(../../img/home.png);
     width: 3vw;
     height: 5vh;
     background-size: contain;
@@ -110,7 +97,7 @@ html, body {
 }
 
 .imgReglas{
-    background-image: url(../img/icono\ reglas.png);
+    background-image: url(../../img/icono\ reglas.png);
     width: 3vw;
     height: 5vh;
     background-size: contain;
@@ -122,7 +109,7 @@ html, body {
 }
 
 .imgNiveles{
-    background-image: url(../img/flecha.png);
+    background-image: url(../../img/flecha.png);
     width: 3vw;
     height: 5vh;
     background-size: contain;
@@ -194,12 +181,6 @@ html, body {
     animation: ocultarNiveles 4s ease-in-out forwards;
 }
 
-.pantalla {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-}
-
 .niveles {
     z-index: 4;
 }
@@ -234,7 +215,7 @@ html, body {
     width: 5vw;
     height: 10vh;
     border-radius: 50%;
-    background-image: url('../img/image.png');
+    background-image: url('../../img/image.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -252,8 +233,133 @@ html, body {
 
 .nombreUsuario {
     right: 8vw;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
     font-size: 2em;
     top: -2vh;
     position: absolute;
     z-index: 10;
+}
+
+.html-ti{
+    position: absolute;
+    z-index: 10000;
+    font-family: "Josefin Sans", sans-serif;
+    color: #8F7115;
+    margin-left: 10vw;
+    font-size: 2.6em;
+    margin-top: 2.5vh;
+}
+
+.teoria{
+    position: absolute;
+    z-index: 10000;
+    color: #8F7115;
+    font-weight: bold;
+    opacity: 75%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2.6em;
+    margin-left: 29vw;
+    margin-top: 3vh;
+}
+
+.abajo{
+    position: absolute;
+    top: 24vh;
+}
+
+.textooo{
+    font-family: "Josefin Sans", sans-serif;
+    color: #8F7218;
+    font-weight: normal;
+    font-size: 1.5em;
+    width: 80vw;
+    margin-left: 6vh;
+    margin-top: 13vh;
+}
+
+.anterior{
+    background-color: #D29420;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 3vw;
+    margin-top: 24vh;
+    cursor: pointer;
+    position: absolute;
+    height: 7vh;
+} .texto-Anterior{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: 2vw;
+} .flecha-Anterior{
+    background-image: url(../../img/vector-anterior.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -2.8vh;
+    margin-left: 0.6vw;
+}
+
+.siguiente{
+    background-color: #D29420;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 88vw;
+    margin-top: 24vh;
+    cursor: pointer;
+    position: absolute;
+    height: 7vh;
+} .texto-Siguiente{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: -2vw;
+} .flecha-Siguiente{
+    background-image: url(../../img/vector-siguiente.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -0.2vh;
+    margin-left: 6.5vw;
+} 
+
+.negrita{
+    text-decoration: underline;
+} .negro{
+    font-weight: bold;
+} .ejemplo-title{
+    color: #8F7218;
+    font-family: "Josefin Sans", sans-serif;
+    font-style: italic;
+    font-size: 1.4em;
+} .ejemplo{
+    margin-left: 3vw;
+    margin-top: 20vh;
+} .comentario{
+    font-style: italic;
+    font-weight: lighter;
+} .edad{
+    color: #8F7218;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.4em;
+}
+
+
+/* Fonts: */
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

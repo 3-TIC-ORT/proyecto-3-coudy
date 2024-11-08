@@ -24,4 +24,4 @@ function mover() {
     });
 }
 
-document.querySelector('button').addEventListener('click', mover);
+codigo.addEventListener('input', mover);
