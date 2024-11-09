@@ -8,23 +8,20 @@ function mover() {
     valorCodigo.forEach((propiedad) => {
         propiedad = propiedad.trim();
 
-        if (propiedad === "justify-content: center") {
+        if (propiedad === "justify-content: center" || propiedad === "justify-content: center;") {
             objMover.classList.add('JUScentrar');
-            localStorage.setItem('levelPassed2-flexbox', 1)
-        } else if (propiedad === "justify-content: flex-end"){
+        } else if (propiedad === "justify-content: flex-end" || propiedad === "justify-content: flex-end;") {
             objMover.classList.add('JUSend');
-        } else if (propiedad === "justify-content: space-between"){
+        } else if (propiedad === "justify-content: flex-start" || propiedad === "justify-content: flex-start;") {
+            objMover.classList.add('JUSstart');
+        } else if (propiedad === "justify-content: space-between" || propiedad === "justify-content: space-between;") {
             objMover.classList.add('JUSbetween');
-        } else if (propiedad === "justify-content: space-around"){
+        } else if (propiedad === "justify-content: space-around" || propiedad === "justify-content: space-around;") {
             objMover.classList.add('JUSaround');
-        } else if (propiedad === "justify-content: space-evenly"){
+            siguienteBtn.style.cursor = 'pointer';
+        } else if (propiedad === "justify-content: space-evenly" || propiedad === "justify-content: space-evenly;") {
             objMover.classList.add('JUSevenly');
-        }
-        if (propiedad === "align-items: center") {
-            objMover.classList.add('ALIGcentrar');
-        } else if (propiedad === "align-items: flex-end") {
-            objMover.classList.add('ALIGcentrar');
-        }                
+        }           
     });
 }
 

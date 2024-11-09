@@ -297,7 +297,8 @@ html, body {
     margin-top: 0.5vh;
     margin-left: 33vw;
     position: absolute;
-    cursor: pointer;
+    cursor: not-allowed;
+    transition: transform 0.2s;
     height: 7vh;
 } .texto-Siguiente{
     font-family: "Inter", sans-serif;
@@ -321,14 +322,15 @@ html, body {
     width: 43vw;
     margin-top: 0.2vh;
     margin-left: 1vw;
-} ul{
+}
+ul{
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.3em;
     width: 40vw;
     margin-top: -3.3vh;
     margin-left: 2vw;
     color: #FFFFFF;
-} .negro{ font-weight: bold; }   .colorsito{ color: #273672; font-weight: bold; }
+} .negro{ font-weight: bold; } .colorsito{ color: #273672; font-weight: bold; }
 
 .relleno{
     background-color: #D9D9D9;
@@ -377,10 +379,10 @@ html, body {
 .trabajo{
     background-color: #495EB7;
     border: 0.35em solid #999999;
-    height: 85vh;
+    height: 86vh;
     width: 55vw;
     margin-left: 44.2vw;
-    margin-top: -79vh;
+    margin-top: -74vh;
     position: absolute;
     display: flex;
 } .imagen{
@@ -392,23 +394,117 @@ html, body {
     height: 13vh;
     margin-top: 2vh;
     margin-left: 2vw;
-    z-index: 3;
+    margin-bottom: 2vh;
+    z-index: 9999;
+} .imagen2{
+    background-image: url(../../img/img-flexbox-2.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    z-index: 9999;
+} .imagen3{
+    background-image: url(../../img/img-flexbox-3.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    z-index: 9999;
 } .cuadrado{
     background-color: #2A3C89;
     width: 10vw;
-    margin-top: -77vh;
-    margin-left: 84.5vw;
+    margin-top: -3.5vh;
+    margin-left: 45vw;
     height: 15vh;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
+} .cuadrado2{
+    background-color: #AA9657;
+    width: 10vw;
+    margin-top: -3.5vh;
+    margin-left: 57.5vw;
+    height: 15vh;
+    z-index: 1;
+    position: absolute;
+} .cuadrado3{
+    background-color: #83344D;
+    width: 10vw;
+    margin-top: -3.5vh;
+    margin-left: 70.5vw;
+    height: 15vh;
+    z-index: 1;
+    position: absolute;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(40deg);
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(20deg);
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulse-animation 1s ease-in-out;
+}
+  
+@keyframes animation-loop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-loop {
+    animation: animation-loop 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
 }
 
 /* MODIFICACIONES DE LUGAR */
 .JUScentrar { justify-content: center; }
 .JUSend { justify-content: flex-end; }
+.JUSstart { justify-content: flex-start; }
 .JUSaround { justify-content: space-around; }
 .JUSbetween { justify-content: space-between; }
 .JUSevenly { justify-content: space-evenly; }
+.ALIGcentrar { align-items: center; }
+.ALIGend { align-items: flex-end; }
+.ALIGstart { align-items: flex-start; }
+.ALIGbaseline { align-items: baseline; }
+.ALIGstrech { align-items: stretch; }
 
 /* Fonts: */
 .josefin-sans {

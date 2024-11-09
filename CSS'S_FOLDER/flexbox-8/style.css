@@ -271,7 +271,7 @@ html, body {
     width: 9vw;
     margin-left: 1.5vw;
     position: absolute;
-    margin-top: 0.5vh;
+    margin-top: 10vh;
     cursor: pointer;
     height: 7vh;
 } .texto-Anterior{
@@ -294,10 +294,11 @@ html, body {
     border: none;
     border-radius: 0.4em;
     width: 9vw;
-    margin-top: 0.5vh;
+    margin-top: 10vh;
     margin-left: 33vw;
     position: absolute;
-    cursor: pointer;
+    cursor: not-allowed;
+    transition: transform 0.2s;
     height: 7vh;
 } .texto-Siguiente{
     font-family: "Inter", sans-serif;
@@ -314,28 +315,84 @@ html, body {
     margin-left: 6.5vw;
 } 
 
+.mimi {
+    width: 20vw;
+    height: 23.5vh;
+    background-color: #3E4D8A;
+    margin-left: 1vw;
+    margin-top: -15vh;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+} .mimi::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-bottom: 3vh solid #3E4D8A;
+}  
+.mimi2 {
+    width: 20vw;
+    height: 17vh;
+    background-color: #3E4D8A;
+    margin-left: 22vw;
+    margin-top: -19vh;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+} .mimi2::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-bottom: 3vh solid #3E4D8A;
+}  
+
 .txt{
     font-family: "Josefin Sans", sans-serif;
     color: #FFFFFF;
     font-size: 1.5em;
-    width: 43vw;
-    margin-top: 0.2vh;
+    width: 40vw;
+    margin-top: 10vh;
     margin-left: 1vw;
 } ul{
     font-family: "Josefin Sans", sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
     width: 40vw;
-    margin-top: -3.3vh;
+    margin-top: -1vh;
     margin-left: 2vw;
     color: #FFFFFF;
-} .negro{ font-weight: bold; }   .colorsito{ color: #273672; font-weight: bold; }
+} .txt-cuadrado, .txt-cuadrado2{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    margin-top: 1.5vh;
+    margin-left: 0.5vw;
+} 
+.cuadradito, .cuadraditoalig{ 
+    color: #273672; 
+    font-weight: bold;
+    background-color: #9DB0FF; 
+    cursor: crosshair;
+ }
 
 .relleno{
     background-color: #D9D9D9;
     width: 39vw;
     display: flex;
     margin-left: 3vw;
-    margin-top: -3.3vh;
+    margin-top: 5vh;
     height: 26vh;
 } .column{
     background-color: #999999;
@@ -364,11 +421,11 @@ html, body {
 } .pt2{
     position: absolute;
     margin-left: 3.5vw;
-    margin-top: 13vh;
+    margin-top: 17vh;
 } #code{
     border: none;
     width: 20vw;
-    height: 3vh;
+    height: 6vh;
     position: absolute;
     margin-left: 5vw;
     margin-top: 9.5vh;
@@ -377,10 +434,10 @@ html, body {
 .trabajo{
     background-color: #495EB7;
     border: 0.35em solid #999999;
-    height: 85vh;
+    height: 86vh;
     width: 55vw;
     margin-left: 44.2vw;
-    margin-top: -79vh;
+    margin-top: -66.8vh;
     position: absolute;
     display: flex;
 } .imagen{
@@ -391,24 +448,122 @@ html, body {
     width: 13vw;
     height: 13vh;
     margin-top: 2vh;
-    margin-left: 2vw;
-    z-index: 3;
+    margin-left: 2.5vw;
+    margin-bottom: 2vh;
+    z-index: 9999;
+} .imagen2{
+    background-image: url(../../img/img-flexbox-2.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    margin-left: 2.5vw;
+    margin-bottom: 2vh;
+    z-index: 9999;
+} .imagen3{
+    background-image: url(../../img/img-flexbox-3.png);
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: contain;
+    width: 13vw;
+    height: 13vh;
+    margin-top: 2vh;
+    margin-left: 2.5vw;
+    margin-bottom: 2vh;
+    z-index: 9999;
 } .cuadrado{
     background-color: #2A3C89;
     width: 10vw;
-    margin-top: -77vh;
+    margin-top: -65vh;
+    margin-left: 53.5vw;
+    height: 15vh;
+    z-index: 1;
+    position: absolute;
+} .cuadrado2{
+    background-color: #AA9657;
+    width: 10vw;
+    margin-top: -65vh;
+    margin-left: 69vw;
+    height: 15vh;
+    z-index: 1;
+    position: absolute;
+} .cuadrado3{
+    background-color: #83344D;
+    width: 10vw;
+    margin-top: -65vh;
     margin-left: 84.5vw;
     height: 15vh;
-    z-index: 2;
+    z-index: 1;
     position: absolute;
+} .segundo{ margin-top: 1vh; }
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(40deg);
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(20deg);
+        transform: scale(1);
+    }
 }
+
+.pulse {
+    animation: pulse-animation 1s ease-in-out;
+}
+  
+@keyframes animation-loop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-loop {
+    animation: animation-loop 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+.opciones{ cursor: pointer; }
 
 /* MODIFICACIONES DE LUGAR */
 .JUScentrar { justify-content: center; }
 .JUSend { justify-content: flex-end; }
+.JUSstart { justify-content: flex-start; }
 .JUSaround { justify-content: space-around; }
 .JUSbetween { justify-content: space-between; }
 .JUSevenly { justify-content: space-evenly; }
+.ALIGcentrar { align-items: center; }
+.ALIGend { align-items: flex-end; }
+.ALIGstart { align-items: flex-start; }
+.ALIGbaseline { align-items: baseline; }
+.ALIGstrech { align-items: stretch; }
 
 /* Fonts: */
 .josefin-sans {

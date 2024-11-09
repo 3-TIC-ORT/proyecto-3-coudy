@@ -4,7 +4,11 @@ const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
 
 function mover() {
-    objMover.classList.remove('JUScentrar', 'JUSend', 'JUSbetween', 'JUSaround', 'JUSevenly', 'ALIGcentrar');
+    objMover.classList.remove(
+        'JUScentrar', 'JUSend', 'JUSstart', 'JUSbetween', 'JUSaround', 'JUSevenly',
+        'ALIGcentrar', 'ALIGend', 'ALIGstart', 'ALIGbaseline', 'ALIGstrech',
+        'FLEXrow', 'FLEXrow-reverse', 'FLEXcolumn', 'FLEXcolumn-reverse'
+    );
     siguienteBtn.classList.remove('pulse-loop');
     const valorCodigo = codigo.value.trim().split(';');
 
@@ -26,11 +30,34 @@ function mover() {
             siguienteBtn.style.cursor = 'pointer';
         } else if (propiedad === "justify-content: space-evenly" || propiedad === "justify-content: space-evenly;") {
             objMover.classList.add('JUSevenly');
-        }             
+        }
+        if (propiedad === "align-items: center" || propiedad === "align-items: center;") {
+            objMover.classList.add('ALIGcentrar');
+        } else if (propiedad === "align-items: flex-end" || propiedad === "align-items: flex-end;") {
+            objMover.classList.add('ALIGend');
+        } else if (propiedad === "align-items: flex-start" || propiedad === "align-items: flex-start;") {
+            objMover.classList.add('ALIGstart');
+        } else if (propiedad === "align-items: baseline" || propiedad === "align-items: baseline;") {
+            objMover.classList.add('ALIGbaseline');
+        } else if (propiedad === "align-items: stretch" || propiedad === "align-items: stretch;") {
+            objMover.classList.add('ALIGstrech');
+        }
+        if (propiedad === "flex-direction: row" || propiedad === "flex-direction: row;") {
+            objMover.classList.add('FLEXrow');
+        } else if (propiedad === "flex-direction: row-reverse" || propiedad === "flex-direction: row-reverse;") {
+            objMover.classList.add('FLEXrow-reverse');
+            localStorage.setItem('levelPassed6-flexbox', 1)
+            nivelCompletado = true
+        } else if (propiedad === "flex-direction: column" || propiedad === "flex-direction: column;") {
+            objMover.classList.add('FLEXcolumn');
+        } else if (propiedad === "flex-direction: column-reverse" || propiedad === "flex-direction: column-reverse;") {
+            objMover.classList.add('FLEXcolumn-reverse');
+        }        
     });
 
     if (nivelCompletado) {
         siguienteBtn.classList.add('pulse');
+        siguienteBtn.style.cursor='pointer'
         setTimeout(() => {
             siguienteBtn.classList.add('pulse-loop');
         }, 1000);
@@ -44,8 +71,7 @@ siguienteBtn.addEventListener('animationend', (event) => {
         relleno.classList.remove('shake');
     }
 });
-let verify = Number(localStorage.getItem('levelPassed3-flexbox') || 0);
-
+let verify = Number(localStorage.getItem('levelPassed6-flexbox') || 0);
 function cambiarCursor(){
     if(verify === 1){
         siguienteBtn.style.cursor = 'pointer';
@@ -53,9 +79,8 @@ function cambiarCursor(){
 }
 
 siguienteBtn.addEventListener('click', () => {
-
     if (verify === 1) {
-        window.location.href = '../flexbox-4/index.html';
+        window.location.href = '../flexbox-7/index.html';
     } else {
         siguienteBtn.classList.remove('pulse-loop');
         relleno.classList.remove('shake');
@@ -63,39 +88,6 @@ siguienteBtn.addEventListener('click', () => {
             relleno.classList.add('shake');
         }, 10);
     }
-});
-
-const cuadradito = document.querySelector('.cuadradito');
-const mimi = document.querySelector('.mimi');
-
-cuadradito.addEventListener('mouseover', () => {
-    mimi.style.display = 'block';
-});
-
-cuadradito.addEventListener('click', () => {
-    if (mimi.style.display === 'block') {
-        mimi.style.display = 'none'; 
-    } else {
-        mimi.style.display = 'block'; 
-    }
-});
-
-window.onclick = function(event) {
-    if (event.target !== cuadradito && !cuadradito.contains(event.target) && event.target !== mimi) {
-        mimi.style.display = "none";
-    }
-};
-
-const opcionesMimi = mimi.querySelectorAll('.opciones');
-const textarea = document.querySelector('#code');
-
-opcionesMimi.forEach(opcion => {
-    opcion.addEventListener('click', () => {
-        const value = opcion.getAttribute('value');
-        textarea.value = value;
-        mimi.style.display = 'none';
-        mover();
-    });
 });
 
 cambiarCursor();

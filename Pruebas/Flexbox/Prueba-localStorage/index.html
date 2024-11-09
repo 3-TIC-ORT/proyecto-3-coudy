@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardar Texto en LocalStorage</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .saved-text {
+            margin-top: 20px;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #555;
+            white-space: pre-line;
+            border: 1px solid #ddd;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Guardar Texto en LocalStorage</h1>
+
+    <textarea id="code" placeholder="Escribe algo aquí..."></textarea>
+    <button id="guardar">Guardar</button>
+
+    <div id="resultado">
+        <h2>Texto Guardado:</h2>
+        <div class="saved-text" id="savedText">No hay texto guardado aún.</div>
+    </div>
+</div>
+
+<script>
+    const textarea = document.querySelector('#code');
+    const btnGuardar = document.querySelector('#guardar');
+    const savedTextDiv = document.querySelector('#savedText');
+
+    function guardar() {
+        const contenidoNuevo = textarea.value.trim();
+
+        if (contenidoNuevo) {
+            localStorage.setItem('textoAcumulado', contenidoNuevo);  
+            mostrar();
+            verificarContenido();
+        }
+    }
+
+    function mostrar() {
+        const contenidoGuardado = localStorage.getItem('textoAcumulado');
+        if (contenidoGuardado) {
+            savedTextDiv.textContent = contenidoGuardado;
+        } else {
+            savedTextDiv.textContent = 'No hay texto guardado aún.';
+        }
+    }
+
+    function verificarContenido() {
+        const contenidoGuardado = localStorage.getItem('textoAcumulado');
+
+        const contenidoNormalizado = contenidoGuardado.replace(/\s+/g, '').toLowerCase();
+
+        if (
+            contenidoNormalizado.includes('align-items:center;') && 
+            contenidoNormalizado.includes('justify-content:center;')
+        ) {
+            console.log('hurraaaaa');
+        }
+    }
+
+    window.addEventListener('load', mostrar);
+    btnGuardar.addEventListener('click', guardar);
+
+</script>
+
+</body>
+</html>
