@@ -2,10 +2,9 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
-let verify = Number(localStorage.getItem('levelPassed10-flexbox') || 0);
+let verify = Number(localStorage.getItem('finalLevelCSS-Passed') || 0);
 
 function mover() {
-    // Remueve todas las clases de posicionamiento en cada llamada
     objMover.classList.remove(
         'JUScentrar', 'JUSend', 'JUSstart', 'JUSbetween', 'JUSaround', 'JUSevenly',
         'ALIGcentrar', 'ALIGend', 'ALIGstart', 'ALIGbaseline', 'ALIGstrech',
@@ -18,7 +17,7 @@ function mover() {
     let nivelCompletado = false;
 
     if (valorCodigo) {
-        localStorage.setItem('codigo-textarea3', valorCodigo);
+        localStorage.setItem('codigo-textarea4', valorCodigo);
     }
 
     if (verify === 1) {
@@ -83,22 +82,34 @@ function mover() {
             imagenesss.forEach((imagen)=>{ imagen.classList.add('espaciado') })
         }
     });
+
     if (nivelCompletado) {
         siguienteBtn.classList.add('pulse');
         siguienteBtn.style.cursor='pointer'
-        siguienteBtn.addEventListener('click', ()=>{ window.location.href='../flexbox-10/index.html' })
+        siguienteBtn.addEventListener('click', volverr)
         setTimeout(() => {
             siguienteBtn.classList.add('pulse-loop');
         }, 1000);
     }
+
+    verificarCodigo();
 }
-function verificarCodigo(){
-    const contenidoGuardado = localStorage.getItem('codigo-textarea3');
+function verificarCodigo() {
+    const contenidoGuardado = localStorage.getItem('codigo-textarea4');
 
-    const contenidoNormalizado = contenidoGuardado.replace(/\s+/g, '').toLowerCase();
+    const contenidoNormalizado = contenidoGuardado
+        .replace(/\s+/g, '')
+        .replace(/;+/g, ';')
+        .toLowerCase();
 
-    if (contenidoNormalizado.includes('flex-wrap:wrap;') && contenidoNormalizado.includes('flex-direction:column;')) {
-        localStorage.setItem('levelPassed10-flexbox', 1)
+    const cumpleCondiciones = 
+        contenidoNormalizado.includes('justify-content:center;') &&
+        contenidoNormalizado.includes('flex-direction:column-reverse;') &&
+        contenidoNormalizado.includes('flex-wrap:wrap-reverse;') &&
+        contenidoNormalizado.includes('align-items:center;');
+
+    if (cumpleCondiciones) {
+        localStorage.setItem('finalLevelCSS-Passed', 1);
     }
 }
 
@@ -116,22 +127,33 @@ function cambiarCursor() {
     }
 }
 
-siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
-        window.location.href = '../flexbox-11/index.html';
-    } else {
+function volverr(){
+    let volver = Number(localStorage.getItem('seleccion-Guia'))
+    if(verify === 1){
+        if(volver === 1){
+            window.location.href='../../Seleccion_de_niveles-Guia'
+        } else if(volver === 2){
+            window.location.href='../../Seleccion_de_niveles-Manual'
+        }
+    } else{
         siguienteBtn.classList.remove('pulse-loop');
         relleno.classList.remove('shake');
         setTimeout(() => {
             relleno.classList.add('shake');
         }, 10);
     }
-});
+}
 
-const cuadradito = document.querySelector('.cuadradito');
+siguienteBtn.addEventListener('click', volverr);
+
+const cuadradito = document.querySelector('.wrap');
 const mimi = document.querySelector('.mimi');
-const cuadradito2 = document.querySelector('.cuadraditoalig');
+const cuadradito2 = document.querySelector('.direction');
 const mimi2 = document.querySelector('.mimi2');
+const cuadradito3 = document.querySelector('.justify');
+const mimi3 = document.querySelector('.mimi-Jus');
+const cuadradito4 = document.querySelector('.align');
+const mimi4 = document.querySelector('.mimi-Align');
 const textarea = document.querySelector('#code');
 
 function agregarOpcion(opcion) {
@@ -148,6 +170,8 @@ function agregarOpcion(opcion) {
 
     mimi.style.display = 'none';
     mimi2.style.display = 'none';
+    mimi3.style.display = 'none';
+    mimi4.style.display = 'none';
 
     mover();
 }
@@ -162,10 +186,6 @@ function manejarOpcionesMimi(mimiElement) {
     });
 }
 
-cuadradito.addEventListener('mouseover', () => {
-    mimi.style.display = 'block';
-});
-
 cuadradito.addEventListener('click', () => {
     mimi.style.display = mimi.style.display === 'block' ? 'none' : 'block';
 });
@@ -175,10 +195,6 @@ window.onclick = function (event) {
         mimi.style.display = "none";
     }
 };
-
-cuadradito2.addEventListener('mouseover', () => {
-    mimi2.style.display = 'block';
-});
 
 cuadradito2.addEventListener('click', () => {
     mimi2.style.display = mimi2.style.display === 'block' ? 'none' : 'block';
@@ -190,7 +206,30 @@ window.onclick = function (event) {
     }
 };
 
+cuadradito3.addEventListener('click', () => {
+    mimi3.style.display = mimi3.style.display === 'block' ? 'none' : 'block';
+});
+
+window.onclick = function (event) {
+    if (event.target !== cuadradito3 && !cuadradito3.contains(event.target) && event.target !== mimi3) {
+        mimi3.style.display = "none";
+    }
+};
+
+cuadradito4.addEventListener('click', () => {
+    mimi4.style.display = mimi4.style.display === 'block' ? 'none' : 'block';
+});
+
+window.onclick = function (event) {
+    if (event.target !== cuadradito4 && !cuadradito4.contains(event.target) && event.target !== mimi4) {
+        mimi4.style.display = "none";
+    }
+};
+
+
 manejarOpcionesMimi(mimi);
 manejarOpcionesMimi(mimi2);
+manejarOpcionesMimi(mimi3);
+manejarOpcionesMimi(mimi4);
 
 cambiarCursor();
