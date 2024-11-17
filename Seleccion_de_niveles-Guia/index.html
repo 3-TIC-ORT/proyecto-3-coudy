@@ -39,6 +39,16 @@
     <div id="islaJs" class="isla-js"></div>
     <div id="candadoJs" class="candado-js"></div>
     </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="felicidades">¡¡Felicidades!!</p>
+            <div class="imagenCoudy"></div>
+            <p class="mas-txt">Haz completado todos los niveles</p>
+            <div class="festejo1"></div>
+            <div class="festejo2"></div>
+        </div>
+    </div>
     <script src="../database.js"></script>
     <script src="../nav.js"></script>
     <script>
@@ -79,6 +89,21 @@
                 islaJs.classList.add('islaC')
             }
         })
+
+        const modal = document.getElementById("myModal");
+        const span = document.getElementsByClassName("close")[0];
+        resultado.innerHTML = mensaje;
+        modal.style.display = "block";
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
     </script>
 </body>
 </html>

@@ -1,0 +1,431 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #F1CE5F;
+}
+
+.mi-div {
+    width: 100%;
+    height: 12vh;
+    background-color: #EFBE24;
+    position: relative;
+    z-index: 0;
+}
+
+.tres-flechas {
+    background-image: url(../../img/tres\ líneas.png);
+    width: 4vw;
+    height: 6vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 2.5vh;
+    left: 1vw;
+    z-index: 10;
+    cursor: url('../../img/cursor.png'), auto;
+}
+
+@keyframes menuDesplegable {
+    0% {
+        transform: translate(-100vw, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes menuOculto {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-100vw, 0);
+        opacity: 0;
+    }
+}
+
+.menu {
+    width: 7vw;
+    height: 100vh;
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-100vw, 0);
+    opacity: 0;
+    transition: opacity 1s linear;
+    z-index: 2;
+}
+
+.mostrar {
+    animation: menuDesplegable 0.6s ease forwards;
+}
+
+.ocultar {
+    animation: menuOculto 1s ease forwards;
+}
+
+.divMenu {
+    position: relative;
+    top: 8vh;
+    flex-direction: column;
+    height: 60vh;
+    width: 100%;
+    left: 2.6vw;
+    z-index: 3;
+}
+
+.btnMenu{
+    margin: 6.5vh 0px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.imgInicio{
+    background-image: url(../../img/home.png);
+    width: 3vw;
+    height: 5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 27.3vh;
+    z-index: 3;
+    position: relative;
+    cursor: pointer;
+}
+
+.imgReglas{
+    background-image: url(../../img/icono\ reglas.png);
+    width: 3vw;
+    height: 5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 32.5vh;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.imgNiveles{
+    background-image: url(../../img/flecha.png);
+    width: 3vw;
+    height: 5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 36.5vh;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    z-index: 3;
+}
+
+@keyframes moverFlecha {
+    0% {
+        transform: rotate(-90deg);
+    } 100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes moverFlecha2 {
+    0% {
+        transform: rotate(0deg);
+    } 100% {
+        transform: rotate(-90deg);
+    }
+}
+
+.girar {
+    animation: moverFlecha 1s ease forwards;
+}
+
+.girar2 {
+    animation: moverFlecha2 1s ease forwards;
+}
+
+@keyframes mostrarNiveles {
+    0% {
+        top: 48vh;
+        opacity: 0;
+    } 100% {
+        top: 52vh;
+        opacity: 1;
+    }
+}
+
+@keyframes ocultarNiveles {
+    0% {
+        top: 52vh;
+    } 100% {
+        top: 48vh;
+        opacity: 0;
+    }
+}
+
+.miNivel {
+    width: 10vw;
+    height: 13vh;
+    position: fixed;
+    z-index: 4;
+    opacity: 0;
+    left: 2vw;
+}
+
+.desplegar {
+    animation: mostrarNiveles 1s ease forwards;
+}
+
+.oculto {
+    animation: ocultarNiveles 4s ease-in-out forwards;
+}
+
+.niveles {
+    z-index: 4;
+}
+
+.html, .css, .js {
+    margin-bottom: 2vh;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.html:hover, .css:hover, .js:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.2em; /* Ajusta el grosor del subrayado */
+    text-decoration-color: darkslategray; /* Cambia el color del subrayado */
+}
+
+.cerrarSesion {
+    display: flex;
+    align-items: flex-end;
+}
+
+.linea {
+    height: 0.4vh;
+    width: 85%;
+    z-index: 10;
+    background-color: #574646;
+    position: relative;
+    margin: 0.5vw;
+}
+
+.image-circle {
+    width: 5vw;
+    height: 10vh;
+    border-radius: 50%;
+    background-image: url('../../img/image.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    background-color: rgb(253, 231, 231);
+    right: 1.5vw;
+    top: 0.7vh;
+    position: absolute;
+    z-index: 10;
+}
+
+#file-input {
+    display: none;
+}
+
+.nombreUsuario {
+    right: 8vw;
+    font-size: 2em;
+    top: -2vh;
+    position: absolute;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    z-index: 10;
+}
+
+.html-ti{
+    position: absolute;
+    z-index: 10000;
+    font-family: "Josefin Sans", sans-serif;
+    color: #715E24;
+    margin-left: 10vw;
+    font-size: 2.6em;
+    margin-top: 2.5vh;
+}
+
+.teoria{
+    position: absolute;
+    z-index: 10000;
+    color: #715E24;
+    opacity: 75%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 2.1em;
+    font-weight: bold;
+    margin-left: 28vw;
+    margin-top: 3.5vh;
+}
+
+
+.anterior{
+    background-color: #D29420;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 1.5vw;
+    margin-top: 75vh;
+    position: absolute;
+    cursor: pointer;
+    height: 7vh;
+} .texto-Anterior{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: 2vw;
+} .flecha-Anterior{
+    background-image: url(../../img/vector-anterior.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -2.8vh;
+    margin-left: 0.6vw;
+}
+
+.siguiente{
+    background-color: #D29420;
+    border: none;
+    border-radius: 0.4em;
+    width: 9vw;
+    margin-left: 89vw;
+    margin-top: 75vh;
+    position: absolute;
+    cursor: pointer;
+    height: 7vh;
+} .texto-Siguiente{
+    font-family: "Inter", sans-serif;
+    color: #FFFFFF;
+    margin-left: -2vw;
+} .flecha-Siguiente{
+    background-image: url(../../img/vector-siguiente.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1vw;
+    height: 3vh;
+    position: absolute;
+    margin-top: -0.2vh;
+    margin-left: 6.5vw;
+}
+
+.consigna{
+    background-color: #EFBE24;
+    width: 40vw;
+    height: 88vh;
+    position: absolute;
+    z-index: -10000;
+} .title{
+    color: #8F7218;
+    font-family: "Josefin Sans", sans-serif;
+    margin-left: 2vw;
+    font-size: 2em;
+    margin-top: 8vh;
+} .txt-consigna{
+    color: #8F7218;
+    font-family: "Josefin Sans", sans-serif;
+    margin-left: 2vw;
+    font-size: 1.7em;
+    width: 30vw;
+}
+
+.css-imgYtxt{
+    margin-left: 50vw;
+    position: absolute;
+    display: flex;
+    height: 7vh;
+    width: 10vw;
+    cursor: pointer;
+} .css-img{
+    background-image: url(../../img/JS-Icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 5vw;
+    height: 5vh;
+    margin-top: 1vh;
+    margin-left: 1vw;
+} .css-txt{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    margin-top: 2.5vh;
+    margin-left: -2.5vw;
+} .index-imgYtxt{
+    margin-left: 40vw;
+    position: absolute;
+    display: flex;
+    height: 7vh;
+    width: 10vw;
+    cursor: pointer;
+    background-color: #D1A51B;
+} .index-img{
+    background-image: url(../../img/HTML-Icon.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 5vw;
+    height: 5vh;
+    margin-top: 1vh;
+    margin-left: 1vw;
+} .index-txt{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    margin-top: 2.5vh;
+    margin-left: -2.5vw;
+} .index-consig{
+    margin-left: 40vw;
+    position: absolute;
+    margin-top: 7vh;
+    height: 81vh;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #D1A51B;
+} 
+.element{
+    color: #FFFFFF;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.5em;
+    margin-left: 5vw;
+} .negrita{
+    font-weight: bold;
+} .style-consig{
+    opacity: 0%;
+    margin-top: 30vh;
+    margin-left: 45vw;
+    position: absolute;
+} #inp1{
+    width: 13vw;
+    height: 5vh;
+    background-color: #EFBE24;
+    border: none;
+    border-radius: 0.1em;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 0.8em;
+} .let{
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+    font-size: 1.8em;
+}
+.invisible{ opacity: 0%; }
+.sacarFondo{ background: none; }
+.agregarFondo{ background-color: #D1A51B; }
+
+/* Fonts: */
+.josefin-sans {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}   
