@@ -12,22 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="menu" id="miMenu">
-        <div class="imgInicio" id="imgInicio"></div>
-        <div class="imgReglas" id="imgReglas"></div>
-        <div class="imgNiveles" id="imgNiveles"></div>
-<div class="divMenu">
-        <div class="btnMenu inicio" id="inicio">INICIO</div>
-        <div class="btnMenu reglas" id="reglas">REGLAS</div>
-        <p class="btnMenu niveles" id="niveles">NIVELES</p>
-</div>
-<div class="miNivel" id="miNivel">
-    <div class="html" id="html">HTML</div>
-    <div class="css" id="css">CSS</div>
-    <div class="js" id="js">JS</div>
-</div>
-<p class="cerrarSesion" id="cerrarSesion">Cerrar sesión</p>
-    </div>
+    <div class="caraCoudy"></div>
+    <p class="texto">Selección de niveles</p>
     <div class="image-circle" id="image-circle"></div>
     <input type="file" id="file-input" class="file-input" accept="image/*">
     <p id="nombreUsuario" class="nombreUsuario"></p>
@@ -60,11 +46,27 @@
         document.addEventListener("DOMContentLoaded", ()=>{
             let verifyHtml = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
             let verifyCss = Number(localStorage.getItem('finalLevelCSS-Passed') || 0)
+            let verifyJs = Number(localStorage.getItem('finalLevelPassed-JS') || 0)
             let candadoHtml = document.getElementById('candadoCss');
             let islaCss = document.getElementById('islaCss');
             let candadoCss = document.getElementById('candadoJs');
             let islaJs = document.getElementById('islaJs');
             let verifyAnimation = Number(localStorage.getItem('animationFinished') || 0)
+            let verifyAnimationJs = Number(localStorage.getItem('animationJs-Finished') || 0)
+            if(verifyHtml === 1){
+                islaCss.addEventListener('click', ()=>{
+                window.location.href = "../CSS'S_FOLDER/CSS-1/index.html"; 
+                localStorage.setItem('seleccion-Guia', 1); 
+            })}
+            if (verifyCss === 1) {
+    islaJs.addEventListener('click', () => { 
+        window.location.href = "../JS'S_FOLDER/JS-1/index.html"; 
+        localStorage.setItem('seleccion-Guia', 1);
+    });
+    islaJs.style.cursor = 'pointer';
+    islaJs.classList.add('islaJ');
+    candadoCss.style.marginTop = "200vh"; // Esto mueve el candado fuera de la vista
+}
             if(verifyHtml === 1 && verifyAnimation === 0){
                 candadoHtml.classList.add('romperCandadoCss')
                 islaCss.style.cursor = 'pointer';
@@ -86,24 +88,26 @@
             } else if(verifyAnimation === 2){
                 candadoCss.classList.add('mantener')
                 islaJs.style.cursor = 'pointer';
-                islaJs.classList.add('islaC')
+                islaJs.classList.add('islaJ')
+            } if(verifyHtml === 1 && verifyCss === 1 && verifyJs === 1 && verifyAnimationJs != 1){
+                const modal = document.getElementById("myModal");
+                const span = document.getElementsByClassName("close")[0];
+                modal.style.display = "block";
+
+                span.onclick = function() {
+                    modal.style.display = "none";
+                    localStorage.setItem('animationJs-Finished', 1)
+                }
+
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    localStorage.setItem('animationJs-Finished', 1)
+                    }
+                }
             }
         })
-
-        const modal = document.getElementById("myModal");
-        const span = document.getElementsByClassName("close")[0];
-        resultado.innerHTML = mensaje;
-        modal.style.display = "block";
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
+        
     </script>
 </body>
 </html>

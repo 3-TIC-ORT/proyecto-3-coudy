@@ -99,9 +99,9 @@ document.querySelector('.siguiente').addEventListener('click', ()=>{
     let volver = Number(localStorage.getItem('seleccion-Guia'))
     if(verify === 1){
         if(volver === 1){
-            window.location.href='../../Seleccion_de_niveles-Guia'
+            window.location.href='../../Seleccion_de_niveles-Guia/index.html'
         } else if(volver === 2){
-            window.location.href='../../Seleccion_de_niveles-Manual'
+            window.location.href='../../Seleccion_de_niveles-Manual/index.html'
         }
     } else{
         alert('No has completado el nivel')

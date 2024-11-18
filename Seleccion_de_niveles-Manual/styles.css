@@ -1,6 +1,8 @@
 body{
     overflow: hidden;
     background-color: #A89AB9;
+    padding: 0;
+    margin: 0;
 }
 
 .isla-html{
@@ -66,212 +68,6 @@ body{
     z-index: 0;
 }
 
-.tres-flechas {
-    background-image: url(../img/tres\ líneas.png);
-    width: 5vw;
-    height: 7vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: fixed; /* Asegura que esté fijo en la ventana */
-    top: 2vh;
-    left: 2vw;
-    z-index: 10;
-    cursor: url('../img/cursor.png'), auto;
-}
-
-@keyframes menuDesplegable {
-    0% {
-        transform: translate(-100vw, 0);
-        opacity: 0;
-    }
-    100% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-}
-
-@keyframes menuOculto {
-    0% {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-100vw, 0);
-        opacity: 0;
-    }
-}
-
-.menu {
-    width: 10vw;
-    height: 100vh;
-    background-color: #6E5293;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-100vw, 0);
-    opacity: 0;
-    transition: opacity 1s linear;
-    z-index: 2;
-}
-
-.mostrar {
-    animation: menuDesplegable 0.6s ease forwards;
-}
-
-.ocultar {
-    animation: menuOculto 1s ease forwards;
-}
-
-.divMenu {
-    position: relative;
-    top: 8vh;
-    flex-direction: column;
-    height: 60vh;
-    width: 100%;
-    left: 2.6vw;
-    z-index: 3;
-}
-
-.btnMenu{
-    margin: 6.5vh 0px;
-    cursor: pointer;
-    z-index: 3;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
-}
-
-.imgInicio{
-    background-image: url(../img/home.png);
-    width: 2vw;
-    height: 4vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 24.7vh;
-    margin-left: 0.3vw;
-    z-index: 3;
-    position: relative;
-    cursor: pointer;
-}
-
-.imgReglas{
-    background-image: url(../img/icono\ reglas.png);
-    width: 2vw;
-    height: 4.2vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 30vh;
-    margin-left: 0.5vw;
-    position: relative;
-    z-index: 3;
-    cursor: pointer;
-}
-
-.imgNiveles{
-    background-image: url(../img/flecha.png);
-    width: 1.5vw;
-    height: 3vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    top: 35.5vh;
-    margin-left: 0.7vw;
-    position: relative;
-    cursor: pointer;
-    transform: rotate(-90deg);
-    z-index: 3;
-}
-
-@keyframes moverFlecha {
-    0% {
-        transform: rotate(-90deg);
-    } 100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes moverFlecha2 {
-    0% {
-        transform: rotate(0deg);
-    } 100% {
-        transform: rotate(-90deg);
-    }
-}
-
-.girar {
-    animation: moverFlecha 1s ease forwards;
-}
-
-.girar2 {
-    animation: moverFlecha2 1s ease forwards;
-}
-
-@keyframes mostrarNiveles {
-    0% {
-        top: 48vh;
-        left: -20vw;
-        opacity: 0;
-    } 100% {
-        top: 52vh;
-        opacity: 1;
-    }
-}
-
-@keyframes ocultarNiveles {
-    0% {
-        top: 52vh;
-    } 100% {
-        top: 48vh;
-        opacity: 0;
-    }
-}
-
-.miNivel {
-    width: 10vw;
-    height: 13vh;
-    position: fixed;
-    z-index: 4;
-    opacity: 0;
-    left: 2vw;
-}
-
-.desplegar {
-    animation: mostrarNiveles 1s ease forwards;
-}
-
-.oculto {
-    animation: ocultarNiveles 4s ease-in-out forwards;
-}
-
-.pantalla {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-}
-
-.niveles {
-    z-index: 4;
-}
-
-.html, .css, .js {
-    margin-bottom: 2vh;
-    cursor: pointer;
-    z-index: 5;
-    font-family: "Josefin Sans", sans-serif;
-    color: #FFFFFF;
-}
-
-.html:hover, .css:hover, .js:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.15em;
-    text-decoration-color: rgb(60, 148, 148);
-}
-
-.cerrarSesion {
-    display: flex;
-    align-items: flex-end;
-    z-index: 10000;
-    cursor: pointer;
-}
-
 .image-circle {
     width: 5vw;
     height: 10vh;
@@ -290,6 +86,29 @@ body{
 
 #file-input {
     display: none;
+}
+
+.texto{
+    font-size: 2.5em;
+    font-weight: bold;
+    top: -5vh;
+    margin-left: 8vw;
+    position: absolute;
+    z-index: 10;
+    font-family: "Josefin Sans", sans-serif;
+    color: #FFFFFF;
+}
+
+.caraCoudy{
+    background-image: url(../img/cara-coudy.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw;
+    z-index: 12;
+    height: 10vh;
+    margin-top: 1vh;
+    margin-left: 1.5vw;
+    position: absolute;
 }
 
 .nombreUsuario {

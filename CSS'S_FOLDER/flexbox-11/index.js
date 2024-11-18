@@ -98,22 +98,25 @@ function verificarCodigo() {
     const contenidoGuardado = localStorage.getItem('codigo-textarea4');
 
     const contenidoNormalizado = contenidoGuardado
-        .replace(/\s+/g, '')
-        .replace(/;+/g, ';')
-        .toLowerCase();
+        .replace(/\s+/g, '')  // Elimina todos los espacios en blanco
+        .toLowerCase();  // Convierte todo a minúsculas
 
+    // Ahora las condiciones no dependen de los puntos y comas
     const cumpleCondiciones = 
-        contenidoNormalizado.includes('justify-content:center;') &&
-        contenidoNormalizado.includes('flex-direction:column-reverse;') &&
-        contenidoNormalizado.includes('flex-wrap:wrap-reverse;') &&
-        contenidoNormalizado.includes('align-items:center;');
+        contenidoNormalizado.includes('justify-content:center') &&
+        contenidoNormalizado.includes('flex-direction:column-reverse') &&
+        contenidoNormalizado.includes('flex-wrap:wrap-reverse') &&
+        contenidoNormalizado.includes('align-items:center');
 
     if (cumpleCondiciones) {
         localStorage.setItem('finalLevelCSS-Passed', 1);
     }
 }
 
-codigo.addEventListener('input', mover);
+codigo.addEventListener('input', ()=>{
+    mover();
+    verificarCodigo();
+});
 
 siguienteBtn.addEventListener('animationend', (event) => {
     if (event.animationName === 'shake') {
@@ -129,11 +132,12 @@ function cambiarCursor() {
 
 function volverr(){
     let volver = Number(localStorage.getItem('seleccion-Guia'))
+    console.log(volver)
     if(verify === 1){
         if(volver === 1){
-            window.location.href='../../Seleccion_de_niveles-Guia'
+            window.location.href='../../Seleccion_de_niveles-Guia/index.html'
         } else if(volver === 2){
-            window.location.href='../../Seleccion_de_niveles-Manual'
+            window.location.href='../../Seleccion_de_niveles-Manual/index.html'
         }
     } else{
         siguienteBtn.classList.remove('pulse-loop');

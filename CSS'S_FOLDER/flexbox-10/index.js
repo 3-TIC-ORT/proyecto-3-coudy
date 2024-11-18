@@ -92,17 +92,21 @@ function mover() {
         }, 1000);
     }
 }
-function verificarCodigo(){
-    const contenidoGuardado = localStorage.getItem('codigo-textarea3');
+function verificarCodigo() {
+    const contenidoGuardado = (localStorage.getItem('codigo-textarea3') || "").toLowerCase();
+    const tieneFlexWrap = contenidoGuardado.includes('flex-wrap: wrap;');
+    const tieneFlexDirection = contenidoGuardado.includes('flex-direction: column;');
 
-    const contenidoNormalizado = contenidoGuardado.replace(/\s+/g, '').toLowerCase();
-
-    if (contenidoNormalizado.includes('flex-wrap:wrap;') && contenidoNormalizado.includes('flex-direction:column;')) {
-        localStorage.setItem('levelPassed10-flexbox', 1)
+    if (tieneFlexWrap && tieneFlexDirection) {
+        localStorage.setItem('levelPassed10-flexbox', 1);
     }
 }
 
-codigo.addEventListener('input', mover);
+
+codigo.addEventListener('input', ()=>{
+    mover();
+    verificarCodigo();
+});
 
 siguienteBtn.addEventListener('animationend', (event) => {
     if (event.animationName === 'shake') {
