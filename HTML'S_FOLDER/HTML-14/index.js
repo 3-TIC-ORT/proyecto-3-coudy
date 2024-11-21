@@ -2,7 +2,7 @@ document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
 
     if(obtenerNivelHtmlAlcanzado >= 5) {
-    } else if (verificar === 0){
+    } else {
         if (input1 === "</h1>") {
             alert("Felicitaciones, has completado el Nivel 5!");
             modificarNivelHtmlAlcanzado(5);

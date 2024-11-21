@@ -1,9 +1,9 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
 
-    if(obtenerNivelHtmlAlcanzado >= 13) {
+    if(obtenerNivelHtmlAlcanzado() >= 13) {
         window.location.href = '../HTML-31/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input1 === "<li>Café</li>") {
             alert("Felicitaciones, has completado el Nivel 13!");
             modificarNivelHtmlAlcanzado(13);

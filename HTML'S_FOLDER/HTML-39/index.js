@@ -12,7 +12,7 @@ verdadero.addEventListener('click', () => {
 })
 
 btnSiguiente.addEventListener('click', () => {
-    if(obtenerNivelHtmlAlcanzado >= 20) {
+    if(obtenerNivelHtmlAlcanzado() >= 20) {
         window.location.href='../HTML-41/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")

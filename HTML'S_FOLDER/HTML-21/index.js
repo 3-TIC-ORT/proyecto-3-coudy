@@ -32,7 +32,7 @@ option6.addEventListener('click', () => {
 });
 
 btnSiguiente.addEventListener('click', () => {
-    if(obtenerNivelHtmlAlcanzado >= 8) {
+    if(obtenerNivelHtmlAlcanzado() >= 8) {
         window.location.href='../HTML-22/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")

@@ -1,10 +1,10 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
     let input2 = document.getElementById('inp2').value;
-
-    let verificar = Number(localStorage.getItem('guardar-LevelPassed42')) || 0;
-    if(obtenerNivelHtmlAlcanzado >= 21 {
-    } else if (verificar === 0){
+    
+    if(obtenerNivelHtmlAlcanzado() >= 21) {
+        window.location.href = '../HTML-43/index.html';
+    } else {
         if (input1 === "<div>" && input2 === '</div>') {
             alert("Felicitaciones, has completado el Nivel 22!");
             modificarNivelHtmlAlcanzado(21);

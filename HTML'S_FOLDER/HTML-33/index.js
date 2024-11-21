@@ -2,9 +2,9 @@ document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
     let input2 = document.getElementById('inp2').value;
 
-    if(obtenerNivelHtmlAlcanzado >= 15) {
+    if(obtenerNivelHtmlAlcanzado() >= 15) {
         window.location.href = '../HTML-34/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input1 === "<a" && input2 === "</a>") {
             alert("Felicitaciones, has completado el Nivel 15!");
             modificarNivelHtmlAlcanzado(15);

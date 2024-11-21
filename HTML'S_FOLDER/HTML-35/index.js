@@ -16,7 +16,7 @@ option3.addEventListener('click', () => {
 })
 
 btnSiguiente.addEventListener('click', () => {
-    if(obtenerNivelHtmlAlcanzado >= 17) {
+    if(obtenerNivelHtmlAlcanzado() >= 17) {
         window.location.href='../HTML-36/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")
