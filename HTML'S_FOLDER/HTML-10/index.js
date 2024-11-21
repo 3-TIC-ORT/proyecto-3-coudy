@@ -23,7 +23,7 @@ dropArea.addEventListener('drop', function(event) {
         alert('Respuesta incorrecta, vuelve a intentarlo');
     } else if (draggedElementId === 'opcion1') {
         alert('Respuesta correcta, toca siguiente para continuar');
-        modificarNivelHtmlAlcanzado(3); // Guarda el nivel alcanzado como 2
+        modificarNivelHtmlAlcanzado(3); // Guarda el nivel alcanzado como 3
     } else if (draggedElementId === 'opcion3') {
         alert('Respuesta incorrecta, vuelve a intentarlo');
     }

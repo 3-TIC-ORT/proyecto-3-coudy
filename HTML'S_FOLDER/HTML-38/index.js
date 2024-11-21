@@ -5,7 +5,7 @@ let btnSiguiente = document.querySelector('.siguiente');
 
 option3.addEventListener('click', () => {
     alert("Respuesta correcta! Toca siguiente para continuar")
-    localStorage.setItem('añadir-LevelPassed38', 1)
+    modificarNivelHtmlAlcanzado(19);
 });
 
 option1.addEventListener('click', () => {
@@ -16,8 +16,7 @@ option2.addEventListener('click', () => {
 })
 
 btnSiguiente.addEventListener('click', () => {
-    let verify = Number(localStorage.getItem('añadir-LevelPassed38')) || 0;
-    if(verify === 1){
+    if(obtenerNivelHtmlAlcanzado >= 19) {
         window.location.href='../HTML-39/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")
