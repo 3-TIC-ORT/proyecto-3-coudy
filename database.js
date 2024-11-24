@@ -11,6 +11,7 @@ function modificarExperiencia(nuevaExperiencia) {
 }
 
 function modificarNivelHtmlAlcanzado(nuevoNivel) {
+    if(nuevoNivel > obtenerNivelHtmlAlcanzado())
     guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
 }
 

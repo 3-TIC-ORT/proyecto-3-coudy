@@ -1,7 +1,8 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
 
-    if(obtenerNivelHtmlAlcanzado >= 5) {
+    if(obtenerNivelHtmlAlcanzado() >= 5) {
+        window.location.href = '../HTML-15/index.html';
     } else {
         if (input1 === "</h1>") {
             alert("Felicitaciones, has completado el Nivel 5!");

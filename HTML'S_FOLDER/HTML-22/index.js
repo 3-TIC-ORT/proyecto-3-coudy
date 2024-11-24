@@ -1,7 +1,7 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp').value;
 
-    if(obtenerNivelHtmlAlcanzado >= 9) {
+    if(obtenerNivelHtmlAlcanzado() >= 9) {
         window.location.href = '../HTML-23/index.html';
     } else {
         if (input1 === "<h1>Argentina</h1>") {

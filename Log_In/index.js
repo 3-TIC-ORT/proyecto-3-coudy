@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const mailInput = document.querySelector('#mail');
     const passwordInput = document.querySelector('#password');
 
-    // Recuperar la experiencia de programación seleccionada
-    const experienciaProgramacion = localStorage.getItem('experienciaProgramacion');
+
 
     if (localStorage.getItem('recuerdame') === 'true') {
         mailInput.value = localStorage.getItem('mail');
@@ -47,8 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem('password');
         }
 
-        localStorage.setItem('nombreUsuario', validUser.username);
+        //localStorage.setItem('nombreUsuario', validUser.username);
         sessionStorage.setItem('id_usuario', validUser.id);
+        const experienciaProgramacion = obtenerDatosUsuario("experienciaProgramacion");
         if (experienciaProgramacion === 'ninguna') {
             alert(`Bienvenido de nuevo ${validUser.username}`);
             window.location.href = '../Seleccion_de_niveles-Guia/index.html';
