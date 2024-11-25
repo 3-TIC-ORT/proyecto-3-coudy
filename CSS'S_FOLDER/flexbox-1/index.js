@@ -10,7 +10,7 @@ function mover() {
 
         if (propiedad === "justify-content: center" || propiedad === "justify-content: center;") {
             objMover.classList.add('JUScentrar');
-        } else if (propiedad === "justify-content: flex-end" || propiedad === "justify-content: flex-end;") {
+        } else if (propiedad === "justify-content: flex-end" || propiedad === "justify-content: flex-end;") {            
             objMover.classList.add('JUSend');
         } else if (propiedad === "justify-content: flex-start" || propiedad === "justify-content: flex-start;") {
             objMover.classList.add('JUSstart');
@@ -27,11 +27,20 @@ function mover() {
 
 codigo.addEventListener('input', mover);
 
-document.querySelector('.siguiente').addEventListener('click', ()=>{
-    let verify = Number(localStorage.getItem('levelPassed1-flexbox') || 0)
-    if(verify === 1){
+document.querySelector('.siguiente').addEventListener('click', ()=>{    
+    if(obtenerNivelCssAlcanzado()>=12){
         window.location.href='../flexbox-2/index.html'
     } else{
-        alert('No has completado el ejercicio');
+        const valorCodigo = codigo.value.trim();
+        if (valorCodigo == "justify-content: flex-end;")
+        {
+            modificarNivelCssAlcanzado(12);
+            window.location.href='../flexbox-2/index.html'
+        }
+        else
+        {
+            alert('No has completado el ejercicio');
+        }
+        
     }
 })
