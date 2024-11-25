@@ -1,14 +1,13 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp1').value.trim().toLowerCase();
     let input2 = document.getElementById('inp2').value.trim();
-
-    let verificar = Number(localStorage.getItem('guardar-Level2-JS')) || 0;
-    if (verificar === 1){
+    
+    if (obtenerNivelJsAlcanzado() >= 2){
         window.location.href = '../JS-9/index.html';
-    } else if (verificar === 0){
+    } else {
         if ((input1 === 'x') && (input2 === '50')) {
             alert("Felicitaciones, has completado el Nivel 2!");
-            localStorage.setItem('guardar-Level2-JS', 1);
+            modificarNivelJsAlcanzado(2);
             window.location.href = '../JS-9/index.html';
         } else if (input1 === "" && input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");
