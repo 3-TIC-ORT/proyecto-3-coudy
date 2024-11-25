@@ -31,7 +31,7 @@ function modificarNivelJsAlcanzado(nuevoNivel) {
 
 function obtenerAnimacionFinished(tipoAnimacion)
 {
-    return obtenerDatosUsuario("animacion" + tipoAnimacion + "Finished");
+    return obtenerDatosUsuario("animacion" + tipoAnimacion + "Finished") || false;
 }
 
 function modificarAnimacionFinished(tipoAnimacion, nuevoValor)
