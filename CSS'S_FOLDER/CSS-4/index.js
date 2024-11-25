@@ -9,7 +9,7 @@ const nivelActual = 2;
 
 option2.addEventListener('click', () => {
     alert("Respuesta correcta! Toca siguiente para continuar");
-    localStorage.setItem('nivelCssAlcanzado', nivelActual); // Guardar el nivel alcanzado
+    modificarNivelCssAlcanzado(2); // Marca el nivel como completado
 });
 
 option1.addEventListener('click', () => {
@@ -20,9 +20,8 @@ option3.addEventListener('click', () => {
     alert("Respuesta incorrecta. Vuelve a intentarlo");
 });
 
-btnSiguiente.addEventListener('click', () => {
-    let nivelAlcanzado = Number(localStorage.getItem('nivelCssAlcanzado')) || 0;
-    if (nivelAlcanzado >= nivelActual) {
+btnSiguiente.addEventListener('click', () => {    
+    if (obtenerNivelCssAlcanzado() >= 2) {
         window.location.href = '../CSS-5/index.html'; // Redirigir al siguiente nivel
     } else {
         alert("No has completado el ejercicio, completalo para poder continuar");
