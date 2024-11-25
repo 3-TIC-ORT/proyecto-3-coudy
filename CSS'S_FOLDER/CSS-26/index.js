@@ -2,13 +2,12 @@ document.querySelector('.siguiente').addEventListener('click', () => {
     let input = document.getElementById('inp').value
     let input2 = document.getElementById('inp2').value;
 
-    let verificar = Number(localStorage.getItem('guardar-Level11-CSS')) || 0;
-    if (verificar === 1){
+    if (obtenerNivelCssAlcanzado()>=11){
         window.location.href = '../CSS-27/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input === 'border-color: red;' && input2 === 'border-width: 10px;' || input2 === 'border-color: red;' && input === 'border-width: 10px;') {
             alert("Felicitaciones, has completado el Nivel 11!");
-            localStorage.setItem('guardar-Leve11-CSS', 1)
+           modificarNivelCssAlcanzado(11)
             window.location.href = '../CSS-27/index.html';
         } else if (input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

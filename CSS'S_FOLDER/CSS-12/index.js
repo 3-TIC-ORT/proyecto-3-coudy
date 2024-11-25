@@ -3,12 +3,12 @@ document.querySelector('.siguiente').addEventListener('click', () => {
     let input2 = document.getElementById('inp2').value;
 
     let verificar = Number(localStorage.getItem('guardar-Level4-CSS')) || 0;
-    if (verificar === 1){
+    if (obtenerNivelCssAlcanzado()>=4){
         window.location.href = '../CSS-13/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input1 === 'p' && input2 === 'color:') {
             alert("Felicitaciones, has completado el Nivel 4!");
-            localStorage.setItem('guardar-Level4-CSS', 1)
+            modificarNivelCssAlcanzado(4); // Marca el nivel como completado
             window.location.href = '../CSS-13/index.html';
         } else if (input1 === "" && input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

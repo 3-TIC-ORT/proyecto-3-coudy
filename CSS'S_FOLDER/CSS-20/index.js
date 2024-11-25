@@ -1,13 +1,12 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input2 = document.getElementById('inp2').value;
 
-    let verificar = Number(localStorage.getItem('guardar-Level9-CSS')) || 0;
-    if (verificar === 1){
+    if (obtenerNivelCssAlcanzado()>=9){
         window.location.href = '../CSS-21/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input2 === 'font-weight:') {
             alert("Felicitaciones, has completado el Nivel 9!");
-            localStorage.setItem('guardar-Leve9-CSS', 1)
+            modificarNivelCssAlcanzado(9); // Marca el nivel como completado
             window.location.href = '../CSS-21/index.html';
         } else if (input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

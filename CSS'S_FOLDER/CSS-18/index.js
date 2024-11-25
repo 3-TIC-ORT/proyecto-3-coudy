@@ -1,13 +1,12 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input2 = document.getElementById('inp2').value;
 
-    let verificar = Number(localStorage.getItem('guardar-Level7-CSS')) || 0;
-    if (verificar === 1){
+    if (obtenerNivelCssAlcanzado()>=7){
         window.location.href = '../CSS-19/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input2 === 'font-size:') {
             alert("Felicitaciones, has completado el Nivel 7!");
-            localStorage.setItem('guardar-Level7-CSS', 1)
+            modificarNivelCssAlcanzado(7); // Marca el nivel como completado
             window.location.href = '../CSS-19/index.html';
         } else if (input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");
