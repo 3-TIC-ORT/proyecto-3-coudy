@@ -84,7 +84,7 @@ html, body {
     width: 9vw;
     margin-left: 1.5vw;
     position: absolute;
-    margin-top: 6vh;
+    margin-top: 0.5vh;
     cursor: pointer;
     height: 7vh;
 } .texto-Anterior{
@@ -107,7 +107,7 @@ html, body {
     border: none;
     border-radius: 0.4em;
     width: 9vw;
-    margin-top: 6vh;
+    margin-top: 0.5vh;
     margin-left: 33vw;
     position: absolute;
     cursor: not-allowed;

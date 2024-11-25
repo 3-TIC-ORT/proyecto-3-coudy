@@ -84,7 +84,7 @@ html, body {
     width: 9vw;
     margin-left: 1.5vw;
     position: absolute;
-    margin-top: 6vh;
+    margin-top: 0.5vh;
     cursor: pointer;
     height: 7vh;
 } .texto-Anterior{
@@ -107,7 +107,7 @@ html, body {
     border: none;
     border-radius: 0.4em;
     width: 9vw;
-    margin-top: 6vh;
+    margin-top: 0.5vh;
     margin-left: 33vw;
     position: absolute;
     cursor: not-allowed;
@@ -250,7 +250,7 @@ ul{
 } .cuadrado3{
     background-color: #83344D;
     width: 10vw;
-    margin-top: -35.5   vh;
+    margin-top: -35.5vh;
     margin-left: 45vw;
     height: 15vh;
     z-index: 1;
