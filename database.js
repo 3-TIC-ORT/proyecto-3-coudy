@@ -10,9 +10,33 @@ function modificarExperiencia(nuevaExperiencia) {
     guardarDatosUsuario('experienciaProgramacion', nuevaExperiencia);
 }
 
+function obtenerExperiencia() {
+    return obtenerDatosUsuario("experienciaProgramacion");    
+}
+
 function modificarNivelHtmlAlcanzado(nuevoNivel) {
     if(nuevoNivel > obtenerNivelHtmlAlcanzado())
     guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
+}
+
+function modificarNivelCssAlcanzado(nuevoNivel) {
+    if(nuevoNivel > obtenerNivelCssAlcanzado())
+    guardarDatosUsuario("nivelCssAlcanzado", nuevoNivel);
+}
+
+function modificarNivelJsAlcanzado(nuevoNivel) {
+    if(nuevoNivel > obtenerNivelJsAlcanzado())
+    guardarDatosUsuario("nivelJsAlcanzado", nuevoNivel);
+}
+
+function obtenerAnimacionFinished(tipoAnimacion)
+{
+    return obtenerDatosUsuario("animacion" + tipoAnimacion + "Finished");
+}
+
+function modificarAnimacionFinished(tipoAnimacion, nuevoValor)
+{
+    guardarDatosUsuario("animacion" + tipoAnimacion + "Finished", nuevoValor);    
 }
 
 function actualizarFotoPerfil(nuevaFotoBase64) {
@@ -21,6 +45,16 @@ function actualizarFotoPerfil(nuevaFotoBase64) {
 
 function obtenerNivelHtmlAlcanzado() {
     const nivel = obtenerDatosUsuario("nivelHtmlAlcanzado");
+    return nivel ?? 0;
+}
+
+function obtenerNivelCssAlcanzado() {
+    const nivel = obtenerDatosUsuario("nivelCssAlcanzado");
+    return nivel ?? 0;
+}
+
+function obtenerNivelJsAlcanzado() {
+    const nivel = obtenerDatosUsuario("nivelJsAlcanzado");
     return nivel ?? 0;
 }
 

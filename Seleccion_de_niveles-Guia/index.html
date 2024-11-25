@@ -44,21 +44,21 @@
         }
 
         document.addEventListener("DOMContentLoaded", ()=>{
-            let verifyHtml = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
-            let verifyCss = Number(localStorage.getItem('finalLevelCSS-Passed') || 0)
-            let verifyJs = Number(localStorage.getItem('finalLevelPassed-JS') || 0)
+            let verifyHtml = obtenerNivelHtmlAlcanzado() == 22;
+            let verifyCss = obtenerNivelCssAlcanzado() == 22;
+            let verifyJs = obtenerNivelJsAlcanzado() == 30;
             let candadoHtml = document.getElementById('candadoCss');
             let islaCss = document.getElementById('islaCss');
             let candadoCss = document.getElementById('candadoJs');
             let islaJs = document.getElementById('islaJs');
-            let verifyAnimation = Number(localStorage.getItem('animationFinished') || 0)
-            let verifyAnimationJs = Number(localStorage.getItem('animationJs-Finished') || 0)
-            if(verifyHtml === 1){
+            let verifyAnimationCss = obtenerAnimacionFinished("Css");
+            let verifyAnimationJs = obtenerAnimacionFinished("Js");
+            if(verifyHtml){
                 islaCss.addEventListener('click', ()=>{
                 window.location.href = "../CSS'S_FOLDER/CSS-1/index.html"; 
                 localStorage.setItem('seleccion-Guia', 1); 
             })}
-            if (verifyCss === 1) {
+            if (verifyCss) {
     islaJs.addEventListener('click', () => { 
         window.location.href = "../JS'S_FOLDER/JS-1/index.html"; 
         localStorage.setItem('seleccion-Guia', 1);
@@ -67,47 +67,48 @@
     islaJs.classList.add('islaJ');
     candadoCss.style.marginTop = "200vh"; // Esto mueve el candado fuera de la vista
 }
-            if(verifyHtml === 1 && verifyAnimation === 0){
+            if(verifyHtml && !verifyAnimationCss){
                 candadoHtml.classList.add('romperCandadoCss')
                 islaCss.style.cursor = 'pointer';
                 islaCss.classList.add('islaC')
                 setTimeout(() => {
-                    localStorage.setItem('animationFinished', 1);
+                    modificarAnimacionFinished("Css",true);
                 }, 7000);
-            } else if(verifyHtml === 1 && verifyCss === 1 && verifyAnimation != 2){
+            } else if(verifyHtml && verifyCss && !verifyAnimationJs){
                 candadoCss.classList.add('romperCandadoJs')
                 islaJs.style.cursor = 'pointer';
                 islaJs.classList.add('islaJ')
                 setTimeout(() => {
-                    localStorage.setItem('animationFinished', 2);
+                    modificarAnimacionFinished("Js",true);
                 }, 7000);
-            } else if(verifyAnimation != 0){
+            } else if(verifyCss){
                 candadoHtml.classList.add('mantener')
                 islaCss.style.cursor = 'pointer';
                 islaCss.classList.add('islaC')
-            } else if(verifyAnimation === 2){
+            } else if(verifyJs){
                 candadoCss.classList.add('mantener')
                 islaJs.style.cursor = 'pointer';
                 islaJs.classList.add('islaJ')
-            } if(verifyHtml === 1 && verifyCss === 1 && verifyJs === 1 && verifyAnimationJs != 1){
+            } if(verifyHtml && verifyCss && verifyJs && !verifyAnimationJs ){
                 const modal = document.getElementById("myModal");
                 const span = document.getElementsByClassName("close")[0];
                 modal.style.display = "block";
 
                 span.onclick = function() {
                     modal.style.display = "none";
-                    localStorage.setItem('animationJs-Finished', 1)
+                    modificarAnimacionFinished("Js", true);
                 }
 
                 window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                    localStorage.setItem('animationJs-Finished', 1)
+                    modificarAnimacionFinished("Js", true);
                     }
                 }
             }
         })
         
     </script>
+    <script src="../database.js"></script>
 </body>
 </html>

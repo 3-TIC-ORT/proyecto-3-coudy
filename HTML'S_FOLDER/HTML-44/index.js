@@ -74,7 +74,7 @@ function verificarCodigo() {
         const cantidadDeseada = 6;
     const esSatisfactorio = contadorCorrectos >= cantidadDeseada;    
     if(esSatisfactorio){
-        localStorage.setItem('finalLevelHTML-Passed', 1)
+        modificarNivelHtmlAlcanzado(22);
     } else{
         const modal = document.getElementById("myModal");
         const span = document.getElementsByClassName("close")[0];
@@ -94,16 +94,23 @@ function verificarCodigo() {
 }
 
 document.querySelector('.siguiente').addEventListener('click', ()=>{
-    verificarCodigo();
-    let verify = Number(localStorage.getItem('finalLevelHTML-Passed') || 0)
-    let volver = Number(localStorage.getItem('seleccion-Guia'))
-    if(verify === 1){
-        if(volver === 1){
+    verificarCodigo();    
+    
+    if(obtenerNivelHtmlAlcanzado() == 22) 
+    {
+        let experienciaProgramacion = obtenerExperiencia();
+                        
+        if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
+        {
             window.location.href='../../Seleccion_de_niveles-Guia/index.html'
-        } else if(volver === 2){
+        } 
+        else 
+        {
             window.location.href='../../Seleccion_de_niveles-Manual/index.html'
         }
-    } else{
+    } 
+    else 
+    {
         alert('No has completado el nivel')
     }
 })
