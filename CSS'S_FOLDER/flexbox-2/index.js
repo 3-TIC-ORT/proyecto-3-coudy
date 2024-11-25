@@ -35,7 +35,7 @@ document.querySelector('.siguiente').addEventListener('click', ()=>{
         if (valorCodigo == "justify-content: center;")
         {
             modificarNivelCssAlcanzado(13);
-            window.location.href='../flexbox-2/index.html'
+            window.location.href='../flexbox-3/index.html'
         }
         else
         {

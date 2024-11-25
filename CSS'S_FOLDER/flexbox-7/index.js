@@ -73,20 +73,29 @@ siguienteBtn.addEventListener('animationend', (event) => {
 });
 let verify = Number(localStorage.getItem('levelPassed7-flexbox') || 0);
 function cambiarCursor(){
-    if(verify === 1){
+    if (obtenerNivelCssAlcanzado()>=18) {
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=18) {
         window.location.href = '../flexbox-8/index.html';
     } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+        const valorCodigo = codigo.value.trim();
+        if (valorCodigo == "flex-direction: column;")
+            {
+                modificarNivelCssAlcanzado(18);
+                window.location.href='../flexbox-8/index.html'
+            }
+            else
+            {                         
+                siguienteBtn.classList.remove('pulse-loop');
+                relleno.classList.remove('shake');
+                setTimeout(() => {
+                    relleno.classList.add('shake');
+                }, 10);            
+            }             
     }
 });
 

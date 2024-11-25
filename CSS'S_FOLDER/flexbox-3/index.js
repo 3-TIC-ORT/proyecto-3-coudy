@@ -44,24 +44,32 @@ siguienteBtn.addEventListener('animationend', (event) => {
         relleno.classList.remove('shake');
     }
 });
-let verify = Number(localStorage.getItem('levelPassed3-flexbox') || 0);
 
 function cambiarCursor(){
-    if(verify === 1){
+    if(obtenerNivelCssAlcanzado()>=14){
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=14) {
         window.location.href = '../flexbox-4/index.html';
     } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+        const valorCodigo = codigo.value.trim();
+        if (valorCodigo == "justify-content: center;")
+        {
+            modificarNivelCssAlcanzado(14);
+            window.location.href='../flexbox-4/index.html'
+        }
+        else
+        {
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);
+        }
+        
     }
 });
 

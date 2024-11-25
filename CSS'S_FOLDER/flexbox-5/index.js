@@ -78,20 +78,29 @@ siguienteBtn.addEventListener('animationend', (event) => {
 });
 
 function cambiarCursor() {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=16) {
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=16) {
         window.location.href = '../flexbox-6/index.html';
     } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+        const valorCodigo = codigo.value.trim();
+        if (valorCodigo.includes("justify-content: center;") && valorCodigo.includes("align-items: center;"))
+        {
+            modificarNivelCssAlcanzado(16);
+            window.location.href='../flexbox-6/index.html'
+        }
+        else
+        {                         
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);            
+        }        
     }
 });
 
