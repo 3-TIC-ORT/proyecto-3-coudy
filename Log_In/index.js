@@ -38,12 +38,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (recuerdameCheckbox.checked) {
             localStorage.setItem('recuerdame', 'true');
-            localStorage.setItem('mail', mailOrUsername);
-            localStorage.setItem('password', password);
+           
         } else {
             localStorage.removeItem('recuerdame');
-            localStorage.removeItem('mail');
-            localStorage.removeItem('password');
+          
         }
 
         //localStorage.setItem('nombreUsuario', validUser.username);
