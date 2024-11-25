@@ -1,13 +1,12 @@
 document.querySelector('.siguiente').addEventListener('click', () => {
     let input1 = document.getElementById('inp1').value.trim();
-
-    let verificar = Number(localStorage.getItem('guardar-Level22-JS')) || 0;
-    if (verificar === 1){
+    
+    if (obtenerNivelJsAlcanzado() >= 22){
         window.location.href = '../JS-49/index.html';
-    } else if (verificar === 0){
+    } else {
         if (input1 === '.createElement') {
             alert("Felicitaciones, has completado el Nivel 22!");
-            localStorage.setItem('guardar-Level22-JS', 1);
+            modificarNivelJsAlcanzado(22);
             window.location.href = '../JS-49/index.html';
         } else if (input1 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");
