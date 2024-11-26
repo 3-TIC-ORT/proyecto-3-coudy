@@ -68,7 +68,7 @@ function mover() {
             objMover.classList.add('WRAPnowrap');
         } else if (propiedad === "flex-wrap: wrap" || propiedad === "flex-wrap: wrap;") {
             objMover.classList.add('WRAPwrap');
-            localStorage.setItem('levelPassed9-flexbox', 1)
+            modificarNivelCssAlcanzado(20);
             nivelCompletado = true;
         } else if (propiedad === "flex-wrap: wrap-reverse" || propiedad === "flex-wrap: wrap-reverse;") {
             objMover.classList.add('WRAPwrap-reverse');
@@ -92,22 +92,32 @@ siguienteBtn.addEventListener('animationend', (event) => {
         relleno.classList.remove('shake');
     }
 });
-let verify = Number(localStorage.getItem('levelPassed9-flexbox') || 0);
+
 function cambiarCursor(){
-    if(verify === 1){
+    if (obtenerNivelCssAlcanzado()>=20) {
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=20) {
         window.location.href = '../flexbox-10/index.html';
     } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+        const valorCodigo = codigo.value.trim();
+        if (
+            (valorCodigo == "flex-wrap: wrap") || (valorCodigo == "flex-wrap: wrap;"))
+        {
+            modificarNivelCssAlcanzado(20);
+            window.location.href='../flexbox-10/index.html'
+        }
+        else
+        {                         
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);            
+        }     
     }
 });
 

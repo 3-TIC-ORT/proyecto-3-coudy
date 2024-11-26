@@ -2,21 +2,16 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
-let verify = Number(localStorage.getItem('levelPassed8-flexbox') || 0);
 
 function mover() {
     objMover.classList.remove('JUScentrar', 'JUSend', 'JUSstart', 'JUSbetween', 'JUSaround', 'JUSevenly', 'ALIGcentrar', 'ALIGend', 'ALIGstart', 'ALIGbaseline', 'ALIGstrech');
-    siguienteBtn.classList.remove('pulse-loop');
-    const valorCodigo = codigo.value.trim().split('\n');
+    siguienteBtn.classList.remove('pulse-loop');    
     let nivelCompletado = false;
-    if(valorCodigo){
-        localStorage.setItem('codigo-textarea2', valorCodigo);  
-    }
-
-    if(verify === 1){
+    
+    if (obtenerNivelCssAlcanzado()>=19){
         nivelCompletado = true;
     }
-
+    const valorCodigo = codigo.value.trim().split('\n');
     valorCodigo.forEach((propiedad) => {
         propiedad = propiedad.trim();
 
@@ -87,10 +82,10 @@ function mover() {
             siguienteBtn.classList.add('pulse-loop');
         }, 1000);
     }
-    verificarCodigo();
+    //verificarCodigo();
 }
 
-function verificarCodigo(){
+/*function verificarCodigo(){
     const contenidoGuardado = localStorage.getItem('codigo-textarea2');
 
     const contenidoNormalizado = contenidoGuardado.replace(/\s+/g, '').toLowerCase();
@@ -101,7 +96,7 @@ function verificarCodigo(){
     ) {
         localStorage.setItem('levelPassed8-flexbox', 1)
     }
-}
+}*/
 
 codigo.addEventListener('input', mover);
 
@@ -112,20 +107,33 @@ siguienteBtn.addEventListener('animationend', (event) => {
 });
 
 function cambiarCursor() {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=19) {
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=19) {
         window.location.href = '../flexbox-9/index.html';
-    } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+    } else {        
+        const valorCodigo = codigo.value.trim();
+        const contenidoNormalizado = valorCodigo.replace(/\s+/g, '').toLowerCase();
+        console.log(contenidoNormalizado);
+        if (
+            contenidoNormalizado.includes('flex-direction:row-reverse;') &&         
+            contenidoNormalizado.includes('justify-content:flex-end;'))
+        {
+            modificarNivelCssAlcanzado(19);
+            window.location.href='../flexbox-9/index.html'
+        }
+        else
+        {                         
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);            
+        }     
     }
 });
 

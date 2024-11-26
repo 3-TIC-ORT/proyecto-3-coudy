@@ -16,11 +16,11 @@ function mover() {
     const valorCodigo = codigo.value.trim().split('\n');
     let nivelCompletado = false;
 
-    if (valorCodigo) {
+    /*if (valorCodigo) {
         localStorage.setItem('codigo-textarea4', valorCodigo);
-    }
+    }*/
 
-    if (verify === 1) {
+        if(obtenerNivelCssAlcanzado()>=22) {
         nivelCompletado = true;
     }
 
@@ -95,9 +95,9 @@ function mover() {
     verificarCodigo();
 }
 function verificarCodigo() {
-    const contenidoGuardado = localStorage.getItem('codigo-textarea4');
+    const valorCodigo = codigo.value.trim();
 
-    const contenidoNormalizado = contenidoGuardado
+    const contenidoNormalizado = valorCodigo
         .replace(/\s+/g, '')  // Elimina todos los espacios en blanco
         .toLowerCase();  // Convierte todo a minúsculas
 
@@ -109,7 +109,7 @@ function verificarCodigo() {
         contenidoNormalizado.includes('align-items:center');
 
     if (cumpleCondiciones) {
-        localStorage.setItem('finalLevelCSS-Passed', 1);
+        modificarNivelCssAlcanzado(22);
     }
 }
 
@@ -131,21 +131,27 @@ function cambiarCursor() {
 }
 
 function volverr(){
-    let volver = Number(localStorage.getItem('seleccion-Guia'))
-    console.log(volver)
-    if(verify === 1){
-        if(volver === 1){
-            window.location.href='../../Seleccion_de_niveles-Guia/index.html'
-        } else if(volver === 2){
-            window.location.href='../../Seleccion_de_niveles-Manual/index.html'
+    if(obtenerNivelCssAlcanzado() == 22) 
+        {
+            let experienciaProgramacion = obtenerExperiencia();
+                            
+            if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
+            {
+                window.location.href='../../Seleccion_de_niveles-Guia/index.html'
+            } 
+            else 
+            {
+                window.location.href='../../Seleccion_de_niveles-Manual/index.html'
+            }
+        } 
+        else 
+        {
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);
         }
-    } else{
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
-    }
 }
 
 siguienteBtn.addEventListener('click', volverr);

@@ -2,7 +2,6 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
-let verify = Number(localStorage.getItem('levelPassed10-flexbox') || 0);
 
 function mover() {
     // Remueve todas las clases de posicionamiento en cada llamada
@@ -15,15 +14,15 @@ function mover() {
     siguienteBtn.classList.remove('pulse-loop');
 
     const valorCodigo = codigo.value.trim().split('\n');
-    let nivelCompletado = false;
+    /*let nivelCompletado = false;
 
     if (valorCodigo) {
-        localStorage.setItem('codigo-textarea3', valorCodigo);
+        modificarNivelCssAlcanzado(21);
     }
 
-    if (verify === 1) {
+    if(obtenerNivelCssAlcanzado()>=21) {
         nivelCompletado = true;
-    }
+    }*/
 
     // Aplica las clases según el valor ingresado
     valorCodigo.forEach((propiedad) => {
@@ -83,19 +82,18 @@ function mover() {
             imagenesss.forEach((imagen)=>{ imagen.classList.add('espaciado') })
         }
     });
-    if (nivelCompletado) {
+    /*if (nivelCompletado) {
         siguienteBtn.classList.add('pulse');
         siguienteBtn.style.cursor='pointer'
         siguienteBtn.addEventListener('click', ()=>{ window.location.href='../flexbox-10/index.html' })
         setTimeout(() => {
             siguienteBtn.classList.add('pulse-loop');
         }, 1000);
-    }
+    }*/
 }
-function verificarCodigo() {
-    const contenidoGuardado = (localStorage.getItem('codigo-textarea3') || "").toLowerCase();
-    const tieneFlexWrap = contenidoGuardado.includes('flex-wrap: wrap;');
-    const tieneFlexDirection = contenidoGuardado.includes('flex-direction: column;');
+function verificarCodigo() {    
+    const tieneFlexWrap = codigo.value.trim().includes('flex-wrap: wrap;');
+    const tieneFlexDirection = codigo.value.trim().includes('flex-direction: column;');
 
     if (tieneFlexWrap && tieneFlexDirection) {
         localStorage.setItem('levelPassed10-flexbox', 1);
@@ -115,20 +113,33 @@ siguienteBtn.addEventListener('animationend', (event) => {
 });
 
 function cambiarCursor() {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=21) {
         siguienteBtn.style.cursor = 'pointer';
     }
 }
 
 siguienteBtn.addEventListener('click', () => {
-    if (verify === 1) {
+    if (obtenerNivelCssAlcanzado()>=21) {
         window.location.href = '../flexbox-11/index.html';
     } else {
-        siguienteBtn.classList.remove('pulse-loop');
-        relleno.classList.remove('shake');
-        setTimeout(() => {
-            relleno.classList.add('shake');
-        }, 10);
+        const valorCodigo = codigo.value.trim();
+        const contenidoNormalizado = valorCodigo.replace(/\s+/g, '').toLowerCase();
+        console.log(valorCodigo);
+        if (
+            valorCodigo.includes('flex-wrap: wrap;') &&         
+            valorCodigo.includes('flex-direction: column;'))
+        {
+            modificarNivelCssAlcanzado(21);
+            window.location.href='../flexbox-11/index.html'
+        }
+        else
+        {                         
+            siguienteBtn.classList.remove('pulse-loop');
+            relleno.classList.remove('shake');
+            setTimeout(() => {
+                relleno.classList.add('shake');
+            }, 10);            
+        }                      
     }
 });
 
