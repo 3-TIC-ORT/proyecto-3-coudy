@@ -2,9 +2,8 @@ import { onEvent, startServer } from "soquetic";
 import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
-dotenv.config();  // Esto carga las variables del archivo .env
+dotenv.config();
 
-// Configurar el transportador de Nodemailer
 const cuenta = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -13,7 +12,6 @@ const cuenta = nodemailer.createTransport({
     }
 });
 
-// Función para generar el código
 function generarCodigo() {
     return {
         numero1: Math.floor(Math.random() * 10),
