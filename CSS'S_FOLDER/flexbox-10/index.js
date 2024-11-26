@@ -19,10 +19,10 @@ function mover() {
     if (valorCodigo) {
         modificarNivelCssAlcanzado(21);
     }
-
+    */
     if(obtenerNivelCssAlcanzado()>=21) {
         nivelCompletado = true;
-    }*/
+    }
 
     // Aplica las clases según el valor ingresado
     valorCodigo.forEach((propiedad) => {
@@ -82,21 +82,21 @@ function mover() {
             imagenesss.forEach((imagen)=>{ imagen.classList.add('espaciado') })
         }
     });
-    /*if (nivelCompletado) {
+    if (nivelCompletado) {
         siguienteBtn.classList.add('pulse');
         siguienteBtn.style.cursor='pointer'
-        siguienteBtn.addEventListener('click', ()=>{ window.location.href='../flexbox-10/index.html' })
+        siguienteBtn.addEventListener('click', ()=>{ window.location.href='../flexbox-11/index.html' })
         setTimeout(() => {
             siguienteBtn.classList.add('pulse-loop');
         }, 1000);
-    }*/
+    }
 }
 function verificarCodigo() {    
     const tieneFlexWrap = codigo.value.trim().includes('flex-wrap: wrap;');
     const tieneFlexDirection = codigo.value.trim().includes('flex-direction: column;');
 
     if (tieneFlexWrap && tieneFlexDirection) {
-        localStorage.setItem('levelPassed10-flexbox', 1);
+        //localStorage.setItem('levelPassed10-flexbox', 1);
     }
 }
 

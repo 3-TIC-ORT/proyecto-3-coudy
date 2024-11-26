@@ -31,7 +31,7 @@ function mover() {
             objMover.classList.add('ALIGcentrar');
         } else if (propiedad === "align-items: flex-end" || propiedad === "align-items: flex-end;") {
             objMover.classList.add('ALIGend');
-            localStorage.setItem('levelPassed4-flexbox', 1);
+            modificarNivelCssAlcanzado(15);
             nivelCompletado = true;
         } else if (propiedad === "align-items: flex-start" || propiedad === "align-items: flex-start;") {
             objMover.classList.add('ALIGstart');

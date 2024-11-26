@@ -48,7 +48,7 @@ function mover() {
             objMover.classList.add('FLEXrow-reverse');
         } else if (propiedad === "flex-direction: column" || propiedad === "flex-direction: column;") {
             objMover.classList.add('FLEXcolumn');
-            localStorage.setItem('levelPassed7-flexbox', 1)
+            modificarNivelCssAlcanzado(18);
             nivelCompletado = true
         } else if (propiedad === "flex-direction: column-reverse" || propiedad === "flex-direction: column-reverse;") {
             objMover.classList.add('FLEXcolumn-reverse');
@@ -71,7 +71,7 @@ siguienteBtn.addEventListener('animationend', (event) => {
         relleno.classList.remove('shake');
     }
 });
-let verify = Number(localStorage.getItem('levelPassed7-flexbox') || 0);
+
 function cambiarCursor(){
     if (obtenerNivelCssAlcanzado()>=18) {
         siguienteBtn.style.cursor = 'pointer';

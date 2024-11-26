@@ -39,8 +39,7 @@
     <script src="../nav.js"></script>
     <script>
         function guardarInfo(){
-            window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'
-            localStorage.setItem('seleccion-Guia', 1)
+            window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'            
         }
 
         document.addEventListener("DOMContentLoaded", ()=>{            
@@ -61,13 +60,11 @@
             console.log("verifyAnimationJs = " + verifyAnimationJs);
             if(verifyHtml){
                 islaCss.addEventListener('click', ()=>{
-                window.location.href = "../CSS'S_FOLDER/CSS-1/index.html"; 
-                localStorage.setItem('seleccion-Guia', 1); 
+                window.location.href = "../CSS'S_FOLDER/CSS-1/index.html";                 
             })}
             if (verifyCss) {
     islaJs.addEventListener('click', () => { 
-        window.location.href = "../JS'S_FOLDER/JS-1/index.html"; 
-        localStorage.setItem('seleccion-Guia', 1);
+        window.location.href = "../JS'S_FOLDER/JS-1/index.html";         
     });
     islaJs.style.cursor = 'pointer';
     islaJs.classList.add('islaJ');

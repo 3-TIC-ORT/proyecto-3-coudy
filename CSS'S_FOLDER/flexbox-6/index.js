@@ -46,7 +46,7 @@ function mover() {
             objMover.classList.add('FLEXrow');
         } else if (propiedad === "flex-direction: row-reverse" || propiedad === "flex-direction: row-reverse;") {
             objMover.classList.add('FLEXrow-reverse');
-            localStorage.setItem('levelPassed6-flexbox', 1)
+            modificarNivelCssAlcanzado(17);
             nivelCompletado = true
         } else if (propiedad === "flex-direction: column" || propiedad === "flex-direction: column;") {
             objMover.classList.add('FLEXcolumn');
@@ -71,7 +71,7 @@ siguienteBtn.addEventListener('animationend', (event) => {
         relleno.classList.remove('shake');
     }
 });
-let verify = Number(localStorage.getItem('levelPassed6-flexbox') || 0);
+
 function cambiarCursor(){
     if (obtenerNivelCssAlcanzado()>=17) {
         siguienteBtn.style.cursor = 'pointer';

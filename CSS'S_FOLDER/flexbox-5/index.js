@@ -2,7 +2,6 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
-let verify = Number(localStorage.getItem('levelPassed5-flexbox') || 0);
 
 function mover() {
     objMover.classList.remove('JUScentrar', 'JUSend', 'JUSstart', 'JUSbetween', 'JUSaround', 'JUSevenly', 'ALIGcentrar', 'ALIGend', 'ALIGstart', 'ALIGbaseline', 'ALIGstrech');
@@ -13,7 +12,7 @@ function mover() {
         localStorage.setItem('codigo-textarea', valorCodigo);  
     }
 
-    if(verify === 1){
+    if (obtenerNivelCssAlcanzado()>=16) {
         nivelCompletado = true;
     }
 
@@ -57,15 +56,15 @@ function mover() {
 }
 
 function verificarCodigo(){
-    const contenidoGuardado = localStorage.getItem('codigo-textarea');
+    const valorCodigo = codigo.value.trim();
 
-    const contenidoNormalizado = contenidoGuardado.replace(/\s+/g, '').toLowerCase();
+    const contenidoNormalizado = valorCodigo.replace(/\s+/g, '').toLowerCase();
 
     if (
         contenidoNormalizado.includes('align-items:center;') && 
         contenidoNormalizado.includes('justify-content:center;')
     ) {
-        localStorage.setItem('levelPassed5-flexbox', 1)
+        modificarNivelCssAlcanzado(16);
     }
 }
 
