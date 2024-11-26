@@ -30,11 +30,13 @@ document.addEventListener("DOMContentLoaded", function() {
         // Guardar la información del usuario en el array de usuarios
         Users.push({ id: userId, username: name, mail: mail, password: password });
         localStorage.setItem('users', JSON.stringify(Users));
-
+        sessionStorage.clear;
+        sessionStorage.setItem('id_usuario', userId);
+        
         alert("Registro exitoso, disfrute de su experiencia");
         generarCodigo();
         console.log("Guardando el usuario con id: " + userId);
-        sessionStorage.setItem('id_usuario', userId);
+        
         loginUsuario(name);
     });
 

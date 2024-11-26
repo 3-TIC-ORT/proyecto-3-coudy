@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         //localStorage.setItem('nombreUsuario', validUser.username);
         sessionStorage.setItem('id_usuario', validUser.id);
         const experienciaProgramacion = obtenerDatosUsuario("experienciaProgramacion");
+        console.log(experienciaProgramacion);
         if (experienciaProgramacion === 'ninguna') {
             alert(`Bienvenido de nuevo ${validUser.username}`);
             window.location.href = '../Seleccion_de_niveles-Guia/index.html';
