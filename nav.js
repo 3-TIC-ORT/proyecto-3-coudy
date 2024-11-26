@@ -64,3 +64,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const texto = document.getElementById("nombreUsuario");
     texto.textContent = user.username;
 });
+
+let carasCoudy = document.querySelectorAll('.caraCoudy');
+carasCoudy.forEach((cara)=>{
+    cara.addEventListener('click', ()=>{
+        let experienciaProgramacion = obtenerExperiencia();
+        if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna"){ 
+            window.location.href='../../Seleccion_de_niveles-Guia/index.html' 
+        } 
+        else{ 
+            window.location.href='../../Seleccion_de_niveles-Manual/index.html' 
+        }
+    })
+})
