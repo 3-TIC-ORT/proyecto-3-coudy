@@ -2,7 +2,6 @@ let codigo = document.getElementById('code');
 let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
-let verify = Number(localStorage.getItem('finalLevelCSS-Passed') || 0);
 
 function mover() {
     objMover.classList.remove(
@@ -124,11 +123,6 @@ siguienteBtn.addEventListener('animationend', (event) => {
     }
 });
 
-function cambiarCursor() {
-    if (verify === 1) {
-        siguienteBtn.style.cursor = 'pointer';
-    }
-}
 
 function volverr(){
     if(obtenerNivelCssAlcanzado() == 22) 
@@ -241,5 +235,3 @@ manejarOpcionesMimi(mimi);
 manejarOpcionesMimi(mimi2);
 manejarOpcionesMimi(mimi3);
 manejarOpcionesMimi(mimi4);
-
-cambiarCursor();
