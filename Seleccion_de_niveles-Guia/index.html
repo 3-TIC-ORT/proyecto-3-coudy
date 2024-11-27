@@ -61,14 +61,18 @@
             if(verifyHtml){
                 islaCss.addEventListener('click', ()=>{
                 window.location.href = "../CSS'S_FOLDER/CSS-1/index.html";                 
-            })}
+            })
+            islaCss.style.cursor = 'pointer';
+            islaCss.classList.add('islaC');
+            candadoHtml.style.marginTop = "200vh";
+        }
             if (verifyCss) {
     islaJs.addEventListener('click', () => { 
         window.location.href = "../JS'S_FOLDER/JS-1/index.html";         
     });
     islaJs.style.cursor = 'pointer';
     islaJs.classList.add('islaJ');
-    candadoCss.style.marginTop = "200vh"; // Esto mueve el candado fuera de la vista
+    candadoCss.style.marginTop = "200vh";
 }
              if(verifyHtml && verifyCss) 
             {

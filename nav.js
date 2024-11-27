@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let carasCoudy = document.querySelectorAll('.caraCoudy');
 carasCoudy.forEach((cara)=>{
+    cara.style.cursor = 'pointer';
     cara.addEventListener('click', ()=>{
         let experienciaProgramacion = obtenerExperiencia();
         if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna"){ 

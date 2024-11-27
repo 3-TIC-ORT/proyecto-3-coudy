@@ -130,7 +130,7 @@ html, body {
 
 .mimi {
     width: 20vw;
-    height: 23.5vh;
+    /* height: 23.5vh; */
     background-color: #3E4D8A;
     margin-left: 1vw;
     margin-top: -15vh;
@@ -152,7 +152,7 @@ html, body {
 }  
 .mimi2 {
     width: 20vw;
-    height: 17vh;
+    /* height: 17vh; */
     background-color: #3E4D8A;
     margin-left: 22vw;
     margin-top: -19vh;

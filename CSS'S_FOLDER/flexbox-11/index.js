@@ -108,6 +108,7 @@ function verificarCodigo() {
         contenidoNormalizado.includes('align-items:center');
 
     if (cumpleCondiciones) {
+        siguienteBtn.style.cursor='pointer';
         modificarNivelCssAlcanzado(22);
     }
 }

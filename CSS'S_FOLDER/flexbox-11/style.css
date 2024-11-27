@@ -130,7 +130,7 @@ html, body {
 
 .mimi {
     width: 20vw;
-    height: 19vh;
+    /* height: 19vh; */
     background-color: #3E4D8A;
     margin-top: 1vh;
     margin-left: 1vw;
@@ -152,7 +152,7 @@ html, body {
 }  
 .mimi2 {
     width: 20vw;
-    height: 17vh;
+    /* height: 17vh; */
     background-color: #3E4D8A;
     margin-left: 1vw;
     margin-top: -33vh;
@@ -174,7 +174,7 @@ html, body {
 
 .mimi-Jus {
     width: 20vw;
-    height: 24vh;
+    /* height: 24vh; */
     background-color: #3E4D8A;
     margin-left: 1vw;
     margin-top: -16.3vh;
@@ -197,7 +197,7 @@ html, body {
 
 .mimi-Align {
     width: 20vw;
-    height: 21vh;
+    /* height: 21vh; */
     background-color: #3E4D8A;
     margin-left: 1vw;
     margin-top: -10.5vh;
