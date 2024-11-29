@@ -1,3 +1,5 @@
+connect2Server();
+
 function handleBotonNingunaClick (){    
     handleClick("ninguna"); 
     location.href='../Seleccion_de_niveles-Guia/index.html'   

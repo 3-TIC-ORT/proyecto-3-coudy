@@ -1,3 +1,5 @@
+connect2Server();
+
 function handleBotonSecundariaClick (){    
     handleClick("Estudiante de Secundaria");    
 }

@@ -1,3 +1,5 @@
+connect2Server();
+
 function handleBotonProgramadorClick (){    
     handleClick("Programador");    
 }

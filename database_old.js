@@ -62,7 +62,7 @@ function obtenerFotoPerfil() {
     return obtenerDatosUsuario("perfilImagen");
 }
 
-function obtenerDatosUsuario_localstorage(key) {
+function obtenerDatosUsuario(key) {
     let userId = sessionStorage.getItem('id_usuario');
 
     if (userId) {
@@ -81,45 +81,8 @@ function obtenerDatosUsuario_localstorage(key) {
         console.log("id_usuario no se encontro en sessionStorage");
     }
 }
-function obtenerDatosUsuario(key) {
-    let userId = sessionStorage.getItem('id_usuario');
-    if (!userId)
-    {
-        console.log("id_usuario no se encontro en sessionStorage");
-        return;
-    }
-
-    postData("get_user", {user_id: userId}, (user) => 
-        {
-            if (!user)
-            {
-                console.log("El usuario id " + userId + " no se encontró en la base de datos");
-                return;
-            }
-            return user[key];
-        }); 
-}
 
 function obtenerUsuario() {
-    let userId = sessionStorage.getItem('id_usuario');
-    if (!userId)
-    {
-        console.log("id_usuario no se encontro en sessionStorage");
-        return;
-    }
-
-    postData("get_user", {user_id: userId}, (user) => 
-        {
-            if (!user)
-            {
-                console.log("El usuario id " + userId + " no se encontró en la base de datos");
-                return;
-            }
-            return user;
-        }); 
-}
-
-function obtenerUsuario_localstorage() {
     let userId = sessionStorage.getItem('id_usuario');
 
     if (userId) {
@@ -142,40 +105,22 @@ function obtenerUsuario_localstorage() {
 function guardarDatosUsuario(key, value) {
     let userId = sessionStorage.getItem('id_usuario');
 
-    if (!userId)
-        {
-            console.log("id_usuario no se encontro en sessionStorage");
-            return;
-        }
-    
-        postData("update_user", {user_id: userId, key: key, new_value: value}, (result) => 
-            {
-                if (result.error)
-                {
-                    console.log("Error en el backend actualizando los datos del usuario: ?", [result.error]);                    
-                }                                
-            }); 
-}
+    if (userId) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        if (users) {
+            let userIndex = users.findIndex(user => user.id === userId);
 
-    function guardarDatosUsuario_locastorage(key, value) {
-        let userId = sessionStorage.getItem('id_usuario');
-    
-        if (userId) {
-            const users = JSON.parse(localStorage.getItem('users'));
-            if (users) {
-                let userIndex = users.findIndex(user => user.id === userId);
-    
-                if (userIndex !== -1) {
-                    console.log("Guardando datos usuario. Key=" + key + ", value=" + value);
-                    users[userIndex][key] = value;
-                    localStorage.setItem('users', JSON.stringify(users));
-                } else {
-                    console.log("El usuario id " + userId + " no se encontró en la base de datos");
-                }
+            if (userIndex !== -1) {
+                console.log("Guardando datos usuario. Key=" + key + ", value=" + value);
+                users[userIndex][key] = value;
+                localStorage.setItem('users', JSON.stringify(users));
             } else {
-                console.log("users no se encontro en localStorage");
+                console.log("El usuario id " + userId + " no se encontró en la base de datos");
             }
         } else {
-            console.log("id_usuario no se encontro en sessionStorage");
+            console.log("users no se encontro en localStorage");
         }
+    } else {
+        console.log("id_usuario no se encontro en sessionStorage");
+    }
 }

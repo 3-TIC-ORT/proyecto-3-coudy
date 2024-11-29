@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const SignUpForm = document.querySelector('#SignUpForm');
     const botonAceptar = document.getElementById("button");
 
+    connect2Server();
+
     SignUpForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
@@ -16,53 +18,39 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!name || !mail || !password) {
             return alert('Asegúrate de haber completado todos los espacios');
         }
-
-        const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const isUserRegistered = Users.find(user => user.mail === mail || user.username === name);
-
-        if (isUserRegistered) {
-            return alert('El usuario ya está registrado');
-        }
-
-        // Generar un ID único para el usuario
-        const userId = generateUniqueId();
-
-        // Guardar la información del usuario en el array de usuarios
-        Users.push({ id: userId, username: name, mail: mail, password: password });
-        localStorage.setItem('users', JSON.stringify(Users));
-        sessionStorage.clear;
-        sessionStorage.setItem('id_usuario', userId);
         
-        alert("Registro exitoso, disfrute de su experiencia");
-        generarCodigo();
-        console.log("Guardando el usuario con id: " + userId);
-        
-        loginUsuario(name);
+        postData("register", {mail: mail, user_name: name, password: password}, (data) => {            
+            console.log(data);
+            if (!data)
+            {
+                console.log ("Respuesta vacía");
+                return alert('El backend dio una respuesta vacía');
+            }
+            else if (data.result == "ya_existe")
+            {
+                console.log ("Ya existe");
+                return alert('El usuario ya está registrado');
+            }
+            else if (data.result  == "registro_exitoso")
+            {
+                console.log ("Registro exitoso. User id: " + data.user_id);                
+                sessionStorage.clear;
+                sessionStorage.setItem('id_usuario', data.user_id);
+                
+                alert("Registro exitoso, disfrute de su experiencia");
+                window.location.href = '../Formulario-1/index.html';
+            }
+            else if (data.result  == "error")
+            {
+                console.log ("Error en el backend");
+                return alert('Error en el backend');
+            }
+            else
+            {
+                console.log ("Respuesta inesperada: " + data);
+                return alert("Respuesta inesperada: " + data);
+            }
+
+        });                
     });
-
-    function loginUsuario(nombreUsuario) {
-        // Implementa lógica si es necesario
-    }
-
-    function generarCodigo() {    
-        let codigo = {
-            numero1: Math.floor(Math.random() * 10),
-            numero2: Math.floor(Math.random() * 10),
-            numero3: Math.floor(Math.random() * 10),
-            numero4: Math.floor(Math.random() * 10),
-            numero5: Math.floor(Math.random() * 10)
-        };
-
-        // Redirigir a la página de verificación
-        window.location.href = '../Formulario-1/index.html';
-
-        let gmail = document.querySelector('#mail').value; // Asegurarte de obtener el valor correctamente
-        let objeto = { gmail: gmail, codigo: codigo }; // Crear el objeto correctamente
-        sessionStorage.setItem('objeto', JSON.stringify(objeto)); // Guardar el objeto en el sessionStorage
-        postData("gmail", objeto); // Enviar los datos al servidor
-    }
-
-    function generateUniqueId() {
-        return 'id-' + Math.random().toString(36).substr(2, 16);
-    }
 });

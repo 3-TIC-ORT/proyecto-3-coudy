@@ -35,9 +35,14 @@
             <div class="festejo2"></div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../socket.js"></script>
+    <script src="../database.js"></script>    
     <script src="../database.js"></script>
     <script src="../nav.js"></script>
     <script>
+        connect2Server();
+
         function guardarInfo(){
             window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'            
         }
@@ -51,8 +56,8 @@
             let candadoCss = document.getElementById('candadoJs');
             let islaJs = document.getElementById('islaJs');
             let verifyAnimationCss = obtenerAnimacionFinished("Css");
-            let verifyAnimationJs = obtenerAnimacionFinished("Js");
-            
+            let verifyAnimationJs = obtenerAnimacionFinished("Js");                        
+
             console.log("verifyHtml = " + verifyHtml);
             console.log("verifyCss = " + verifyCss);
             console.log("verifyJs = " + verifyJs);
@@ -138,6 +143,8 @@
         })
         
     </script>
-    <script src="../database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../socket.js"></script>
+    <script src="../database.js"></script>        
 </body>
 </html>
