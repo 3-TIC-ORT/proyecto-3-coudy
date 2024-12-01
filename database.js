@@ -30,14 +30,14 @@ async function modificarNivelHtmlAlcanzado(nuevoNivel) {
         guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
 }
 
-function modificarNivelCssAlcanzado(nuevoNivel) {
-    if(nuevoNivel > obtenerNivelCssAlcanzado())
-    guardarDatosUsuario("nivelCssAlcanzado", nuevoNivel);
+async function modificarNivelCssAlcanzado(nuevoNivel) {
+    if(nuevoNivel > await obtenerNivelCssAlcanzado())
+        guardarDatosUsuario("nivelCssAlcanzado", nuevoNivel);
 }
 
-function modificarNivelJsAlcanzado(nuevoNivel) {
-    if(nuevoNivel > obtenerNivelJsAlcanzado())
-    guardarDatosUsuario("nivelJsAlcanzado", nuevoNivel);
+async function modificarNivelJsAlcanzado(nuevoNivel) {
+    if(nuevoNivel > await obtenerNivelJsAlcanzado())
+        guardarDatosUsuario("nivelJsAlcanzado", nuevoNivel);
 }
 
 function obtenerAnimacionFinished(tipoAnimacion)
@@ -57,7 +57,7 @@ function actualizarFotoPerfil(nuevaFotoBase64) {
 function obtenerNivelHtmlAlcanzado() {
     return new Promise((resolve, reject) => {
         obtenerUsuario((usuario) => {
-            if (usuario != null) {                
+            if (usuario != null) {
                 resolve(usuario["nivelHtmlAlcanzado"]); // Resolve the promise with the value
             } else {
                 reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
@@ -67,13 +67,27 @@ function obtenerNivelHtmlAlcanzado() {
 }
 
 function obtenerNivelCssAlcanzado() {
-    const nivel = obtenerDatosUsuario("nivelCssAlcanzado");
-    return nivel ?? 0;
+    return new Promise((resolve, reject) => {
+        obtenerUsuario((usuario) => {
+            if (usuario != null) {                
+                resolve(usuario["nivelCssAlcanzado"]); // Resolve the promise with the value
+            } else {
+                reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
+            }
+        });
+    });        
 }
 
 function obtenerNivelJsAlcanzado() {
-    const nivel = obtenerDatosUsuario("nivelJsAlcanzado");
-    return nivel ?? 0;
+    return new Promise((resolve, reject) => {
+        obtenerUsuario((usuario) => {
+            if (usuario != null) {                
+                resolve(usuario["obtenerNivelJsAlcanzado"]); // Resolve the promise with the value
+            } else {
+                reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
+            }
+        });
+    });        
 }
 
 function obtenerFotoPerfil() {
