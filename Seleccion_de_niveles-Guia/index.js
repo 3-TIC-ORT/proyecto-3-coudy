@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
         {        
             // Callback a ejecutar cuando termina el connect2ServerAndWait
             verifyHtml = await obtenerNivelHtmlAlcanzado() == 22;
-            verifyCss = obtenerNivelCssAlcanzado() == 22;
-            verifyJs = obtenerNivelJsAlcanzado() == 30;
+            verifyCss = await obtenerNivelCssAlcanzado() == 22;
+            verifyJs = await obtenerNivelJsAlcanzado() == 30;
             candadoHtml = document.getElementById('candadoCss');
             islaCss = document.getElementById('islaCss');
             candadoCss = document.getElementById('candadoJs');
             islaJs = document.getElementById('islaJs');
-            verifyAnimationCss = obtenerAnimacionFinished("Css");
-            verifyAnimationJs = obtenerAnimacionFinished("Js");                        
+            verifyAnimationCss = await obtenerAnimacionFinished("Css");
+            verifyAnimationJs = await obtenerAnimacionFinished("Js");                        
 
             console.log("verifyHtml = " + verifyHtml);
 

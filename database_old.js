@@ -43,7 +43,7 @@ function actualizarFotoPerfil(nuevaFotoBase64) {
     guardarDatosUsuario("perfilImagen", nuevaFotoBase64);
 }
 
-function await obtenerNivelHtmlAlcanzado() {
+function obtenerNivelHtmlAlcanzado() {
     const nivel = obtenerDatosUsuario("nivelHtmlAlcanzado");
     return nivel ?? 0;
 }

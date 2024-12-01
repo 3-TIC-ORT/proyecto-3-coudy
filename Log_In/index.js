@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (data.user)
             {
                 console.log ("Usuario encontrado: " + JSON.stringify(data.user));
-                sessionStorage.setItem('id_usuario', data.user.id);
-                //const experienciaProgramacion = obtenerDatosUsuario("experienciaProgramacion");
+                sessionStorage.setItem('id_usuario', data.user.id);                
                 const experienciaProgramacion = data.user.experienciaProgramacion;
                 console.log(experienciaProgramacion);
                 if (experienciaProgramacion === 'ninguna') {
