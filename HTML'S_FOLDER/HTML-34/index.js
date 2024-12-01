@@ -1,12 +1,12 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     let input1 = document.getElementById('inp').value;
 
-    if(obtenerNivelHtmlAlcanzado() >= 16) {
+    if(await obtenerNivelHtmlAlcanzado() >= 16) {
         window.location.href = '../HTML-35/index.html';
     } else {
-        if (input1 === "href=") {
+        if (input1 === "a href=") {
             alert("Felicitaciones, has completado el Nivel 16!");
-            modificarNivelHtmlAlcanzado(16);
+            await modificarNivelHtmlAlcanzado(16);
             window.location.href = '../HTML-35/index.html';
         } else if (input1 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

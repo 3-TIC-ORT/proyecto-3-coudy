@@ -25,8 +25,8 @@ dropArea.addEventListener('drop', function(event) {
     }
 });
 
-document.querySelector('.siguiente').addEventListener('click', () => {        
-    if (obtenerNivelHtmlAlcanzado() >= 1) {
+document.querySelector('.siguiente').addEventListener('click', async () => {        
+    if (await obtenerNivelHtmlAlcanzado() >= 1) {
         window.location.href='../HTML-9/index.html';
     } else {
         alert("Aún no has completado el nivel");

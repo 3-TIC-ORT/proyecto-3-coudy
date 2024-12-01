@@ -38,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
             {
                 console.log ("Usuario encontrado: " + JSON.stringify(data.user));
                 sessionStorage.setItem('id_usuario', data.user.id);
-                const experienciaProgramacion = obtenerDatosUsuario("experienciaProgramacion");
+                //const experienciaProgramacion = obtenerDatosUsuario("experienciaProgramacion");
+                const experienciaProgramacion = data.user.experienciaProgramacion;
                 console.log(experienciaProgramacion);
                 if (experienciaProgramacion === 'ninguna') {
                     alert(`Bienvenido de nuevo ${data.user.username}`);

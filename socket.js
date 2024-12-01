@@ -20,7 +20,7 @@ socket.on("connect_error", () => {
 });
 
 const assertConnection = (socket) => {
-    if (!socket.active) {
+    if (!socket.active) {        
         throw new SoqueticError(
             "No se puede enviar un evento si no hay conexión al backend.\nRecordá que tenés que llamar a connect2Server() para conectarte al backend."
         );
@@ -85,3 +85,23 @@ const connect2Server = (PORT = 3000) => {
     socket.io.uri = `http://localhost:${PORT}`;
     socket.connect();
 };
+
+function connect2ServerAndWait(onConnectedCallback) {
+    socket.io.uri = `http://localhost:3000`;
+    socket.connect();
+
+    // On successful connection
+    socket.on("connect", () => {
+        console.log("Conectado al backend!");
+        
+        // Execute the callback only after the connection is established
+        if (typeof onConnectedCallback === "function") {
+            onConnectedCallback();
+        }
+    });
+
+    // Handle connection errors
+    socket.on("connect_error", (err) => {
+        console.error("Error al conectar al backend. Revisá que el servidor esté corriendo y la URL sea correcta.: " +  err.message);        
+    });
+}

@@ -93,12 +93,12 @@ function verificarCodigo() {
     }
 }
 
-document.querySelector('.siguiente').addEventListener('click', ()=>{
+document.querySelector('.siguiente').addEventListener('click', async ()=>{
     verificarCodigo();    
     
-    if(obtenerNivelHtmlAlcanzado() == 22) 
+    if(await obtenerNivelHtmlAlcanzado() == 22) 
     {
-        let experienciaProgramacion = obtenerExperiencia();
+        let experienciaProgramacion = await obtenerExperiencia();
                         
         if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
         {

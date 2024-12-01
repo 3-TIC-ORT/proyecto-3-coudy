@@ -19,8 +19,8 @@ option4.addEventListener('click', () => {
     alert("Respuesta incorrecta. Vuelve a intentarlo")
 })
 
-btnSiguiente.addEventListener('click', () => {
-    if(obtenerNivelHtmlAlcanzado() >= 7) {
+btnSiguiente.addEventListener('click', async () => {
+    if(await obtenerNivelHtmlAlcanzado() >= 7) {
         window.location.href='../HTML-18/index.html';
     } else{
         alert("No has completado el ejercicio, completalo para poder continuar")

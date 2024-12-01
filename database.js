@@ -1,3 +1,6 @@
+document.addEventListener("DOMContentLoaded", ()=>{    
+connect2Server;
+})
 function modificarRazonAprender(nuevaRazon) {
     guardarDatosUsuario('razonAprender', nuevaRazon);
 }
@@ -11,12 +14,20 @@ function modificarExperiencia(nuevaExperiencia) {
 }
 
 function obtenerExperiencia() {
-    return obtenerDatosUsuario("experienciaProgramacion");    
+    return new Promise((resolve, reject) => {
+        obtenerUsuario((usuario) => {
+            if (usuario != null) {                
+                resolve(usuario["experienciaProgramacion"]); // Resolve the promise with the value
+            } else {
+                reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
+            }
+        });
+    });    
 }
 
-function modificarNivelHtmlAlcanzado(nuevoNivel) {
-    if(nuevoNivel > obtenerNivelHtmlAlcanzado())
-    guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
+async function modificarNivelHtmlAlcanzado(nuevoNivel) {        
+    if(nuevoNivel > await obtenerNivelHtmlAlcanzado())
+        guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
 }
 
 function modificarNivelCssAlcanzado(nuevoNivel) {
@@ -44,8 +55,15 @@ function actualizarFotoPerfil(nuevaFotoBase64) {
 }
 
 function obtenerNivelHtmlAlcanzado() {
-    const nivel = obtenerDatosUsuario("nivelHtmlAlcanzado");
-    return nivel ?? 0;
+    return new Promise((resolve, reject) => {
+        obtenerUsuario((usuario) => {
+            if (usuario != null) {                
+                resolve(usuario["nivelHtmlAlcanzado"]); // Resolve the promise with the value
+            } else {
+                reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
+            }
+        });
+    });    
 }
 
 function obtenerNivelCssAlcanzado() {
@@ -88,7 +106,7 @@ function obtenerDatosUsuario(key) {
         console.log("id_usuario no se encontro en sessionStorage");
         return;
     }
-
+    
     postData("get_user", {user_id: userId}, (user) => 
         {
             if (!user)
@@ -100,24 +118,32 @@ function obtenerDatosUsuario(key) {
         }); 
 }
 
-function obtenerUsuario() {
+function obtenerUsuario(callback) {
     let userId = sessionStorage.getItem('id_usuario');
     if (!userId)
     {
         console.log("id_usuario no se encontro en sessionStorage");
-        return;
+        callback(null);
     }
-
-    postData("get_user", {user_id: userId}, (user) => 
-        {
-            if (!user)
-            {
+            
+    postData("get_user", {user_id: userId}, (resultado) =>
+        {            
+            if (!resultado || !resultado.user)
+            {                
                 console.log("El usuario id " + userId + " no se encontró en la base de datos");
-                return;
+                callback(null);
             }
-            return user;
-        }); 
-}
+            else
+            {
+                console.log("Encontrado el usuario id " + userId);
+                // Ejecuta el callback luego de que finaliza el postData
+                if (typeof callback === "function") {
+                             
+                    callback(resultado.user);
+                }            
+            }            
+        });           
+    }
 
 function obtenerUsuario_localstorage() {
     let userId = sessionStorage.getItem('id_usuario');

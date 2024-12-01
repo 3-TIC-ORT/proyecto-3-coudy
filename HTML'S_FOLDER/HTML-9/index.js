@@ -30,8 +30,8 @@ dropArea.addEventListener('drop', function(event) {
 });
 
 // Controla el botón "siguiente" para avanzar al próximo nivel
-document.querySelector('.siguiente').addEventListener('click', () => {
-    if (obtenerNivelHtmlAlcanzado() >= 2) {
+document.querySelector('.siguiente').addEventListener('click', async () => {
+    if (await obtenerNivelHtmlAlcanzado() >= 2) {
         window.location.href = '../HTML-10/index.html';
     } else {
         alert("Aún no has completado el nivel");

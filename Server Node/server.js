@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 // Crear la tabla 'users' si no existe.
-db.exec('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT UNIQUE, mail TEXT UNIQUE, password TEXT, experienciaProgramacion TEXT, razonAprender TEXT, teSentisIdentificado TEXT, nivelHtmlAlcanzado INTEGER, nivelCssAlcanzado INTEGER, nivelJsAlcanzado INTEGER, animacionCssFinished, animacionJsFinished)');
+db.exec('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT UNIQUE, mail TEXT UNIQUE, password TEXT, perfilImagen TEXT, experienciaProgramacion TEXT, razonAprender TEXT, teSentisIdentificado TEXT, nivelHtmlAlcanzado INTEGER, nivelCssAlcanzado INTEGER, nivelJsAlcanzado INTEGER, animacionCssFinished INTEGER, animacionJsFinished INTEGER)');
 
 onEvent("register", async (data) =>  
     {        
@@ -74,13 +74,13 @@ onEvent("register", async (data) =>
                 {                            
                     // Query exitoso, y encontró un row para ese username, lo cual quiere decir que el usuario ya existía.                                
                     result.user = row;
+                    return result;
                 }
                 else
                 {
-                    console.log("El usuario ? no fue encontrado en la base de datos.",[data.user_id]);
-                }
-    
-                return result;
+                    console.log("El usuario " + data.user_id + " no fue encontrado en la base de datos.");
+                    return null;
+                }                
             });
             
             onEvent("update_user", async (data) =>          

@@ -15,7 +15,7 @@ function obtenerExperiencia() {
 }
 
 function modificarNivelHtmlAlcanzado(nuevoNivel) {
-    if(nuevoNivel > obtenerNivelHtmlAlcanzado())
+    if(nuevoNivel > await obtenerNivelHtmlAlcanzado())
     guardarDatosUsuario("nivelHtmlAlcanzado", nuevoNivel);
 }
 
@@ -43,7 +43,7 @@ function actualizarFotoPerfil(nuevaFotoBase64) {
     guardarDatosUsuario("perfilImagen", nuevaFotoBase64);
 }
 
-function obtenerNivelHtmlAlcanzado() {
+function await obtenerNivelHtmlAlcanzado() {
     const nivel = obtenerDatosUsuario("nivelHtmlAlcanzado");
     return nivel ?? 0;
 }
