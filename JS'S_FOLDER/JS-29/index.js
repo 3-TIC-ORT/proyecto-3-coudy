@@ -1,14 +1,14 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     let input1 = document.getElementById('inp1').value.trim();
     let input2 = document.getElementById('inp2').value.trim();
     let input3 = document.getElementById('inp3').value.trim();
     
-    if (obtenerNivelJsAlcanzado() >= 13){
+    if (await obtenerNivelJsAlcanzado() >= 13){
         window.location.href = '../JS-30/index.html';
     } else {
         if (input1 === 'if' && input2 === '===' && input3 === 'alert') {
             alert("Felicitaciones, has completado el Nivel 13!");
-            modificarNivelJsAlcanzado(13);
+            await modificarNivelJsAlcanzado(13);
             window.location.href = '../JS-30/index.html';
         } else if (input1 === '' && input2 === '' && input3 === '') {
             alert("No has completado el ejercicio, completalo para poder continuar");

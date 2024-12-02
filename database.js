@@ -90,7 +90,7 @@ function obtenerNivelJsAlcanzado() {
     return new Promise((resolve, reject) => {
         obtenerUsuario((usuario) => {
             if (usuario != null) {                
-                resolve(usuario["obtenerNivelJsAlcanzado"]); // Resolve the promise with the value
+                resolve(usuario["nivelJsAlcanzado"]); // Resolve the promise with the value
             } else {
                 reject(new Error("No se pudo encontrar el usuario logueado")); // Reject the promise with an error
             }

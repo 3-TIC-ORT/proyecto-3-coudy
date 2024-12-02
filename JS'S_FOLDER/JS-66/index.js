@@ -1,4 +1,4 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     const expectedCode = `
     let colores = ["rojo", "azul", "verde"];
     for (let i = 0; i < colores.length; i++) {
@@ -7,12 +7,21 @@ document.querySelector('.siguiente').addEventListener('click', () => {
         
     const inp1 = document.getElementById("inp1").value;
     
-    if (obtenerNivelJsAlcanzado() >= 30){
-        window.location.href = '../JS-65/index.html';
+    if (await obtenerNivelJsAlcanzado() >= 30){
+        let experienciaProgramacion = await obtenerExperiencia();
+                        
+        if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
+        {
+            window.location.href='../../Seleccion_de_niveles-Guia/index.html'
+        } 
+        else 
+        {
+            window.location.href='../../Seleccion_de_niveles-Manual/index.html'
+        }
     } else {
         if (inp1.trim() === expectedCode.trim()) {
             alert("Felicitaciones, has completado el Nivel 29!");
-            modificarNivelJsAlcanzado(30);
+            await modificarNivelJsAlcanzado(30);
             volverr()
         } else if (inp1 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

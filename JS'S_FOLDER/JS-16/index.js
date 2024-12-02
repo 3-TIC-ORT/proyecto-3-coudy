@@ -1,14 +1,14 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async() => {
     let input1 = document.getElementById('inp1').value.trim();
     let input2 = document.getElementById('inp2').value.trim();
     let input3 = document.getElementById('inp3').value.trim();
     
-    if (obtenerNivelJsAlcanzado() >= 7){
+    if (await obtenerNivelJsAlcanzado() >= 7){
         window.location.href = '../JS-17/index.html';
     } else {
         if ((input1 === 'let') && (input2 === 'prompt') && (input3 == 'alert')) {
             alert("Felicitaciones, has completado el Nivel 7!");
-            modificarNivelJsAlcanzado(7);
+            await modificarNivelJsAlcanzado(7);
             window.location.href = '../JS-17/index.html';
         } else if (input1 === "" && input2 === "" && input3 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");
