@@ -1,5 +1,6 @@
 {
   "name": "Coudy Backend",
+  "type": "module",
   "version": "1.0.0",
   "description": "Coudy Backend",
   "main": "index.js",

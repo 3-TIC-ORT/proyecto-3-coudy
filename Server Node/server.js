@@ -19,7 +19,7 @@ db.exec('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT
 startServer();
 
 // Evento "register"
-onEvent("register", async (data) =>  
+onEvent("register", (data) =>  
     {        
         let result = {};
        
@@ -48,7 +48,7 @@ onEvent("register", async (data) =>
     });    
 
     // Evento 'login'
-onEvent("login", async (data) =>          
+onEvent("login", (data) =>          
     {
         console.log("login requested:");
         console.log(`mail_or_user: ${data.mail_or_user}`);
@@ -87,7 +87,7 @@ onEvent("get_user", async (data) =>
         }                
     });
             
-onEvent("update_user", async (data) =>          
+onEvent("update_user", (data) =>          
     {
         console.log("update_user requested:");
         console.log(`user_id: ${data.user_id}`);
