@@ -128,8 +128,7 @@ siguienteBtn.addEventListener('animationend', (event) => {
 async function volverr(){
     if(await obtenerNivelCssAlcanzado() == 22) 
         {
-            let experienciaProgramacion = await obtenerExperiencia();
-            alert("Experiencia: " + experienciaProgramacion);                
+            let experienciaProgramacion = await obtenerExperiencia();                
             if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
             {
                 window.location.href='../../Seleccion_de_niveles-Guia/index.html'
