@@ -65,15 +65,15 @@ function cambiarCursor(){
     }
 }
 
-siguienteBtn.addEventListener('click', () => {
+siguienteBtn.addEventListener('click', async () => {
 
-    if (obtenerNivelCssAlcanzado()>=15) {
+    if (await obtenerNivelCssAlcanzado()>=15) {
         window.location.href = '../flexbox-5/index.html';
     } else {
         const valorCodigo = codigo.value.trim();
         if (valorCodigo == "align-items: flex-end;")
         {
-            modificarNivelCssAlcanzado(15);
+            await modificarNivelCssAlcanzado(15);
             window.location.href='../flexbox-5/index.html'
         }
         else

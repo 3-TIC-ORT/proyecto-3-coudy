@@ -3,7 +3,7 @@ let objMover = document.querySelector('.trabajo');
 const siguienteBtn = document.querySelector('.siguiente');
 const relleno = document.querySelector('.relleno');
 
-function mover() {
+async function mover() {
     objMover.classList.remove(
         'JUScentrar', 'JUSend', 'JUSstart', 'JUSbetween', 'JUSaround', 'JUSevenly',
         'ALIGcentrar', 'ALIGend', 'ALIGstart', 'ALIGbaseline', 'ALIGstrech',
@@ -19,7 +19,7 @@ function mover() {
         localStorage.setItem('codigo-textarea4', valorCodigo);
     }*/
 
-        if(obtenerNivelCssAlcanzado()>=22) {
+        if(await obtenerNivelCssAlcanzado()>=22) {
         nivelCompletado = true;
     }
 
@@ -125,11 +125,11 @@ siguienteBtn.addEventListener('animationend', (event) => {
 });
 
 
-function volverr(){
-    if(obtenerNivelCssAlcanzado() == 22) 
+async function volverr(){
+    if(await obtenerNivelCssAlcanzado() == 22) 
         {
-            let experienciaProgramacion = obtenerExperiencia();
-                            
+            let experienciaProgramacion = await obtenerExperiencia();
+            alert("Experiencia: " + experienciaProgramacion);                
             if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna") 
             {
                 window.location.href='../../Seleccion_de_niveles-Guia/index.html'

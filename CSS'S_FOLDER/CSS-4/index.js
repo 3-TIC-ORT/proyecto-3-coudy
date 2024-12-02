@@ -20,8 +20,8 @@ option3.addEventListener('click', () => {
     alert("Respuesta incorrecta. Vuelve a intentarlo");
 });
 
-btnSiguiente.addEventListener('click', () => {    
-    if (obtenerNivelCssAlcanzado() >= 2) {
+btnSiguiente.addEventListener('click', async () => {    
+    if (await obtenerNivelCssAlcanzado() >= 2) {
         window.location.href = '../CSS-5/index.html'; // Redirigir al siguiente nivel
     } else {
         alert("No has completado el ejercicio, completalo para poder continuar");

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     islaJs.style.cursor = 'pointer';
                     islaJs.classList.add('islaJ');
                     setTimeout(() => {
-                        modificarAnimacionFinished("Js",true);
+                        modificarAnimacionFinished("Js",1);
                     }, 7000);
                 }
                 else
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     islaCss.style.cursor = 'pointer';
                     islaCss.classList.add('islaC');
                     setTimeout(() => {
-                        modificarAnimacionFinished("Css",true);
+                        modificarAnimacionFinished("Css",1);
                     }, 7000);
                 }
                 else
@@ -99,13 +99,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
                 span.onclick = function() {
                     modal.style.display = "none";
-                    modificarAnimacionFinished("Js", true);
+                    modificarAnimacionFinished("Js", 1);
                 }
 
                 window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
-                    modificarAnimacionFinished("Js", true);
+                    modificarAnimacionFinished("Js", 1);
                     }
                 }
             }

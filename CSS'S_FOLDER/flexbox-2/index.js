@@ -27,14 +27,14 @@ function mover() {
 
 codigo.addEventListener('input', mover);
 
-document.querySelector('.siguiente').addEventListener('click', ()=>{    
-    if(obtenerNivelCssAlcanzado()>=13){
+document.querySelector('.siguiente').addEventListener('click', async ()=>{    
+    if(await obtenerNivelCssAlcanzado()>=13){
         window.location.href='../flexbox-3/index.html'
     } else{
         const valorCodigo = codigo.value.trim();
         if (valorCodigo == "justify-content: center;")
         {
-            modificarNivelCssAlcanzado(13);
+            await modificarNivelCssAlcanzado(13);
             window.location.href='../flexbox-3/index.html'
         }
         else

@@ -99,15 +99,15 @@ function cambiarCursor(){
     }
 }
 
-siguienteBtn.addEventListener('click', () => {
-    if (obtenerNivelCssAlcanzado()>=20) {
+siguienteBtn.addEventListener('click', async () => {
+    if (await obtenerNivelCssAlcanzado()>=20) {
         window.location.href = '../flexbox-10/index.html';
     } else {
         const valorCodigo = codigo.value.trim();
         if (
             (valorCodigo == "flex-wrap: wrap") || (valorCodigo == "flex-wrap: wrap;"))
         {
-            modificarNivelCssAlcanzado(20);
+            await modificarNivelCssAlcanzado(20);
             window.location.href='../flexbox-10/index.html'
         }
         else

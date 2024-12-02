@@ -78,14 +78,14 @@ function cambiarCursor(){
     }
 }
 
-siguienteBtn.addEventListener('click', () => {
-    if (obtenerNivelCssAlcanzado()>=18) {
+siguienteBtn.addEventListener('click', async () => {
+    if (await obtenerNivelCssAlcanzado()>=18) {
         window.location.href = '../flexbox-8/index.html';
     } else {
         const valorCodigo = codigo.value.trim();
         if (valorCodigo == "flex-direction: column;")
             {
-                modificarNivelCssAlcanzado(18);
+                await modificarNivelCssAlcanzado(18);
                 window.location.href='../flexbox-8/index.html'
             }
             else

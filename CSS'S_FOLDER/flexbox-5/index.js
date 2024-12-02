@@ -82,14 +82,14 @@ function cambiarCursor() {
     }
 }
 
-siguienteBtn.addEventListener('click', () => {
-    if (obtenerNivelCssAlcanzado()>=16) {
+siguienteBtn.addEventListener('click', async () => {
+    if (await obtenerNivelCssAlcanzado()>=16) {
         window.location.href = '../flexbox-6/index.html';
     } else {
         const valorCodigo = codigo.value.trim();
         if (valorCodigo.includes("justify-content: center;") && valorCodigo.includes("align-items: center;"))
         {
-            modificarNivelCssAlcanzado(16);
+            await modificarNivelCssAlcanzado(16);
             window.location.href='../flexbox-6/index.html'
         }
         else

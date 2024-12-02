@@ -1,14 +1,13 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     let input1 = document.getElementById('inp1').value;
     let input2 = document.getElementById('inp2').value;
 
-    let verificar = Number(localStorage.getItem('guardar-Level5-CSS')) || 0;
-    if (obtenerNivelCssAlcanzado()>=5){
+    if (await obtenerNivelCssAlcanzado()>=5){
         window.location.href = '../CSS-15/index.html';
     } else {
         if (input1 === '.colortexto' && input2 === 'color:') {
             alert("Felicitaciones, has completado el Nivel 5!");
-            modificarNivelCssAlcanzado(5); // Marca el nivel como completado
+            await modificarNivelCssAlcanzado(5); // Marca el nivel como completado
             window.location.href = '../CSS-15/index.html';
         } else if (input1 === "" && input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

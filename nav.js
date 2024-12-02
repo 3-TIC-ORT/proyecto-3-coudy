@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
 let carasCoudy = document.querySelectorAll('.caraCoudy');
 carasCoudy.forEach((cara)=>{
     cara.style.cursor = 'pointer';
-    cara.addEventListener('click', ()=>{
-        let experienciaProgramacion = obtenerExperiencia();
+    cara.addEventListener('click', async ()=>{
+        let experienciaProgramacion = await obtenerExperiencia();
         if(experienciaProgramacion === "poca" || experienciaProgramacion === "ninguna"){ 
             window.location.href='../../Seleccion_de_niveles-Guia/index.html' 
         } 

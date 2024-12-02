@@ -20,8 +20,8 @@ option2.addEventListener('click', () => handleOptionClick('option2'));
 option3.addEventListener('click', () => handleOptionClick('option3'));
 
 // Asociar evento al botón de siguiente
-nextButton.addEventListener('click', () => {
-    if (obtenerNivelCssAlcanzado() >= 1) {
+nextButton.addEventListener('click', async () => {
+    if (await obtenerNivelCssAlcanzado() >= 1) {
         window.location.href = '../CSS-4/index.html'; // Cambiar al nivel siguiente
     } else {
         alert("Aún no has completado el nivel");

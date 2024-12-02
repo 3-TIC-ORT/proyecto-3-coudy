@@ -1,12 +1,12 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     let input2 = document.getElementById('inp2').value;
 
-    if (obtenerNivelCssAlcanzado()>=7){
+    if (await obtenerNivelCssAlcanzado()>=7){
         window.location.href = '../CSS-19/index.html';
     } else {
         if (input2 === 'font-size:') {
             alert("Felicitaciones, has completado el Nivel 7!");
-            modificarNivelCssAlcanzado(7); // Marca el nivel como completado
+            await modificarNivelCssAlcanzado(7); // Marca el nivel como completado
             window.location.href = '../CSS-19/index.html';
         } else if (input2 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");

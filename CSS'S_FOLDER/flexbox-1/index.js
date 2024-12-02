@@ -27,14 +27,14 @@ function mover() {
 
 codigo.addEventListener('input', mover);
 
-document.querySelector('.siguiente').addEventListener('click', ()=>{    
-    if(obtenerNivelCssAlcanzado()>=12){
+document.querySelector('.siguiente').addEventListener('click', async ()=>{    
+    if(await obtenerNivelCssAlcanzado()>=12){
         window.location.href='../flexbox-2/index.html'
     } else{
         const valorCodigo = codigo.value.trim();
         if (valorCodigo == "justify-content: flex-end;")
         {
-            modificarNivelCssAlcanzado(12);
+            await modificarNivelCssAlcanzado(12);
             window.location.href='../flexbox-2/index.html'
         }
         else
