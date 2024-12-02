@@ -1,12 +1,12 @@
-document.querySelector('.siguiente').addEventListener('click', () => {
+document.querySelector('.siguiente').addEventListener('click', async () => {
     let input1 = document.getElementById('inp1').value.trim();
     
-    if (obtenerNivelJsAlcanzado() >= 11){
+    if (await obtenerNivelJsAlcanzado() >= 11){
         window.location.href = '../JS-23/index.html';
     } else {
         if (input1 === '==') {
             alert("Felicitaciones, has completado el Nivel 11!");
-            modificarNivelJsAlcanzado(11);
+            await modificarNivelJsAlcanzado(11);
             window.location.href = '../JS-23/index.html';
         } else if (input1 === "") {
             alert("No has completado el ejercicio, completalo para poder continuar");
