@@ -17,17 +17,11 @@
     <div class="tres-flechas" id="tresFlechas"></div>
     <div class="isla-html" onclick="guardarInfo(1)"></div>
     <div id="isla-css" class="isla-css" onclick="guardarInfo(2)"></div>
-    <div id="isla-js" class="isla-js" onclick="guardarInfo(3)"></div>
-    <script>
-        function guardarInfo(num){
-            if(num === 1){
-                window.location.href='../HTML\'S_FOLDER/HTML-1/index.html'
-            } else if(num === 2){
-                window.location.href='../CSS\'S_FOLDER/CSS-1/index.html'
-            } else if(num = 3){
-                window.location.href='../JS\'S_FOLDER/JS-1/index.html'
-            }            
-        }
-    </script>    
+    <div id="isla-js" class="isla-js" onclick="guardarInfo(3)"></div>    
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script> <!-- Dependency for socket.js -->
+    <script src="../socket.js"></script> <!-- Provides functionality needed by database.js -->
+    <script src="../database.js"></script> <!-- Provides functionality needed by nav.js -->
+    <script src="../nav.js"></script> <!-- Last, since it depends on database.js -->
+    <script src="index.js"></script>
 </html>
