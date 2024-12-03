@@ -167,25 +167,6 @@ function obtenerUsuario(callback) {
         });           
     }
 
-function obtenerUsuario_localstorage() {
-    let userId = sessionStorage.getItem('id_usuario');
-
-    if (userId) {
-        const users = JSON.parse(localStorage.getItem('users'));
-        if (users) {
-            const user = users.find(user => user.id === userId);
-            if (user) {
-                return user;
-            } else {
-                console.log("El usuario id " + userId + " no se encontró en la base de datos");
-            }
-        } else {
-            console.log("users no se encontro en localStorage");
-        }
-    } else {
-        console.log("id_usuario no se encontro en sessionStorage");
-    }
-}
 
 function guardarDatosUsuario(key, value) {
     let userId = sessionStorage.getItem('id_usuario');
@@ -196,34 +177,11 @@ function guardarDatosUsuario(key, value) {
             return;
         }
     
-        postData("update_user", {user_id: userId, key: key, new_value: value}, (result) => 
+    postData("update_user", {user_id: userId, key: key, new_value: value}, (result) => 
+        {
+            if (result.error)
             {
-                if (result.error)
-                {
-                    console.log("Error en el backend actualizando los datos del usuario: ?", [result.error]);                    
-                }                                
-            }); 
-}
-
-    function guardarDatosUsuario_locastorage(key, value) {
-        let userId = sessionStorage.getItem('id_usuario');
-    
-        if (userId) {
-            const users = JSON.parse(localStorage.getItem('users'));
-            if (users) {
-                let userIndex = users.findIndex(user => user.id === userId);
-    
-                if (userIndex !== -1) {
-                    console.log("Guardando datos usuario. Key=" + key + ", value=" + value);
-                    users[userIndex][key] = value;
-                    localStorage.setItem('users', JSON.stringify(users));
-                } else {
-                    console.log("El usuario id " + userId + " no se encontró en la base de datos");
-                }
-            } else {
-                console.log("users no se encontro en localStorage");
-            }
-        } else {
-            console.log("id_usuario no se encontro en sessionStorage");
-        }
+                console.log("Error en el backend actualizando los datos del usuario: ?", [result.error]);                    
+            }                                
+        }); 
 }

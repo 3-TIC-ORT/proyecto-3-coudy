@@ -1,18 +1,10 @@
 import { onEvent, sendEvent, startServer } from "soquetic";
 import Database from 'better-sqlite3';
-import cors from 'cors';
-import express from 'express';
 
-const app = express();
 const port = 3000;
 
 // Crear o abrir la base de datos sqlite.
-//let db = new sqlite3.Database('./users.db');
 const db = new Database('./users.db');
-
-// Es necesario usar CORS ya que los requests se envían desde un dominio diferente.
-app.use(cors());
-app.use(express.json());
 
 // Crear la tabla 'users' si no existe.
 db.exec('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT UNIQUE, mail TEXT UNIQUE, password TEXT, perfilImagen TEXT, experienciaProgramacion TEXT, razonAprender TEXT, teSentisIdentificado TEXT, nivelHtmlAlcanzado INTEGER, nivelCssAlcanzado INTEGER, nivelJsAlcanzado INTEGER, animacionCssFinished INTEGER, animacionJsFinished INTEGER)');
@@ -49,17 +41,14 @@ onEvent("register", (data) =>
 
     // Evento 'login'
 onEvent("login", (data) =>          
-    {
-        console.log("login requested:");
-        console.log(`mail_or_user: ${data.mail_or_user}`);
-        console.log(`password: ${data.password}`);
-        
+    {   
         let result = {};
+        // Ejectua consulta a la base de datos para obtener un usuario con el username o mail y password enviado por el frontend
         const row = db.prepare('SELECT * FROM users WHERE username = ? AND password = ?')        
         .get(data.mail_or_user, data.password);        
         if (row)                       
         {                            
-            // Query exitoso, y encontró un row para ese username, lo cual quiere decir que el usuario ya existía.                                
+            // Encontro el usuario. Lo devuelve en el la respuesta del evento                       
             result.user = row;
         }            
 
@@ -102,7 +91,6 @@ onEvent("update_user", (data) =>
             try
             {
                 let sql = `UPDATE users SET ${data.key} = ? WHERE id = ?`;
-                console.log("Ejecutando SQL: " + sql);
                 const stmt = db.prepare(sql).run(data.new_value, data.user_id);
             }
             catch (err)

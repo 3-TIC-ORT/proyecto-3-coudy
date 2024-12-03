@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         
         postData("login", {mail_or_user: mailOrUsername, password: password}, (data) => {            
-            console.log(data);
             if (!data)
             {
                 console.log ("Respuesta vacía");
@@ -39,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log ("Usuario encontrado: " + JSON.stringify(data.user));
                 sessionStorage.setItem('id_usuario', data.user.id);                
                 const experienciaProgramacion = data.user.experienciaProgramacion;
-                console.log(experienciaProgramacion);
                 if (experienciaProgramacion === 'ninguna') {
                     alert(`Bienvenido de nuevo ${data.user.username}`);
                     window.location.href = '../Seleccion_de_niveles-Guia/index.html';
@@ -60,28 +58,12 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        /*const Users = JSON.parse(localStorage.getItem('users')) || [];
-        const validUser = Users.find(user => 
-          (user.mail === mailOrUsername || user.username === mailOrUsername) && user.password === password
-        );
-
-        if (!validUser) {
-            return alert("Usuario y/o contraseña incorrectos");
-        }
-    
-        if (!mailOrUsername || !password) {
-            return alert('Asegúrate de haber completado todos los espacios');
-        }*/
-
         if (recuerdameCheckbox.checked) {
             localStorage.setItem('recuerdame', 'true');
            
         } else {
             localStorage.removeItem('recuerdame');
           
-        }
-
-        //localStorage.setItem('nombreUsuario', validUser.username);
-        
+        }        
     });
 });
