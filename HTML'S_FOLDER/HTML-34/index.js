@@ -4,7 +4,7 @@ document.querySelector('.siguiente').addEventListener('click', async () => {
     if(await obtenerNivelHtmlAlcanzado() >= 16) {
         window.location.href = '../HTML-35/index.html';
     } else {
-        if (input1 === "a href=") {
+        if (input1 === "href=") {
             alert("Felicitaciones, has completado el Nivel 16!");
             await modificarNivelHtmlAlcanzado(16);
             window.location.href = '../HTML-35/index.html';
